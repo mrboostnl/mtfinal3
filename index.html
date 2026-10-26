@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="ext-resource-dependency" content="assets/p-deur.png" data-resource-id="nav_p_deur_png">
+<meta name="ext-resource-dependency" content="assets/p-paal.png" data-resource-id="nav_p_paal_png">
+<meta name="ext-resource-dependency" content="assets/panel.jpg" data-resource-id="nav_panel_jpg">
+<meta name="ext-resource-dependency" content="assets/af-lamellen.png" data-resource-id="nav_af_lamellen_png">
+<meta name="ext-resource-dependency" content="assets/af-houtnerf.png" data-resource-id="nav_af_houtnerf_png">
+<meta name="ext-resource-dependency" content="assets/mt-mark.svg" data-resource-id="nav_mt_mark_svg">
+<meta name="ext-resource-dependency" content="assets/install.jpg" data-resource-id="nav_install_jpg">
+<meta name="ext-resource-dependency" content="assets/p-beton.png" data-resource-id="r0_p_beton_png">
+<meta name="ext-resource-dependency" content="assets/web/team-forklift-logo.png" data-resource-id="r1_team_forklift_logo_png">
+<meta name="ext-resource-dependency" content="assets/web/composiet-duo-logo.png" data-resource-id="r2_composiet_duo_logo_png">
+<meta name="ext-resource-dependency" content="assets/web/shoot-kantoor.jpg" data-resource-id="r3_shoot_kantoor_jpg">
+<meta name="ext-resource-dependency" content="assets/web/shoot-advies.jpg" data-resource-id="r4_shoot_advies_jpg">
+<meta name="ext-resource-dependency" content="assets/web/shoot-plank.jpg" data-resource-id="r5_shoot_plank_jpg">
+<meta name="ext-resource-dependency" content="assets/web/shoot-forklift.jpg" data-resource-id="r6_shoot_forklift_jpg">
+<template id="__bundler_thumbnail" data-bg-color="#F1EEE8"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F1EEE8"></rect><circle cx="50" cy="50" r="20" fill="#FB7029"></circle></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;color:#11131F;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#11131F;text-decoration:none}
+a:hover{color:#FB7029}
+button,input,select{font-family:inherit;color:inherit}
+:focus-visible{outline:2px solid #FB7029;outline-offset:2px;border-radius:6px}
+.hs::-webkit-scrollbar{display:none}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+</style>
+</helmet>
+
+<sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+<div style="background:#0E1120;color:#fff;font-size:14px;font-weight:500">
+  <div style="max-width:1320px;margin:0 auto;padding:9px clamp(20px,5vw,40px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="{{ googleUrl }}" style="display:flex;align-items:center;gap:8px;color:#fff"><span style="color:#FB7029;letter-spacing:1px">★★★★★</span><span>8,8 op Google · 220 reviews</span></a>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;opacity:.92"><span>14 dagen bedenktijd</span><span>Eigen bezorgservice</span><span>Gratis afhalen in Boekel, op afspraak</span></div>
+  </div>
+</div>
+</sc-if>
+
+<header style="background:#F1EEE8">
+  <div style="max-width:1320px;margin:0 auto;padding:12px clamp(20px,5vw,40px);display:flex;align-items:center;gap:20px">
+    <a href="https://www.mthekwerken.nl" style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:clamp(19px,2vw,24px);letter-spacing:-.02em;flex:none"><x-import component-from-global-scope="mt-logo" from="./mt-logo.js" size="36" hint-size="36px,36px"></x-import>MT hekwerken</a>
+    <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+      <label style="flex:1;max-width:380px;margin-left:auto;background:#fff;border-radius:6px;padding:0 14px;display:flex;align-items:center;gap:10px;height:46px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+        <input type="search" placeholder="Ik ben op zoek naar…" aria-label="Zoeken" style="border:none;outline:none;flex:1;font-size:14px;background:none;min-width:0">
+      </label>
+      <div style="display:flex;gap:10px">
+        <a href="https://www.mthekwerken.nl/configurator/" style="border:1.5px solid #11131F;border-radius:6px;padding:10px 18px;font-size:15px">Calculator</a>
+        <a href="https://www.mthekwerken.nl/offerte-aanvragen/" style="background:#FB7029;color:#fff;border-radius:6px;padding:11px 18px;font-size:15px;font-weight:500">Offerte aanvragen</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Zoeken" style="margin-left:auto;margin-right:-14px;width:44px;height:44px;border:none;background:none;display:grid;place-items:center;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+    </sc-if>
+    <a href="https://www.mthekwerken.nl/winkelwagen/" aria-label="Winkelwagen" style="position:relative;width:44px;height:44px;display:grid;place-items:center;flex:none">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.8"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8a3 3 0 016 0"></path></svg>
+      <span style="position:absolute;top:5px;right:3px;background:#11131F;color:#fff;border-radius:8px;font-size:10px;min-width:16px;height:16px;display:grid;place-items:center;font-weight:600">{{ cartCount }}</span>
+    </a>
+    <sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mt-mobile-nav" from="./mobile-nav.js" hint-size="96px,44px"></x-import></sc-if>
+  </div>
+  <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+  <nav style="background:#F7F5F1;border-top:1px solid #E6E2DA">
+    <div style="max-width:1320px;margin:0 auto;padding:12px clamp(20px,5vw,40px);display:flex;gap:30px;font-weight:500;font-size:15px">
+      <a href="https://www.mthekwerken.nl/assortiment/" style="color:#FB7029">Hekwerken</a><a href="https://www.mthekwerken.nl/composiet-schuttingen/">Composiet</a><a href="https://www.mthekwerken.nl/offerte-aanvragen/">Offerte</a><a href="https://www.mthekwerken.nl/configurator/">Configurator</a><a href="https://www.mthekwerken.nl/klantenservice/">Klantenservice</a><a href="https://www.mthekwerken.nl/over-ons/">Over ons</a>
+    </div>
+  </nav>
+  </sc-if>
+</header>
+
+<main>
+<section data-screen-label="01 Intro" style="max-width:1320px;margin:0 auto;padding:18px clamp(20px,5vw,40px) 0">
+  <div style="font-size:13px;color:#6B6E7A;display:flex;gap:8px;margin-bottom:14px"><a href="https://www.mthekwerken.nl" style="color:#6B6E7A">Home</a><span>/</span><span style="color:#11131F">Hekwerken</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px 40px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h1 style="margin:0;font-size:clamp(30px,3.4vw,44px);line-height:1.04;letter-spacing:-.03em;font-weight:600">Hekwerken</h1>
+      <p style="margin:0;font-size:clamp(15px,1.4vw,16px);line-height:1.55;color:#3E4150;max-width:56ch;text-wrap:pretty">Dubbelstaafmat is stevig en betaalbaar, spijlenhekwerk geeft een strakke, zware uitstraling. Kies een systeem, hoogte en kleur, en vul aan met palen en een poort.</p>
+    </div>
+  </div>
+
+  <nav aria-label="Productgroepen" onMouseEnter="{{ catEnter }}" onMouseLeave="{{ catLeave }}" style="position:relative;margin-top:{{ L.catTop }}">
+    <div id="cat-track" class="hs" onScroll="{{ catScroll }}" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 calc(-1 * clamp(20px,5vw,40px));padding:0 clamp(20px,5vw,40px);scroll-padding:0 clamp(20px,5vw,40px);scrollbar-width:none">
+      <sc-for list="{{ catLoop }}" as="c" hint-placeholder-count="10">
+        <a href="{{ c.href }}" style="flex:0 0 {{ L.tileW }};scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;color:#11131F" style-hover="color:#11131F">
+          <span style="position:relative;display:block;aspect-ratio:1/1;border-radius:14px;background:#E3ECF5;overflow:hidden"><img src="{{ c.img }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;padding:12%;box-sizing:border-box;object-fit:contain;display:block;mix-blend-mode:multiply;transition:transform .45s cubic-bezier(.22,1,.36,1)" style-hover="transform:scale(1.07)"></span>
+          <span style="display:flex;flex-direction:column;gap:2px;padding:0 2px"><strong style="font-size:14px;font-weight:600;line-height:1.25">{{ c.t }}</strong><span style="font-size:12px;line-height:1.35;color:#6B6E7A">{{ c.s }}</span></span>
+        </a>
+      </sc-for>
+    </div>
+    <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+      <button type="button" onClick="{{ catPrev }}" aria-label="Vorige productgroepen" style="position:absolute;left:-14px;top:{{ L.arrTop }};width:44px;height:44px;border-radius:99px;border:none;background:#fff;box-shadow:0 6px 18px rgba(14,17,32,.14);display:grid;place-items:center;cursor:pointer;opacity:{{ catPrevOp }};pointer-events:{{ catPrevPe }};transition:opacity .2s ease" style-hover="background:#11131F;color:#fff" style-focus="opacity:1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+      <button type="button" onClick="{{ catNext }}" aria-label="Volgende productgroepen" style="position:absolute;right:-14px;top:{{ L.arrTop }};width:44px;height:44px;border-radius:99px;border:none;background:#fff;box-shadow:0 6px 18px rgba(14,17,32,.14);display:grid;place-items:center;cursor:pointer;opacity:{{ catNextOp }};pointer-events:{{ catNextPe }};transition:opacity .2s ease" style-hover="background:#11131F;color:#fff" style-focus="opacity:1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+    </sc-if>
+  </nav>
+
+</section>
+
+<sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}">
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #E6E2DA;margin-top:24px">
+    <div style="padding:10px clamp(20px,5vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <button id="filter-btn" type="button" onClick="{{ openDrawer }}" aria-haspopup="dialog" style="height:46px;border:1.5px solid #11131F;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:600;cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>Filters<sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}"><span style="background:#FB7029;color:#fff;border-radius:99px;min-width:22px;height:22px;padding:0 6px;display:grid;place-items:center;font-size:12px">{{ activeCount }}</span></sc-if>
+      </button>
+      <label style="position:relative;display:block">
+        <span style="position:absolute;left:12px;top:5px;font-size:11px;color:#6B6E7A;pointer-events:none">Sorteren</span>
+        <select value="{{ sort }}" onChange="{{ onSort }}" aria-label="Sorteren" style="width:100%;height:46px;border:1.5px solid #E1DCD2;border-radius:8px;background:#fff;padding:14px 32px 0 11px;font-size:14px;font-weight:500;appearance:none;-webkit-appearance:none;color:#11131F;box-shadow:none;cursor:pointer">
+          <sc-for list="{{ sortOpts }}" as="o" hint-placeholder-count="4"><option value="{{ o.v }}">{{ o.l }}</option></sc-for>
+        </select><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.4" stroke-linecap="round" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M6 9l6 6 6-6"></path></svg>
+      </label>
+    </div>
+  </div>
+</sc-if>
+
+<section data-screen-label="02 Assortiment" style="max-width:1320px;margin:0 auto;padding:{{ L.secPad }} clamp(20px,5vw,40px) 0">
+  <div style="display:grid;grid-template-columns:{{ L.mainCols }};gap:36px;align-items:start">
+
+    <aside onKeyDown="{{ drawerKey }}" aria-hidden="{{ fp.hidden }}" style="position:fixed;inset:0;z-index:90;visibility:{{ fp.vis }};transition:visibility 0s linear {{ fp.visDelay }}">
+      <div onClick="{{ closeDrawer }}" style="position:absolute;inset:0;background:rgba(14,17,32,.42);backdrop-filter:blur(2px);opacity:{{ fp.scrimOp }};transition:opacity .35s ease"></div>
+      <div role="dialog" aria-modal="true" aria-label="Filters" style="position:relative;margin-left:auto;width:min(440px,100%);height:100%;background:#fff;display:flex;flex-direction:column;box-shadow:-24px 0 60px rgba(14,17,32,.18);transform:{{ fp.tf }};transition:transform .45s cubic-bezier(.22,1,.36,1)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid #E6E2DA">
+            <span style="display:flex;align-items:baseline;gap:10px"><strong style="font-size:21px;font-weight:600;letter-spacing:-.01em">Filters</strong><span style="font-size:14px;color:#6B6E7A">{{ countLabel }}</span></span>
+            <button id="drawer-close" type="button" onClick="{{ closeDrawer }}" aria-label="Filters sluiten" style="width:44px;height:44px;border-radius:99px;border:none;background:#F1EEE8;display:grid;place-items:center;cursor:pointer;transition:background .2s,transform .3s cubic-bezier(.22,1,.36,1)" style-hover="background:#E6E1D8;transform:rotate(90deg)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+          </div>
+        <div style="flex:1;overflow:auto;overscroll-behavior:contain;padding:4px 22px 22px;display:flex;flex-direction:column">
+          <sc-for list="{{ fGroups }}" as="g" hint-placeholder-count="5">
+            <div style="border-bottom:1px solid #E6E2DA;padding:14px 0">
+              <button type="button" onClick="{{ g.toggle }}" aria-expanded="{{ g.open }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;border:none;background:none;padding:0;cursor:{{ g.cursor }};font-size:15px;font-weight:600;text-align:left">
+                <span>{{ g.t }}<sc-if value="{{ g.hasSel }}" hint-placeholder-val="{{ false }}"><span style="margin-left:6px;color:#FB7029;font-weight:500">({{ g.selCount }})</span></sc-if></span>
+                <sc-if value="{{ g.collapsible }}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round" style="transform:{{ g.rot }};transition:transform .2s"><path d="M6 9l6 6 6-6"></path></svg></sc-if>
+              </button>
+              <sc-if value="{{ g.open }}" hint-placeholder-val="{{ true }}">
+                <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+                  <sc-if value="{{ g.hint }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;line-height:1.4;color:#6B6E7A">{{ g.hint }}</span></sc-if>
+                  <sc-if value="{{ g.isList }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-direction:column;gap:2px">
+                      <sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="3">
+                        <button type="button" role="checkbox" aria-checked="{{ o.on }}" disabled="{{ o.disabled }}" onClick="{{ o.toggle }}" style="display:flex;align-items:center;gap:10px;border:none;background:transparent;padding:7px 8px;margin:0 -8px;border-radius:8px;cursor:pointer;text-align:left;font-size:14px;opacity:{{ o.op }};transition:background .15s" style-hover="background:#F7F5F1">
+                          <span style="flex:none;width:20px;height:20px;border-radius:5px;border:1.5px solid {{ o.boxBorder }};background:{{ o.boxBg }};display:grid;place-items:center"><sc-if value="{{ o.on }}" hint-placeholder-val="{{ false }}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><path d="M5 12l5 5 9-10"></path></svg></sc-if></span>
+                          <span style="flex:1">{{ o.l }}</span><span style="color:#8A8C96;font-size:13px">{{ o.n }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ g.isChips }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;flex-wrap:wrap;gap:6px">
+                      <sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="6">
+                        <button type="button" role="checkbox" aria-checked="{{ o.on }}" disabled="{{ o.disabled }}" onClick="{{ o.toggle }}" style="height:36px;padding:0 11px;border-radius:8px;border:1.5px solid {{ o.chipBorder }};background:{{ o.chipBg }};color:{{ o.chipFg }};font-size:13px;font-weight:500;cursor:pointer;opacity:{{ o.op }};display:flex;align-items:center;gap:5px;transition:border-color .15s,transform .15s" style-hover="border-color:#11131F;transform:translateY(-1px)">{{ o.l }}<span style="font-size:11px;opacity:.65">{{ o.n }}</span></button>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ g.isColor }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;flex-direction:column;gap:2px">
+                      <sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="3">
+                        <button type="button" role="checkbox" aria-checked="{{ o.on }}" disabled="{{ o.disabled }}" onClick="{{ o.toggle }}" style="display:flex;align-items:center;gap:10px;border:none;background:transparent;padding:6px 8px;margin:0 -8px;border-radius:8px;cursor:pointer;text-align:left;font-size:14px;opacity:{{ o.op }};transition:background .15s" style-hover="background:#F7F5F1">
+                          <span style="flex:none;width:26px;height:26px;border-radius:99px;padding:2px;border:2px solid {{ o.ring }}"><span style="display:block;width:100%;height:100%;border-radius:99px;background:{{ o.hex }}"></span></span>
+                          <span style="flex:1;display:flex;flex-direction:column;line-height:1.2"><span style="font-weight:{{ o.fw }}">{{ o.l }}</span><span style="font-size:12px;color:#6B6E7A">{{ o.ral }}</span></span><span style="color:#8A8C96;font-size:13px">{{ o.n }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ g.isPrice }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center">
+                      <label style="display:flex;align-items:center;gap:4px;border:1.5px solid #E1DCD2;border-radius:8px;height:42px;padding:0 10px;font-size:14px"><span style="color:#6B6E7A">€</span><input type="number" inputMode="numeric" min="0" placeholder="Min" aria-label="Minimumprijs" value="{{ priceMin }}" onChange="{{ onMin }}" style="width:100%;border:none;outline:none;font-size:14px;background:none"></label>
+                      <span style="color:#8A8C96">–</span>
+                      <label style="display:flex;align-items:center;gap:4px;border:1.5px solid #E1DCD2;border-radius:8px;height:42px;padding:0 10px;font-size:14px"><span style="color:#6B6E7A">€</span><input type="number" inputMode="numeric" min="0" placeholder="Max" aria-label="Maximumprijs" value="{{ priceMax }}" onChange="{{ onMax }}" style="width:100%;border:none;outline:none;font-size:14px;background:none"></label>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+
+          <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:20px;background:#F1EEE8;border-radius:12px;padding:22px 18px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+              <span style="position:relative;display:block;width:136px;height:136px;margin-bottom:6px">
+                <span style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 45%,#BDE1F2,#77B3D0)"></span>
+                <img src="assets/web/team-advies.png" alt="Medewerker van MT Hekwerken" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;display:block">
+                <span style="position:absolute;top:-4px;right:-10px;width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 3px #F1EEE8;display:block"><x-import component-from-global-scope="mt-logo" from="./mt-logo.js" size="46" scope="self" hint-size="46px,46px"></x-import></span>
+              </span>
+              <strong style="font-size:18px;font-weight:600;line-height:1.2">Twijfel je of je alles hebt?</strong>
+              <span style="font-size:14px;line-height:1.45;color:#3E4150">Ons team helpt je met de juiste palen, bevestigingen en aantallen.</span>
+              <a href="https://www.mthekwerken.nl/contact/" style="margin-top:6px;align-self:stretch;display:flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:8px;background:#11131F;color:#fff;font-size:15px;font-weight:600" style-hover="background:#2A2D3D;color:#fff">Contactpagina<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </sc-if>
+        </div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:10px;padding:14px 22px calc(14px + env(safe-area-inset-bottom));border-top:1px solid #E6E2DA">
+            <button type="button" onClick="{{ clearAll }}" style="height:50px;padding:0 18px;border:1.5px solid #11131F;border-radius:8px;background:#fff;font-size:15px;font-weight:600;cursor:pointer" style-hover="background:#F7F5F1">Wis alles</button>
+            <button type="button" onClick="{{ closeDrawer }}" style="height:50px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:15px;font-weight:600;cursor:pointer" style-hover="background:#E9611C">{{ showLabel }}</button>
+          </div>
+      </div>
+    </aside>
+
+    <div style="min-width:0;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+          <strong style="font-size:17px;font-weight:600" aria-live="polite">{{ countLabel }}</strong>
+          <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:#6B6E7A;animation:pulse 1s ease-in-out infinite">Bijwerken…</span></sc-if>
+        </div>
+        <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:10px">
+          <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#6B6E7A">Sorteren op
+            <span style="position:relative;display:block">
+              <select value="{{ sort }}" onChange="{{ onSort }}" style="appearance:none;-webkit-appearance:none;height:42px;min-width:200px;border:1.5px solid #E1DCD2;border-radius:8px;background:#fff;padding:0 36px 0 14px;font-size:14px;font-weight:500;color:#11131F;cursor:pointer;box-shadow:none" style-hover="border-color:#11131F">
+                <sc-for list="{{ sortOpts }}" as="o" hint-placeholder-count="4"><option value="{{ o.v }}">{{ o.l }}</option></sc-for>
+              </select><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.4" stroke-linecap="round" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </label>
+          <button id="filter-btn" type="button" onClick="{{ openDrawer }}" aria-haspopup="dialog" aria-expanded="{{ drawerOpen }}" style="height:42px;padding:0 16px 0 14px;border:none;border-radius:8px;background:#11131F;color:#fff;display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s" style-hover="background:#2A2D3D">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"></path><circle cx="16" cy="7" r="2"></circle><circle cx="8" cy="17" r="2"></circle></svg>Filters<sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}"><span style="background:#FB7029;color:#fff;border-radius:99px;min-width:20px;height:20px;padding:0 6px;display:grid;place-items:center;font-size:12px">{{ activeCount }}</span></sc-if>
+          </button>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+          <sc-for list="{{ activeChips }}" as="a" hint-placeholder-count="2">
+            <button type="button" onClick="{{ a.remove }}" aria-label="{{ a.aria }}" style="display:flex;align-items:center;gap:6px;height:34px;padding:0 10px 0 12px;border-radius:99px;border:none;background:#F1EEE8;font-size:13px;font-weight:500;cursor:pointer" style-hover="background:#E6E1D8">{{ a.l }}<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+          </sc-for>
+          <button type="button" onClick="{{ clearAll }}" style="border:none;background:none;font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0 4px">Wis alle filters</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showDemo }}" hint-placeholder-val="{{ true }}">
+        <span style="font-size:12px;color:#6B6E7A">Alle prijzen incl. btw. Prototype: prijzen per hoogte zijn indicatief.</span>
+      </sc-if>
+
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+        <div style="border:1px dashed #D9D5CC;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+          <strong style="font-size:19px;font-weight:600">Geen producten met deze combinatie</strong>
+          <span style="font-size:15px;line-height:1.5;color:#3E4150;max-width:52ch">Verwijder een van de filters hieronder, of vraag ons team: we leveren meer uitvoeringen dan er online staan.</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ activeChips }}" as="a" hint-placeholder-count="2"><button type="button" onClick="{{ a.remove }}" style="height:36px;padding:0 12px;border-radius:99px;border:1.5px solid #11131F;background:#fff;font-size:13px;font-weight:500;cursor:pointer">Verwijder {{ a.l }}</button></sc-for>
+          </div>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin-top:4px">
+            <button type="button" onClick="{{ clearAll }}" style="border:none;background:#FB7029;color:#fff;border-radius:8px;height:44px;padding:0 18px;font-size:15px;font-weight:600;cursor:pointer">Wis alle filters</button>
+            <a href="tel:+31855808704" style="align-self:center;text-decoration:underline;text-underline-offset:3px">Bel +31 85 580 8704</a>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="display:grid;grid-template-columns:{{ L.gridCols }};gap:{{ L.gap }};opacity:{{ gridOp }};transition:opacity .2s">
+        <sc-for list="{{ items }}" as="p" hint-placeholder-count="6">
+          <sc-if value="{{ p.isHelp }}" hint-placeholder-val="{{ false }}">
+            <div style="grid-column:1 / -1;background:#FB7029;color:#fff;border-radius:12px;padding:14px 16px 0 16px;display:flex;align-items:stretch;gap:12px;overflow:hidden">
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;padding-bottom:14px">
+                <strong style="font-size:16px;font-weight:600;line-height:1.2">Twijfel je of je alles hebt?</strong>
+                <span style="font-size:13px;line-height:1.4">Ons team helpt je met de juiste palen, bevestigingen en aantallen.</span>
+                <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;font-size:14px;font-weight:600"><a href="tel:+31855808704" style="color:#11131F;background:#fff;border-radius:8px;padding:9px 14px">Bel voor advies</a><a href="mailto:info@mthekwerken.nl" style="color:#fff;font-weight:500;align-self:center;text-decoration:underline;text-underline-offset:3px">Mail ons</a></div>
+              </div>
+              <div style="position:relative;flex:none;width:112px;align-self:stretch;min-height:110px">
+                <span style="position:absolute;left:50%;bottom:-46px;width:120px;height:120px;border-radius:50%;background:#4EAB39;transform:translateX(-50%)"></span>
+                <img src="assets/web/duo-cutout.png" alt="" style="position:absolute;left:50%;bottom:0;height:104px;width:auto;transform:translateX(-50%);display:block">
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ p.isPromo }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ p.href }}" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:{{ L.promoH }};grid-column:{{ L.promoSpan }};border-radius:12px;overflow:hidden;background:#1B1D2A;color:#fff">
+              <img data-plx="40" src="{{ p.img }}" alt="{{ p.alt }}" loading="lazy" style="position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;display:block;will-change:transform">
+              <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,32,0) 30%,rgba(14,17,32,.78) 100%)"></span>
+              <span style="position:relative;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+                <strong style="font-size:clamp(24px,2.4vw,30px);font-weight:600;line-height:1.05;letter-spacing:-.02em;text-wrap:balance">{{ p.t }}</strong>
+                <span style="font-size:15px;line-height:1.45;max-width:30ch">{{ p.d }}</span>
+                <span style="margin-top:4px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600">{{ p.cta }}<span style="width:30px;height:30px;border-radius:99px;background:#FB7029;color:#fff;display:grid;place-items:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+              </span>
+            </a>
+          </sc-if>
+          <sc-if value="{{ p.isProd }}" hint-placeholder-val="{{ true }}">
+            <article onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" style="display:flex;flex-direction:{{ L.cardDir }};gap:{{ L.cardGap }};min-width:0">
+              <div style="position:relative;flex:none;width:{{ L.imgW }};aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:#F7F5F1">
+                <a href="{{ p.href }}" aria-label="{{ p.name }}" style="position:absolute;inset:0;display:block">
+                  <sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ p.img }}" alt="" loading="lazy" style="position:absolute;inset:8%;width:84%;height:84%;object-fit:contain;display:block;mix-blend-mode:multiply"></sc-if>
+                  <sc-if value="{{ p.hasImg2 }}" hint-placeholder-val="{{ false }}"><img src="{{ p.img2 }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ p.img2Op }};transition:opacity .3s ease"></sc-if>
+                  <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#8A8C96;font-size:12px;text-align:center;padding:10px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#B9B4AA" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="{{ p.icon }}"></path></svg>Productfoto volgt</span></sc-if>
+                </a>
+                <button type="button" onClick="{{ p.quick }}" aria-label="{{ p.qvAria }}" title="Snel bekijken" style="position:absolute;top:10px;right:10px;width:40px;height:40px;border:none;border-radius:99px;background:#fff;box-shadow:0 4px 14px rgba(14,17,32,.12);display:grid;place-items:center;cursor:pointer;opacity:{{ p.qvOp }};transform:{{ p.qvTf }};transition:opacity .2s ease,transform .25s cubic-bezier(.22,1,.36,1)" style-hover="background:#11131F;color:#fff" style-focus="opacity:1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                <sc-if value="{{ p.showSw }}" hint-placeholder-val="{{ false }}">
+                  <div style="position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:4px;background:#fff;border-radius:99px;padding:4px;box-shadow:0 4px 14px rgba(14,17,32,.12)">
+                    <sc-for list="{{ p.swatches }}" as="s" hint-placeholder-count="3"><a href="{{ s.href }}" title="{{ s.t }}" aria-label="{{ s.aria }}" style="width:28px;height:28px;border-radius:99px;padding:3px;border:2px solid transparent;display:block" style-hover="border-color:#11131F"><span style="display:block;width:100%;height:100%;border-radius:99px;background:{{ s.hex }}"></span></a></sc-for>
+                  </div>
+                </sc-if>
+              </div>
+              <div style="flex:1;min-width:0;padding:{{ L.bodyPad }};display:flex;flex-direction:column;gap:6px">
+                <a href="{{ p.href }}" style="font-size:{{ L.nameSize }};font-weight:600;line-height:1.25;letter-spacing:-.005em;text-wrap:pretty;overflow-wrap:anywhere">{{ p.name }}</a>
+                <span style="font-size:14px;line-height:1.4;color:#6B6E7A">{{ p.featLine }}</span>
+                <div style="margin-top:auto;padding-top:8px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+                  <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                    <span style="display:flex;align-items:baseline;gap:5px;flex-wrap:wrap"><span style="font-size:13px;color:#6B6E7A">{{ p.pricePre }}</span><strong style="font-size:19px;font-weight:600;letter-spacing:-.01em">{{ p.priceStr }}</strong><span style="font-size:13px;color:#6B6E7A">{{ p.unit }}</span></span>
+                  </span>
+                  <sc-if value="{{ p.variable }}" hint-placeholder-val="{{ true }}">
+                    <a href="{{ p.href }}" aria-label="{{ p.goAria }}" onMouseEnter="{{ arrowAnim }}" style="flex:none;width:46px;height:46px;border-radius:99px;background:#FB7029;color:#fff;display:grid;place-items:center;overflow:hidden" style-hover="background:#E9611C;color:#fff"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"></path></svg></a>
+                  </sc-if>
+                  <sc-if value="{{ p.direct }}" hint-placeholder-val="{{ false }}">
+                    <button type="button" onClick="{{ p.add }}" aria-label="{{ p.addAria }}" style="flex:none;width:46px;height:46px;border-radius:99px;border:none;background:{{ p.addBg }};color:#fff;display:grid;place-items:center;cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ p.addIcon }}"></path></svg></button>
+                  </sc-if>
+                </div>
+              </div>
+            </article>
+          </sc-if>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ hasPages }}" hint-placeholder-val="{{ true }}">
+        <nav aria-label="Paginering" style="display:flex;justify-content:center;align-items:center;gap:8px;margin-top:24px;flex-wrap:wrap">
+          <sc-if value="{{ notFirst }}" hint-placeholder-val="{{ false }}">
+            <button type="button" onClick="{{ prevPage }}" style="height:48px;padding:0 18px 0 14px;border-radius:8px;border:1.5px solid #E1DCD2;background:#fff;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500;cursor:pointer" style-hover="border-color:#11131F"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB7029" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>Vorige</button>
+          </sc-if>
+          <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="3">
+            <sc-if value="{{ pg.gap }}" hint-placeholder-val="{{ false }}"><span style="min-width:24px;text-align:center;color:#6B6E7A">…</span></sc-if>
+            <sc-if value="{{ pg.btn }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ pg.go }}" aria-current="{{ pg.current }}" aria-label="Pagina {{ pg.n }}" style="min-width:48px;height:48px;padding:0 6px;border-radius:8px;border:{{ pg.border }};background:{{ pg.bg }};color:#11131F;font-size:15px;font-weight:{{ pg.fw }};cursor:pointer" style-hover="border-color:#11131F">{{ pg.n }}</button></sc-if>
+          </sc-for>
+          <sc-if value="{{ notLast }}" hint-placeholder-val="{{ true }}">
+            <button type="button" onClick="{{ nextPage }}" style="height:48px;padding:0 14px 0 18px;border-radius:8px;border:1.5px solid #E1DCD2;background:#fff;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500;cursor:pointer" style-hover="border-color:#11131F">Volgende<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB7029" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+          </sc-if>
+        </nav>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Goed om te weten" style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,40px) 0">
+  <h2 style="margin:0 0 24px;font-size:clamp(28px,3vw,38px);line-height:1.05;letter-spacing:-.03em;font-weight:600">Goed om te weten voor je bestelt</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+    <sc-for list="{{ infoCards }}" as="c" hint-placeholder-count="4">
+      <div style="background:#F7F5F1;border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+        <div style="position:relative">
+          <div style="position:relative;aspect-ratio:4/3;overflow:hidden"><img data-plx="30" src="{{ c.img }}" alt="{{ c.alt }}" loading="lazy" style="position:absolute;left:0;top:-9%;width:100%;height:118%;object-fit:cover;object-position:{{ c.pos }};display:block;will-change:transform"></div>
+          <span style="position:absolute;right:20px;bottom:-24px;width:48px;height:48px;border-radius:50%;box-shadow:0 0 0 4px #F7F5F1;display:block;z-index:1"><x-import component-from-global-scope="mt-logo" from="./mt-logo.js" size="48" scope="self" hint-size="48px,48px"></x-import></span>
+        </div>
+        <div style="padding:24px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1">
+        <strong style="font-size:17px;font-weight:600">{{ c.t }}</strong>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#3E4150;text-wrap:pretty;flex:1">{{ c.b }}</p>
+        <a href="{{ c.href }}" style="font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px">{{ c.l }}</a>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="margin-top:32px;padding-top:24px;border-top:1px solid #E6E2DA;display:flex;flex-direction:column;gap:12px">
+    <strong style="font-size:15px;font-weight:600">Meer hekwerk</strong>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px">
+      <sc-for list="{{ allCats }}" as="a" hint-placeholder-count="9"><a href="{{ a.href }}" style="color:#3E4150;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#C9C4BA">{{ a.t }}</a></sc-for>
+    </div>
+  </div>
+</section>
+</main>
+
+<sc-if value="{{ qv.show }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ qv.close }}" onKeyDown="{{ qv.key }}" style="position:fixed;inset:0;z-index:95;background:rgba(14,17,32,.5);display:grid;place-items:center;padding:clamp(0px,3vw,32px)">
+    <div onClick="{{ qv.stop }}" role="dialog" aria-modal="true" aria-label="{{ qv.name }}" style="position:relative;width:min(920px,100%);max-height:100%;overflow:auto;background:#fff;border-radius:{{ L.qvRadius }};display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
+      <button id="qv-close" type="button" onClick="{{ qv.close }}" aria-label="Sluiten" style="position:absolute;top:12px;right:12px;z-index:2;width:42px;height:42px;border-radius:99px;border:none;background:#fff;box-shadow:0 2px 10px rgba(14,17,32,.12);display:grid;place-items:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      <div style="background:#F7F5F1;display:flex;flex-direction:column;gap:10px;padding:16px">
+        <div style="position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#F7F5F1">
+          <sc-if value="{{ qv.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ qv.mainImg }}" alt="{{ qv.name }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ qv.fit }};display:block;mix-blend-mode:multiply"></sc-if>
+          <sc-if value="{{ qv.noImg }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;display:grid;place-items:center;color:#8A8C96;font-size:13px">Productfoto volgt</span></sc-if>
+        </div>
+        <sc-if value="{{ qv.hasThumbs }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:8px">
+            <sc-for list="{{ qv.thumbs }}" as="t" hint-placeholder-count="2"><button type="button" onClick="{{ t.pick }}" aria-label="Afbeelding {{ t.n }}" style="width:64px;height:64px;padding:0;border-radius:8px;overflow:hidden;border:2px solid {{ t.border }};background:#fff;cursor:pointer"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button></sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <div style="padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px;padding-right:40px">
+          <strong style="font-size:clamp(22px,2.4vw,28px);font-weight:600;line-height:1.1;letter-spacing:-.02em">{{ qv.name }}</strong>
+          <span style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span style="font-size:14px;color:#6B6E7A">{{ qv.pricePre }}</span><strong style="font-size:24px;font-weight:600">{{ qv.priceStr }}</strong><span style="font-size:14px;color:#6B6E7A">{{ qv.unit }} · incl. btw</span></span>
+        </div>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:15px;color:#3E4150">
+          <sc-for list="{{ qv.feats }}" as="f" hint-placeholder-count="3"><li style="display:flex;gap:8px;align-items:baseline"><span style="width:5px;height:5px;border-radius:99px;background:#11131F;flex:none;transform:translateY(-2px)"></span>{{ f }}</li></sc-for>
+        </ul>
+        <sc-if value="{{ qv.hasColors }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:600">Kleuren</span>
+            <div style="display:flex;flex-wrap:wrap;gap:12px"><sc-for list="{{ qv.colors }}" as="k" hint-placeholder-count="3"><span style="display:flex;align-items:center;gap:7px;font-size:14px"><span style="width:20px;height:20px;border-radius:99px;background:{{ k.hex }}"></span>{{ k.l }} <span style="color:#8A8C96;font-size:12px">{{ k.ral }}</span></span></sc-for></div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ qv.hasSizes }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:600">{{ qv.sizeTitle }}</span>
+            <div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ qv.sizes }}" as="z" hint-placeholder-count="6"><span style="height:32px;padding:0 10px;border-radius:8px;border:1.5px solid #E1DCD2;display:flex;align-items:center;font-size:13px;font-weight:500">{{ z }}</span></sc-for></div>
+          </div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:12px 14px;background:#F7F5F1;border-radius:10px;font-size:14px">
+          <sc-if value="{{ qv.hasIncl }}" hint-placeholder-val="{{ false }}"><span style="display:flex;gap:8px;align-items:flex-start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="{{ qv.inclColor }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px"><path d="{{ qv.inclIcon }}"></path></svg>{{ qv.incl }}</span></sc-if>
+          <sc-if value="{{ qv.hasLever }}" hint-placeholder-val="{{ false }}"><span style="display:flex;gap:8px;align-items:flex-start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7"></path></svg>Levertijd {{ qv.lever }}</span></sc-if>
+          <span style="display:flex;gap:8px;align-items:flex-start;color:#3E4150"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"></path></svg>Gratis afhalen in Boekel, op afspraak</span>
+        </div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+          <sc-if value="{{ qv.variable }}" hint-placeholder-val="{{ true }}"><a href="{{ qv.href }}" style="height:52px;border-radius:8px;background:#FB7029;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600" style-hover="background:#E9611C;color:#fff">Kies uitvoering</a></sc-if>
+          <sc-if value="{{ qv.direct }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ qv.add }}" style="height:52px;border-radius:8px;border:none;background:{{ qv.addBg }};color:#fff;font-size:16px;font-weight:600;cursor:pointer">{{ qv.addLabel }}</button></sc-if>
+          <a href="{{ qv.href }}" style="text-align:center;font-size:14px;text-decoration:underline;text-underline-offset:3px">Naar de productpagina</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<footer style="background:#F1EEE8;margin-top:clamp(56px,8vw,96px)">
+  <div style="max-width:1320px;margin:0 auto;padding:88px clamp(20px,5vw,40px) 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px">
+      <div style="display:flex;flex-direction:column;gap:40px">
+        <h2 style="margin:0;font-size:clamp(34px,3.6vw,50px);line-height:1.06;letter-spacing:-.03em;font-weight:600;max-width:13ch">Dé expert in hekwerk, poorten en composiet voor tuin en gevel</h2>
+        <div style="border:1.5px solid #D9D5CC;border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:16px;max-width:520px">
+          <strong style="font-size:17px;font-weight:600">Meld je aan voor onze nieuwsbrief</strong>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <input type="email" placeholder="john@doe.nl" style="flex:1;min-width:180px;height:52px;border:1.5px solid #D9D5CC;border-radius:6px;padding:0 16px;font-family:inherit;font-size:16px;background:#fff">
+            <button style="height:52px;border:none;border-radius:6px;background:#FB7029;color:#fff;padding:0 24px;font-size:16px;font-weight:600;cursor:pointer">Aanmelden</button>
+          </div>
+        </div>
+        <span style="display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px;letter-spacing:-.02em"><x-import component-from-global-scope="mt-logo" from="./mt-logo.js" size="48" hint-size="48px,48px"></x-import>MT hekwerken</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:40px 24px;align-content:start">
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <strong style="font-size:17px;font-weight:600">{{ col.t }}</strong>
+            <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="5"><a href="{{ l.href }}" style="font-size:15px;color:#3E4150">{{ l.t }}</a></sc-for>
+          </div>
+        </sc-for>
+        <div style="display:flex;flex-direction:column;gap:14px;justify-content:end">
+          <span style="align-self:start;display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 4px 18px rgba(14,17,32,.06)"><strong style="font-size:18px;font-weight:600">8,8</strong><span style="color:#FB7029;letter-spacing:1px">★★★★★</span><span style="font-size:14px;color:#6B6E7A">(220)</span></span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid #DCD7CE;padding:24px 0 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:14px">
+      <div style="display:flex;gap:28px;flex-wrap:wrap"><a href="https://www.mthekwerken.nl/algemene-voorwaarden/" style="color:#8A8C96">Algemene voorwaarden</a><a href="https://www.mthekwerken.nl/privacy/" style="color:#8A8C96">Privacy</a><a href="https://www.mthekwerken.nl/cookies/" style="color:#8A8C96">Cookies</a></div>
+      <div style="display:flex;gap:18px;font-weight:600"><a href="https://www.instagram.com/mthekwerken/">Instagram</a><a href="https://www.tiktok.com/@mthekwerken">TikTok</a><a href="https://www.youtube.com/@mthekwerken/videos">YouTube</a><a href="https://www.facebook.com/mthekwerken/">Facebook</a><a href="https://nl.pinterest.com/MTHekwerken/">Pinterest</a></div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;perPage&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:12,&quot;min&quot;:4,&quot;max&quot;:24,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Overzicht&quot;},&quot;mobileCard&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;horizontaal&quot;,&quot;verticaal&quot;],&quot;default&quot;:&quot;horizontaal&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Overzicht&quot;},&quot;showPromos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overzicht&quot;},&quot;showDemoNote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overzicht&quot;}}">
+const RES = (id, p) => (window.__resources && window.__resources[id]) || p;
+const IMG = 'https://www.mthekwerken.nl/wp-content/uploads/';
+const SITE = 'https://www.mthekwerken.nl';
+const COLORS = { zwart: { l: 'Zwart', ral: 'RAL 9005', hex: '#1D1D1F' }, groen: { l: 'Groen', ral: 'RAL 6009', hex: '#2C3A2E' }, grijs: { l: 'Antraciet', ral: 'RAL 7016', hex: '#3B4045' } };
+const H_DSM = [60, 80, 100, 120, 140, 163, 183, 203], H_SP = [80, 100, 125, 150, 180, 200, 250], H_GATE = [100, 125, 150, 180, 200], H_POST = [60, 80, 100, 120, 140, 163, 183, 203, 243];
+const C3 = ['zwart', 'groen', 'grijs'];
+const ICON = { paneel: 'M3 5v14M21 5v14M3 8h18M3 16h18M7 8v8M11 8v8M15 8v8M19 8v8', poort: 'M4 4v17M20 4v17M4 7h16v12H4M8 7v12M12 7v12M16 7v12', onderdeel: 'M10 3h4v18h-4zM8 3h8' };
+const P = [
+  { id: 'dsm656', name: 'Dubbelstaafmat 6/5/6', slug: 'dubbelstaafmat-6-5-6', group: 'paneel', sys: ['dsm'], draad: '6/5/6', h: H_DSM, c: C3, pmin: 18.95, pmax: 45.95, unit: 'per mat', feats: ['251 cm breed', 'Draad 6/5/6 mm', 'Maas 50 × 200 mm'], incl: ['x', 'Exclusief palen'], lever: '5–18 werkdagen', img: IMG + '100cm.724.1-scaled-5-533x533.jpg', img2: IMG + 'dubbelstaafmat-6-5-6-in-tuin-6-533x412.jpg', variable: true },
+  { id: 'spglad', name: 'Spijlen hekwerk glad', slug: 'spijlen-hekwerk-glad', group: 'paneel', sys: ['spijlen'], top: 'glad', h: H_SP, c: C3, pmin: 129, pmax: 299, unit: 'per vak', feats: ['220 cm breed', 'Spijl Ø 2,5 cm', 'Bovenkant glad'], incl: ['x', 'Exclusief palen'], lever: '15–25 werkdagen', img: IMG + 'Industriehekwerk_glad-6-533x543.png', img2: IMG + '1221062481-6.jpg', variable: true },
+  { id: 'enkpoort', name: 'Enkele tuinpoort', slug: 'enkele-tuinpoort', group: 'poort', sys: ['dsm'], leaf: 'enkel', h: H_GATE, c: ['zwart', 'groen'], w: [100, 120, 150, 200], pmin: 249, pmax: 529, unit: 'per stuk', feats: ['Doorgang 100–200 cm', 'Maas 50 × 50 mm'], incl: ['v', 'Inclusief 2 palen, scharnieren, slot en 3 sleutels'], lever: '5–18 werkdagen', img: IMG + 'Liga-lp-5.jpg', img2: IMG + 'enkele-tuinpoort-aan-gaashekwerk-5.jpg', variable: true },
+  { id: 'eprond', name: 'Eindpaal rond compleet', slug: 'eindpaal-rond-compleet', group: 'onderdeel', sys: ['dsm'], paal: 'rond', h: H_POST, c: C3, pmin: 23.95, pmax: 70, unit: 'per stuk', feats: ['Ø 60 mm', 'In de grond of op voetplaat'], incl: ['v', 'Inclusief paalkap en eindbeugelsets'], lever: '5–18 werkdagen', img: IMG + 'Aantekening-2019-12-12-155140-5-533x537.png', variable: true },
+  { id: 'dsm868', name: 'Dubbelstaafmat 8/6/8', slug: 'dubbelstaafmat-8-6-8', group: 'paneel', sys: ['dsm'], draad: '8/6/8', pmin: 29.95, unit: 'per mat', feats: ['251 cm breed', 'Draad 8/6/8 mm', 'Zwaarder dan 6/5/6'], incl: ['x', 'Exclusief palen'], img: IMG + '80cm.727.1-zwart-scaled-6.jpg', variable: true },
+  { id: 'spdoor', name: 'Spijlen hekwerk doorlopend', slug: 'spijlen-hekwerk-doorlopend', group: 'paneel', sys: ['spijlen'], top: 'doorlopend', pmin: 129, unit: 'per vak', feats: ['Spijlen steken boven de bovenbuis uit'], variable: true },
+  { id: 'sppunt', name: 'Spijlen hekwerk met punt', slug: 'spijlenhekwerk-met-punt', group: 'paneel', sys: ['spijlen'], top: 'punt', pmin: 187, unit: 'per vak', feats: ['Spijlen met punt aan de bovenkant'], variable: true },
+  { id: 'dubpoort', name: 'Dubbele tuinpoort', slug: 'dubbele-tuinpoort', group: 'poort', sys: ['dsm'], leaf: 'dubbel', pmin: 399, unit: 'per stuk', feats: ['Twee vleugels, voor bredere doorgangen'], variable: true },
+  { id: 'lp656', name: 'Looppoort dubbelstaafmat 6/5/6', slug: 'looppoort-dubbelstaafmat-6-5-6', group: 'poort', sys: ['dsm'], draad: '6/5/6', leaf: 'enkel', pmin: 289, unit: 'per stuk', feats: ['Past bij dubbelstaafmat 6/5/6'], variable: true },
+  { id: 'dp656', name: 'Dubbele dubbelstaafmat poort 6/5/6', slug: 'dubbele-dubbelstaafmat-poort-6-5-6', group: 'poort', sys: ['dsm'], draad: '6/5/6', leaf: 'dubbel', pmin: 539, unit: 'per stuk', feats: ['Past bij dubbelstaafmat 6/5/6'], variable: true },
+  { id: 'lp868', name: 'Looppoort dubbelstaafmat 8/6/8', slug: 'looppoort-dubbelstaafmat-8-6-8', group: 'poort', sys: ['dsm'], draad: '8/6/8', leaf: 'enkel', pmin: 379, unit: 'per stuk', feats: ['Past bij dubbelstaafmat 8/6/8'], variable: true },
+  { id: 'dp868', name: 'Dubbele dubbelstaafmat poort 8/6/8', slug: 'dubbele-dubbelstaafmat-poort-8-6-8', group: 'poort', sys: ['dsm'], draad: '8/6/8', leaf: 'dubbel', pmin: 619, unit: 'per stuk', feats: ['Past bij dubbelstaafmat 8/6/8'], variable: true },
+  { id: 'tprond', name: 'Tussenpaal rond compleet', slug: 'tussenpaal-rond-compleet', group: 'onderdeel', sys: ['dsm'], paal: 'rond', pmin: 23.95, unit: 'per stuk', feats: ['Ø 60 mm', 'Voor dubbelstaafmat'], variable: true },
+  { id: 'hprond', name: 'Hoekpaal rond compleet', slug: 'hoekpaal-rond-compleet', group: 'onderdeel', sys: ['dsm'], paal: 'rond', pmin: 23.95, unit: 'per stuk', feats: ['Ø 60 mm', 'Voor dubbelstaafmat'], variable: true },
+  { id: 'rechth', name: 'Hoek/eind/ tussenpaal rechthoek compleet', slug: 'hoek-eind-tussenpaal-rechthoek-compleet', group: 'onderdeel', sys: ['dsm'], paal: 'rechthoek', pmin: 22.95, unit: 'per stuk', feats: ['Eén paal voor hoek, eind of tussen', 'Voor dubbelstaafmat'], variable: true },
+  { id: 'epvk', name: 'Eindpaal vierkant compleet', slug: 'eindpaal-vierkant-compleet', group: 'onderdeel', sys: ['spijlen'], paal: 'vierkant', pmin: 50, unit: 'per stuk', feats: ['60 × 60 mm', 'Blinde bevestiging'], variable: true },
+  { id: 'tpvk', name: 'Tussenpaal vierkant compleet', slug: 'tussenpaal-vierkant-compleet', group: 'onderdeel', sys: ['spijlen'], paal: 'vierkant', pmin: 50, unit: 'per stuk', feats: ['60 × 60 mm', 'Blinde bevestiging'], variable: true },
+  { id: 'hpvk', name: 'Hoekpaal vierkant compleet', slug: 'hoekpaal-vierkant-compleet', group: 'onderdeel', sys: ['spijlen'], paal: 'vierkant', pmin: 50, unit: 'per stuk', feats: ['60 × 60 mm', 'Blinde bevestiging'], variable: true },
+  { id: 'beugel', name: 'Set eindbeugel', slug: 'set-eindbeugel', group: 'onderdeel', sys: ['dsm'], pmin: 3.95, unit: 'per stuk', feats: ['Koppelt een paal aan de dubbelstaafmat'], variable: false },
+  { id: 'beton', name: 'Zak betonmortel 25kg', slug: 'zak-betonmortel', group: 'onderdeel', sys: ['dsm', 'spijlen'], pmin: 9.95, unit: 'per zak', feats: ['25 kg', 'Voor het plaatsen van palen'], img: RES('r0_p_beton_png', 'assets/p-beton.png'), variable: false }
+];
+const FALLBACK = { paneel_spijlen: IMG + 'Industriehekwerk_glad-6-533x543.png', paneel_dsm: IMG + '100cm.724.1-scaled-5-533x533.jpg', poort: IMG + 'Liga-lp-5.jpg', onderdeel: IMG + 'Aantekening-2019-12-12-155140-5-533x537.png', beugel: IMG + 'Dubbelstaafmat-eindbeugel-270x210_0-5.jpg' };
+P.forEach(p => { if (!p.img) p.img = p.id === 'beugel' ? FALLBACK.beugel : p.group === 'paneel' ? FALLBACK['paneel_' + p.sys[0]] : FALLBACK[p.group]; });
+const FILTERS = [
+  { k: 'group', t: 'Productsoort', main: true, opts: [['paneel', 'Panelen & matten'], ['poort', 'Poorten'], ['onderdeel', 'Palen & onderdelen']] },
+  { k: 'sys', t: 'Systeem', main: true, opts: [['dsm', 'Dubbelstaafmat'], ['spijlen', 'Spijlenhekwerk']] },
+  { k: 'h', t: 'Hoogte', main: true, chips: true, num: true, hint: 'Bij palen: geschikt voor hekwerk van deze hoogte.' },
+  { k: 'c', t: 'Kleur', main: true, color: true, opts: Object.keys(COLORS).map(k => [k, COLORS[k].l]) },
+  { k: 'price', t: 'Prijs', main: true, price: true },
+  { k: 'draad', t: 'Draaddikte', opts: [['6/5/6', '6/5/6 mm'], ['8/6/8', '8/6/8 mm']], hint: 'Dikte van de horizontale en verticale draden. 8/6/8 is zwaarder.' },
+  { k: 'top', t: 'Bovenafwerking', opts: [['glad', 'Glad'], ['doorlopend', 'Doorlopend'], ['punt', 'Met punt']] },
+  { k: 'paal', t: 'Paalvorm', opts: [['rond', 'Rond'], ['vierkant', 'Vierkant'], ['rechthoek', 'Rechthoek']] },
+  { k: 'leaf', t: 'Type poort', opts: [['enkel', 'Enkele poort'], ['dubbel', 'Dubbele poort']] },
+  { k: 'w', t: 'Doorgangsbreedte poort', chips: true, num: true, hint: 'Gemeten van binnenkant paal tot binnenkant paal.' }
+];
+const KEYS = FILTERS.filter(f => !f.price).map(f => f.k);
+const URLK = { group: 'soort', sys: 'systeem', h: 'hoogte', c: 'kleur', draad: 'draad', top: 'boven', paal: 'paal', leaf: 'poort', w: 'breedte' };
+const CAT_TILES = [
+  { t: 'Dubbelstaafmat', s: 'Matten in 8 hoogtes', href: SITE + '/hekwerk/dubbelstaafmatten/', img: IMG + '100cm.724.1-scaled-5-533x533.jpg' },
+  { t: 'Spijlenhekwerk', s: 'Strak en zwaar', href: SITE + '/hekwerk/spijlen-hekwerk/', img: IMG + 'Industriehekwerk_glad-6-533x543.png' },
+  { t: 'Poorten', s: 'Enkel en dubbel', href: SITE + '/poorten/', img: IMG + 'Liga-lp-5.jpg' },
+  { t: 'Palen', s: 'Rond, vierkant, rechthoek', href: SITE + '/hekwerk/hekwerk-onderdelen/', img: IMG + 'Aantekening-2019-12-12-155140-5-533x537.png' },
+  { t: 'Zwarte hekwerken', s: 'RAL 9005', href: SITE + '/hekwerk/zwart-hekwerk/', img: IMG + '80cm.727.1-zwart-scaled-6.jpg' },
+  { t: 'Bevestiging', s: 'Beugels en klemmen', href: SITE + '/hekwerk/dubbelstaafmatten/dubbelstaafmat-onderdelen/', img: IMG + 'Dubbelstaafmat-eindbeugel-270x210_0-5.jpg' },
+  { t: 'Montage', s: 'Betonmortel en meer', href: SITE + '/hekwerk/hekwerk-onderdelen/', img: RES('r0_p_beton_png', 'assets/p-beton.png') }
+];
+const SORTS = [['rel', 'Aanbevolen'], ['plh', 'Prijs: laag naar hoog'], ['phl', 'Prijs: hoog naar laag'], ['az', 'Naam: A–Z']];
+const eur = v => '€ ' + v.toFixed(2).replace('.', ',');
+const vals = (p, k) => { const v = p[k]; return v == null ? [] : Array.isArray(v) ? v : [v]; };
+
+class Component extends DCLogic {
+  state = (() => {
+    const s = { sel: {}, min: '', max: '', sort: 'rel', page: 1, open: {}, mob: typeof window !== 'undefined' && window.innerWidth < 900, narrow: typeof window !== 'undefined' && window.innerWidth < 560, wide: typeof window === 'undefined' || window.innerWidth >= 1100, drawer: false, loading: false, cart: 0, added: {} };
+    try {
+      const q = new URLSearchParams(window.location.search);
+      KEYS.forEach(k => { const v = q.get(URLK[k]); if (v) s.sel[k] = v.split(',').map(x => (FILTERS.find(f => f.k === k).num ? Number(x) : x)); });
+      s.min = q.get('min') || ''; s.max = q.get('max') || ''; s.sort = q.get('sort') || 'rel'; s.page = Number(q.get('p')) || 1;
+      FILTERS.forEach(f => { if (!f.main && s.sel[f.k] && s.sel[f.k].length) s.open[f.k] = true; });
+    } catch (e) {}
+    return s;
+  })();
+  componentDidMount() {
+    this.onResize = () => { const m = window.innerWidth < 900, n = window.innerWidth < 560, w = window.innerWidth >= 1100; if (m !== this.state.mob || n !== this.state.narrow || w !== this.state.wide) this.setState({ mob: m, narrow: n, wide: w }); };
+    window.addEventListener('resize', this.onResize); this.onResize();
+    this.onPlx = () => { if (this.plxRaf) return; this.plxRaf = requestAnimationFrame(() => { this.plxRaf = null; const vh = window.innerHeight; document.querySelectorAll('[data-plx]').forEach(img => { const box = img.parentElement.getBoundingClientRect(); if (box.bottom < -50 || box.top > vh + 50) return; const p = (box.top + box.height / 2 - vh / 2) / vh; const amt = Number(img.getAttribute('data-plx')) || 30; img.style.transform = 'translate3d(0,' + (p * -amt).toFixed(1) + 'px,0)'; }); }); };
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { window.addEventListener('scroll', this.onPlx, { passive: true }); this.plxT = setInterval(this.onPlx, 800); }
+    this.onPop = () => window.location.reload(); window.addEventListener('popstate', this.onPop);
+    this.catInit = setInterval(() => { const el = document.getElementById('cat-track'); if (el && el.scrollWidth > el.clientWidth) { el.scrollLeft = el.scrollWidth / 3; clearInterval(this.catInit); } }, 150);
+  }
+  catLoopFix(el) {
+    if (!el) return; const set = el.scrollWidth / 3; if (!set) return;
+    if (el.scrollLeft < set * 0.5 || el.scrollLeft > set * 1.5) { const snap = el.style.scrollSnapType; el.style.scrollSnapType = 'none'; el.scrollLeft += el.scrollLeft < set * 0.5 ? set : -set; requestAnimationFrame(() => { el.style.scrollSnapType = snap; }); }
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onPlx); clearInterval(this.plxT); window.removeEventListener('resize', this.onResize); window.removeEventListener('popstate', this.onPop); clearTimeout(this.lt); }
+  componentDidUpdate() {
+    const s = this.state, q = new URLSearchParams();
+    document.body.style.overflow = s.drawer ? 'hidden' : '';
+    KEYS.forEach(k => { if (s.sel[k] && s.sel[k].length) q.set(URLK[k], s.sel[k].join(',')); });
+    if (s.min) q.set('min', s.min); if (s.max) q.set('max', s.max); if (s.sort !== 'rel') q.set('sort', s.sort); if (s.page > 1) q.set('p', s.page);
+    const str = q.toString(); const cur = window.location.search.replace(/^\?/, '');
+    if (str !== cur) { try { history.replaceState(null, '', window.location.pathname + (str ? '?' + str : '') + window.location.hash); } catch (e) {} }
+  }
+  change(patch) {
+    this.setState(s => ({ ...(typeof patch === 'function' ? patch(s) : patch), page: 1, loading: true }));
+    clearTimeout(this.lt); this.lt = setTimeout(() => this.setState({ loading: false }), 260);
+  }
+  priceFor(p, sel) {
+    const hs = sel.h || [];
+    if (hs.length && p.pmax && p.h && p.h.length) {
+      const hit = p.h.filter(h => hs.includes(h)).sort((a, b) => a - b)[0];
+      if (hit != null) {
+        const i = p.h.indexOf(hit), n = p.h.length;
+        const v = i === 0 ? p.pmin : i === n - 1 ? p.pmax : Math.round(p.pmin + (p.pmax - p.pmin) * i / (n - 1)) - 0.05;
+        return { v, pre: '', note: 'bij ' + hit + ' cm (indicatief) · incl. btw' };
+      }
+    }
+    return { v: p.pmin, pre: p.variable ? 'vanaf' : '', note: (p.variable && p.h && p.h.length ? 'kleinste maat (' + p.h[0] + ' cm)' + ' · ' : '') + 'incl. btw' };
+  }
+  matches(p, sel, min, max, except) {
+    for (const k of KEYS) { if (k === except) continue; const a = sel[k]; if (a && a.length && !vals(p, k).some(v => a.includes(v))) return false; }
+    if (except !== 'price') { const pr = this.priceFor(p, sel).v; if (min !== '' && pr < Number(min)) return false; if (max !== '' && pr > Number(max)) return false; }
+    return true;
+  }
+  renderVals() {
+    const s = this.state, sel = s.sel, mob = s.mob, narrow = s.narrow;
+    const mobileCard = this.props.mobileCard ?? 'horizontaal';
+    const horiz = narrow && mobileCard === 'horizontaal';
+    const perPage = this.props.perPage ?? 12;
+    const four = !mob && s.wide;
+    const toggleOpt = (k, v) => this.change(st => { const cur = st.sel[k] || []; const next = cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v]; return { sel: { ...st.sel, [k]: next } }; });
+    const filtered = P.filter(p => this.matches(p, sel, s.min, s.max));
+    const sorted = filtered.map((p, i) => ({ p, i, pr: this.priceFor(p, sel) }));
+    if (s.sort === 'plh') sorted.sort((a, b) => a.pr.v - b.pr.v); else if (s.sort === 'phl') sorted.sort((a, b) => b.pr.v - a.pr.v); else if (s.sort === 'az') sorted.sort((a, b) => a.p.name.localeCompare(b.p.name, 'nl'));
+    const pageCount = Math.max(1, Math.ceil(sorted.length / perPage));
+    const page = Math.min(s.page, pageCount);
+    const slice = sorted.slice((page - 1) * perPage, page * perPage);
+    const cards = slice.map(({ p, pr }) => {
+      const hover = s.hover === p.id, added = s.added[p.id];
+      const sizes = p.w ? 'Breedte ' + p.w[0] + '–' + p.w[p.w.length - 1] + ' cm · hoogte ' + p.h[0] + '–' + p.h[p.h.length - 1] + ' cm' : p.h ? (p.group === 'onderdeel' ? 'Voor hekwerk ' + p.h[0] + '–' + p.h[p.h.length - 1] + ' cm' : p.h.length + ' hoogtes, ' + p.h[0] + '–' + p.h[p.h.length - 1] + ' cm') : '';
+      return {
+        isProd: true, isHelp: false, name: p.name, href: SITE + '/product/' + p.slug + '/',
+        hasImg: !!p.img, img: p.img, hasImg2: !!p.img2 && !mob, img2: p.img2, img2Op: hover ? 1 : 0, qvOp: (hover || mob) ? 1 : 0, qvTf: (hover || mob) ? 'none' : 'translateY(-6px)', showSw: !!p.c && hover && !mob, qvAria: 'Snel bekijken: ' + p.name, goAria: 'Bekijk uitvoeringen van ' + p.name, addAria: added ? p.name + ' toegevoegd' : p.name + ' in winkelwagen', addIcon: added ? 'M5 12.5l4.5 4.5L19 7.5' : 'M12 5v14M5 12h14',
+        quick: () => { this.qvReturn = document.activeElement; this.setState({ qv: p.id, qvImg: 0 }); setTimeout(() => { const b = document.getElementById('qv-close'); if (b) b.focus(); }, 40); }, noImg: !p.img, icon: ICON[p.group],
+        featLine: p.feats.slice(0, 2).join(' · '),
+        hasVariants: !!(p.c || p.h), swatches: (p.c || []).map(c => ({ hex: COLORS[c].hex, t: COLORS[c].l + ' ' + COLORS[c].ral, aria: p.name + ' in ' + COLORS[c].l.toLowerCase(), href: SITE + '/product/' + p.slug + '/?attribute_pa_kleur=' + c })), sizeLine: sizes,
+        hasIncl: !!p.incl, incl: p.incl ? p.incl[1] : '', inclIcon: p.incl && p.incl[0] === 'v' ? 'M5 12.5l4.5 4.5L19 7.5' : 'M7 7l10 10M17 7L7 17', inclColor: p.incl && p.incl[0] === 'v' ? '#00B51A' : '#9A9CA5',
+        pricePre: pr.pre, priceStr: eur(pr.v), unit: p.unit, priceNote: pr.note,
+        hasLever: !!p.lever, lever: p.lever || '',
+        variable: p.variable, direct: !p.variable, addBg: added ? '#00A317' : '#FB7029', addLabel: added ? 'Toegevoegd ✓' : 'In winkelwagen',
+        add: () => this.setState(st => ({ cart: st.cart + 1, added: { ...st.added, [p.id]: true } })),
+        enter: () => this.setState({ hover: p.id }), leave: () => this.setState({ hover: null })
+      };
+    });
+    const PROMOS = [
+      { isPromo: true, t: 'Compleet project configureren?', d: 'Panelen, palen en bevestiging in één keer berekend.', cta: 'Stel mijn project samen', href: SITE + '/configurator/', img: RES('r1_team_forklift_logo_png', 'assets/web/team-forklift-logo.png'), alt: 'Het team van MT Hekwerken in het magazijn' },
+      { isPromo: true, t: 'Composiet schuttingen', d: 'Warme houtlook, geen onderhoud. Zelf te plaatsen.', cta: 'Bekijk composiet', href: SITE + '/composiet-schuttingen/', img: RES('r2_composiet_duo_logo_png', 'assets/web/composiet-duo-logo.png'), alt: 'Twee mensen dragen composiet schuttingplanken' }
+    ];
+    let items = cards.slice();
+    if (this.props.showPromos ?? true) {
+      const i1 = four ? 3 : 2; if (items.length >= i1) items.splice(i1, 0, PROMOS[0]);
+      const i2 = four ? 8 : 9; if (!mob && items.length > i2) items.splice(i2, 0, PROMOS[1]);
+    }
+    const fGroups = FILTERS.map(f => {
+      const isOpen = f.main || !!s.open[f.k];
+      const selA = sel[f.k] || [];
+      let opts = [];
+      if (!f.price) {
+        const raw = f.opts || [...new Set(P.flatMap(p => vals(p, f.k)))].sort((a, b) => a - b).map(v => [v, v + ' cm']);
+        opts = raw.map(([v, l]) => {
+          const on = selA.includes(v);
+          const n = P.filter(p => vals(p, f.k).includes(v) && this.matches(p, sel, s.min, s.max, f.k)).length;
+          const dis = n === 0 && !on;
+          return { l, n: String(n), on, disabled: dis, op: dis ? 0.4 : 1, toggle: () => toggleOpt(f.k, v),
+            boxBorder: on ? '#11131F' : '#C9C4BA', boxBg: on ? '#11131F' : '#fff',
+            chipBorder: on ? '#11131F' : '#E1DCD2', chipBg: on ? '#11131F' : '#fff', chipFg: on ? '#fff' : '#11131F',
+            hex: COLORS[v] ? COLORS[v].hex : '', ral: COLORS[v] ? COLORS[v].ral : '', ring: on ? '#11131F' : 'transparent', fw: on ? 600 : 400 };
+        });
+      }
+      const selCount = f.price ? ((s.min !== '' ? 1 : 0) + (s.max !== '' ? 1 : 0) ? 1 : 0) : selA.length;
+      return { t: f.t, hint: f.hint || '', open: isOpen, collapsible: !f.main, cursor: f.main ? 'default' : 'pointer', rot: isOpen ? 'rotate(180deg)' : 'none',
+        toggle: () => { if (!f.main) this.setState(st => ({ open: { ...st.open, [f.k]: !st.open[f.k] } })); },
+        isList: !f.chips && !f.color && !f.price, isChips: !!f.chips, isColor: !!f.color, isPrice: !!f.price, opts, hasSel: selCount > 0, selCount: String(selCount) };
+    });
+    const chips = [];
+    KEYS.forEach(k => (sel[k] || []).forEach(v => { const f = FILTERS.find(x => x.k === k); const o = (f.opts || []).find(x => x[0] === v); const l = o ? o[1] : v + ' cm'; const lab = f.k === 'w' ? 'Doorgang ' + l : f.k === 'h' ? 'Hoogte ' + l : l; chips.push({ l: lab, aria: 'Verwijder filter ' + lab, remove: () => toggleOpt(k, v) }); }));
+    if (s.min !== '') chips.push({ l: 'Vanaf € ' + s.min, aria: 'Verwijder minimumprijs', remove: () => this.change({ min: '' }) });
+    if (s.max !== '') chips.push({ l: 'Tot € ' + s.max, aria: 'Verwijder maximumprijs', remove: () => this.change({ max: '' }) });
+    const drawer = !!s.drawer;
+    const closeDrawer = () => { this.setState({ drawer: false }); setTimeout(() => { const b = document.getElementById('filter-btn'); if (b) b.focus(); }, 30); };
+    const n = filtered.length;
+    const qp = P.find(x => x.id === s.qv);
+    let qv = { show: false };
+    if (qp) {
+      const pr = this.priceFor(qp, sel), imgs = [qp.img, qp.img2].filter(Boolean), added = s.added[qp.id];
+      const close = () => { this.setState({ qv: null }); const r = this.qvReturn; setTimeout(() => { if (r && r.focus) r.focus(); }, 30); };
+      qv = { show: true, name: qp.name, href: SITE + '/product/' + qp.slug + '/', pricePre: pr.pre, priceStr: eur(pr.v), unit: qp.unit,
+        hasImg: imgs.length > 0, noImg: !imgs.length, mainImg: imgs[s.qvImg || 0] || '', fit: (s.qvImg || 0) === 0 ? 'contain' : 'cover',
+        hasThumbs: imgs.length > 1, thumbs: imgs.map((src, i) => ({ src, n: String(i + 1), border: i === (s.qvImg || 0) ? '#11131F' : 'transparent', pick: () => this.setState({ qvImg: i }) })),
+        feats: qp.feats, hasColors: !!qp.c, colors: (qp.c || []).map(k => COLORS[k]),
+        hasSizes: !!(qp.h || qp.w), sizeTitle: qp.w ? 'Hoogtes (breedte ' + qp.w.join(', ') + ' cm)' : qp.group === 'onderdeel' ? 'Voor hekwerk van' : 'Hoogtes', sizes: (qp.h || []).map(x => x + ' cm'),
+        hasIncl: !!qp.incl, incl: qp.incl ? qp.incl[1] : '', inclIcon: qp.incl && qp.incl[0] === 'v' ? 'M5 12.5l4.5 4.5L19 7.5' : 'M7 7l10 10M17 7L7 17', inclColor: qp.incl && qp.incl[0] === 'v' ? '#00B51A' : '#9A9CA5',
+        hasLever: !!qp.lever, lever: qp.lever || '', variable: qp.variable, direct: !qp.variable,
+        addBg: added ? '#00A317' : '#FB7029', addLabel: added ? 'Toegevoegd ✓' : 'In winkelwagen',
+        add: () => this.setState(st => ({ cart: st.cart + 1, added: { ...st.added, [qp.id]: true } })),
+        close, stop: (e) => e.stopPropagation(), key: (e) => { if (e.key === 'Escape') close(); } };
+    }
+    return {
+      qv,
+      arrowAnim: (e) => { const svg = e.currentTarget.querySelector('svg'); if (!svg || svg.__busy || matchMedia('(prefers-reduced-motion: reduce)').matches) return; svg.__busy = true; svg.animate([{ transform: 'translateX(0)', opacity: 1 }, { transform: 'translateX(18px)', opacity: 0, offset: .38 }, { transform: 'translateX(-18px)', opacity: 0, offset: .39 }, { transform: 'translateX(3px)', opacity: 1, offset: .8 }, { transform: 'translateX(0)', opacity: 1 }], { duration: 560, easing: 'cubic-bezier(.45,0,.25,1)' }).onfinish = () => { svg.__busy = false; }; },
+      googleUrl: 'https://www.google.nl/search?q=Hekwerk+Specialist+-+MT+Hekwerken+Reviews',
+      isDesk: !mob, isMob: mob, cartCount: s.cart,
+      catLoop: [0, 1, 2].flatMap(r => CAT_TILES.map(t => ({ ...t, ins: t.photo ? '0' : '12%', sz: t.photo ? '100%' : '76%', fit: t.photo ? 'cover' : 'contain', blend: t.photo ? 'normal' : 'multiply' }))),
+
+      catEnter: () => this.setState({ catHover: true }), catLeave: () => this.setState({ catHover: false }),
+      catScroll: (e) => this.catLoopFix(e.currentTarget),
+      catPrev: () => { const el = document.getElementById('cat-track'); if (el) el.scrollBy({ left: -el.clientWidth * 0.7, behavior: 'smooth' }); },
+      catNext: () => { const el = document.getElementById('cat-track'); if (el) el.scrollBy({ left: el.clientWidth * 0.7, behavior: 'smooth' }); },
+      catPrevOp: s.catHover ? 1 : 0, catPrevPe: s.catHover ? 'auto' : 'none',
+      catNextOp: s.catHover ? 1 : 0, catNextPe: s.catHover ? 'auto' : 'none',
+
+      allCats: [['Draadhekwerk', 'draadhekwerk'], ['Draadmathekwerk', 'draadmathekwerk'], ['Draadpanelen', 'draadpanelen'], ['Dubbelstaafmat hekwerken', 'dubbelstaafmatten'], ['Groen hekwerk', 'groen-hekwerk'], ['Hekwerk onderdelen', 'hekwerk-onderdelen'], ['Metalen tuinhekken', 'tuinhek-metaal'], ['Oprit hekwerken', 'oprit-hekwerk'], ['Spijlen hekwerken', 'spijlen-hekwerk'], ['Staafmatten', 'staafmatten'], ['Stalen hekwerken', 'stalen-hekwerk'], ['Zwarte hekwerken', 'zwart-hekwerk']].map(([t, sl]) => ({ t, href: SITE + '/hekwerk/' + sl + '/' })),
+      L: { tileW: mob ? '112px' : '148px', arrTop: mob ? '34px' : '52px', catTop: mob ? '24px' : '28px', mainCols: 'minmax(0,1fr)', secPad: mob ? '20px' : '32px', gridCols: mob ? (horiz ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))') : four ? 'repeat(4,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))', gap: mob ? '20px 12px' : '36px 20px',
+        promoH: mob ? '280px' : '100%', promoSpan: mob ? '1 / -1' : 'auto', cardDir: horiz ? 'row' : 'column', cardGap: horiz ? '14px' : '12px', imgW: horiz ? '40%' : '100%', bodyPad: horiz ? '4px 0' : '0 2px', nameSize: horiz ? '16px' : '17px', qvLeft: mob ? 'auto' : '50%', qvRight: mob ? '8px' : 'auto', qvW: mob ? '40px' : '150px', qvH: mob ? '40px' : '40px', qvRadius: mob ? '0px' : '16px' },
+      fp: drawer ? { vis: 'visible', visDelay: '0s', scrimOp: 1, tf: 'translateX(0)', hidden: 'false' } : { vis: 'hidden', visDelay: '.45s', scrimOp: 0, tf: 'translateX(104%)', hidden: 'true' },
+      drawerOpen: drawer,
+      openDrawer: () => { this.setState({ drawer: true }); setTimeout(() => { const b = document.getElementById('drawer-close'); if (b) b.focus(); }, 40); },
+      closeDrawer, drawerKey: (e) => { if (e.key === 'Escape' && drawer) closeDrawer(); },
+      showLabel: 'Toon ' + n + (n === 1 ? ' product' : ' producten'),
+      fGroups, priceMin: s.min, priceMax: s.max,
+      onMin: (e) => this.change({ min: e.target.value }), onMax: (e) => this.change({ max: e.target.value }),
+      sort: s.sort, sortOpts: SORTS.map(([v, l]) => ({ v, l })), onSort: (e) => this.change({ sort: e.target.value }),
+      countLabel: n + (n === 1 ? ' product' : ' producten'), loading: s.loading, gridOp: s.loading ? 0.5 : 1,
+      activeChips: chips, hasActive: chips.length > 0, activeCount: String(chips.length),
+      clearAll: () => this.change({ sel: {}, min: '', max: '' }),
+      showDemo: this.props.showDemoNote ?? true,
+      noResults: n === 0, items,
+      hasPages: pageCount > 1, atFirst: page <= 1, atLast: page >= pageCount, prevOp: page <= 1 ? 0.35 : 1, nextOp: page >= pageCount ? 0.35 : 1,
+      prevPage: () => { this.setState({ page: Math.max(1, page - 1) }); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      nextPage: () => { this.setState({ page: Math.min(pageCount, page + 1) }); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      notFirst: page > 1, notLast: page < pageCount,
+      pages: (() => { const want = [...new Set([1, page - 1, page, page + 1, pageCount])].filter(n => n >= 1 && n <= pageCount).sort((a, b) => a - b); const out = []; want.forEach((n, i) => { if (i && n - want[i - 1] > 1) out.push({ gap: true, btn: false }); const cur = n === page; out.push({ gap: false, btn: true, n: String(n), current: cur ? 'page' : 'false', border: cur ? '2px solid #11131F' : '1.5px solid #E1DCD2', bg: cur ? '#F7F5F1' : '#fff', fw: cur ? 700 : 500, go: () => { this.setState({ page: n }); window.scrollTo({ top: 0, behavior: 'smooth' }); } }); }); return out; })(),
+      infoCards: [
+        { img: RES('r3_shoot_kantoor_jpg', 'assets/web/shoot-kantoor.jpg'), pos: '50% 18%', alt: 'Medewerker van MT Hekwerken', t: 'Wat heb ik nodig?', b: 'Na iedere mat of elk vak komt een paal, en je hebt altijd twee eindpalen nodig. Voorbeeld: 15 meter dubbelstaafmat is 6 matten, 5 tussenpalen en 2 eindpalen.', l: 'Of reken het uit in de configurator', href: SITE + '/configurator/' },
+        { img: RES('r4_shoot_advies_jpg', 'assets/web/shoot-advies.jpg'), pos: '45% 20%', alt: 'Medewerker van MT Hekwerken in het magazijn', t: 'Hoe meet ik?', b: 'Dubbelstaafmatten zijn 251 cm breed, spijlenvakken 220 cm. Beide kort je zelf in met een slijptol. Bij poorten meten we van binnenkant paal tot binnenkant paal.', l: 'Lees de inmeetinstructies', href: SITE + '/blog/hekwerk-inmeten/' },
+        { img: RES('r5_shoot_plank_jpg', 'assets/web/shoot-plank.jpg'), pos: '62% 40%', alt: 'Medewerker draagt een composiet plank', t: 'Wat is inbegrepen?', b: 'Matten en vakken worden zonder palen geleverd. Een complete ronde eindpaal heeft een paalkap en eindbeugelsets. Een enkele tuinpoort komt met twee palen, scharnieren, slot en sleutels.', l: 'Bekijk de montagehandleidingen', href: SITE + '/klantenservice/montagehandleidingen/' },
+        { img: RES('r6_shoot_forklift_jpg', 'assets/web/shoot-forklift.jpg'), pos: '50% 22%', alt: 'Medewerker op de heftruck in het magazijn', t: 'Levering en afhalen', b: 'We bezorgen met onze eigen bezorgservice. Afhalen in ons magazijn in Boekel is gratis, op afspraak. De levertijd staat per product vermeld.', l: 'Levertijden en verzendkosten', href: SITE + '/klantenservice/levertijden-verzendkosten/' }
+      ],
+      footerCols: [
+        { t: 'Klantenservice', links: [['Contact', '/contact/'], ['Klantenservice', '/klantenservice/'], ['Veelgestelde vragen', '/klantenservice/veelgestelde-vragen/'], ['Retourneren', '/klantenservice/retourneren/'], ['Garantie', '/klantenservice/garantie/'], ['Klachten', '/klantenservice/klachten/'], ['Levertijd & verzendkosten', '/klantenservice/levertijden-verzendkosten/'], ['Betaalmethodes', '/klantenservice/betaalmethoden/'], ['Montagehandleidingen', '/klantenservice/montagehandleidingen/']] },
+        { t: 'MT Hekwerken', links: [['Hekwerk configurator', '/configurator/'], ['Offerte', '/offerte-aanvragen/'], ['Over ons', '/over-ons/'], ['Contact', '/contact/'], ['mthekwerken.be', 'https://www.mthekwerken.be'], ['mtzaune.de', 'https://mtzaune.de']] },
+        { t: 'Webshop', links: [['Mijn account', '/mijn-account/'], ['Winkelwagen', '/winkelwagen/']] },
+        { t: 'Ga direct naar', links: [['Hekwerken', '/hekwerk/'], ['Dubbelstaafmat hekwerken', '/hekwerk/dubbelstaafmatten/'], ['Spijlen hekwerken', '/hekwerk/spijlen-hekwerk/'], ['Poorten', '/poorten/'], ['Composiet schuttingen', '/composiet-schuttingen/'], ['Composiet gevelbekleding', '/composiet-gevelbekleding/'], ['Composiet vlonderplanken', '/composiet-vlonderplanken/']] }
+      ].map(c => ({ t: c.t, links: c.links.map(([t, u]) => ({ t, href: u.startsWith('http') ? u : SITE + u })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

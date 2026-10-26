@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
+<style>
+html,body{overflow-x:clip}
+body{margin:0;background:#fff;color:#11131F;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#11131F;text-decoration:none}
+a:hover{color:#FB7029}
+button{font-family:inherit}
+.hs::-webkit-scrollbar{display:none}
+@keyframes upsellIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes spin3d{0%,62%{transform:perspective(120px) rotateY(0deg)}82%,100%{transform:perspective(120px) rotateY(360deg)}}
+</style>
+<script src="cascading-slider.js"></script>
+<script src="feature-pills.js"></script>
+</helmet>
+
+<div style="background:#0E1120;color:#fff;font-size:14px;font-weight:500">
+  <div style="max-width:1320px;margin:0 auto;padding:10px clamp(16px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span style="width:22px;height:22px;border-radius:99px;background:#fff;display:grid;place-items:center"><svg width="14" height="14" viewBox="0 0 48 48" style="flex:none;display:block"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"></path></svg></span>
+      <div style="display:flex;gap:1px"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FB7029"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#FB7029"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#FB7029"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#FB7029"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="#FB7029"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg></div>
+      <span>220+ Google reviews</span>
+    </div>
+    <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:28px;flex-wrap:wrap;opacity:.92">
+      <span style="display:flex;align-items:center;gap:7px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4M12 8v4l2.5 1.5"></path></svg>14 dagen bedenktijd</span><span style="display:flex;align-items:center;gap:7px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01"></path></svg>Eigen bezorgservice</span><span style="display:flex;align-items:center;gap:7px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6zM9 12l2 2 4-4"></path></svg>15 jaar garantie</span>
+    </div></sc-if>
+  </div>
+</div>
+
+<header style="background:#F1EEE8">
+  <div style="max-width:1320px;margin:0 auto;padding:16px clamp(16px,4vw,40px);display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+    <a href="#" onMouseEnter="{{ logoAnim }}" style="display:flex;align-items:center;gap:6px;font-weight:700;font-size:24px;letter-spacing:-.02em">
+      <svg width="40" height="40" viewBox="0 0 79 79" style="display:block;flex:none;overflow:visible"><circle data-lg="c" cx="39.5" cy="39.5" r="39.5" fill="#FB7029"></circle><g transform="translate(19.328 18.098)"><g data-lg="s"><path d="M183.984,199.425a18.32,18.32,0,0,0,18.3,18.3h3.746a18.319,18.319,0,0,0,18.3-18.3V172.441H183.984Zm4.294-22.691h31.756v22.691a14.021,14.021,0,0,1-14.005,14.006h-3.746a14.021,14.021,0,0,1-14-14.006Z" transform="translate(-183.984 -172.441)" fill="#fff"></path></g><g data-lg="t"><path d="M196.951,211.217H206.3v9.25H210.6v-9.25h9.352v-4.294h-23Z" transform="translate(-188.278 -183.858)" fill="#fff"></path></g><g data-lg="v"><path d="M219.956,189.772v-5.036l-11.513,7.054-11.513-7.053v5.036l11.513,7.054Z" transform="translate(-188.272 -176.512)" fill="#fff"></path></g></g></svg>MT hekwerken
+    </a>
+    <sc-if value="{{ navDesk }}" hint-placeholder-val="{{ true }}"><div style="flex:1;min-width:200px;max-width:380px;margin-left:auto;background:#fff;border-radius:6px;padding:12px 16px;display:flex;align-items:center;gap:10px;color:#8A8C96;font-size:14px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>Ik ben op zoek naar…
+    </div>
+    <div style="display:flex;gap:10px">
+      <a href="#" style="border:1.5px solid #11131F;border-radius:6px;padding:11px 22px;font-size:16px">Calculator</a>
+      <a href="#" style="background:#FB7029;color:#fff;border-radius:6px;padding:12px 22px;font-size:16px;font-weight:500">Offerte aanvragen</a>
+    </div></sc-if>
+    <sc-if value="{{ navMob }}" hint-placeholder-val="{{ false }}"><button type="button" aria-label="Zoeken" style="margin-left:auto;margin-right:-20px;width:44px;height:44px;border:none;background:none;display:grid;place-items:center;cursor:pointer;padding:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button></sc-if>
+    <div style="position:relative;width:40px;height:40px;display:grid;place-items:center">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.8"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8a3 3 0 016 0"></path></svg>
+      <span style="position:absolute;top:4px;right:2px;background:#11131F;color:#fff;border-radius:8px;font-size:10px;min-width:16px;height:16px;display:grid;place-items:center;font-weight:600">{{ cartCount }}</span>
+    </div>
+    <sc-if value="{{ navMob }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mt-mobile-nav" from="./mobile-nav.js" hint-size="96px,44px"></x-import></sc-if>
+  </div>
+  <sc-if value="{{ navDesk }}" hint-placeholder-val="{{ true }}"><nav style="background:#F7F5F1;border-top:1px solid #E6E2DA">
+    <div class="hs" style="max-width:1320px;margin:0 auto;padding:14px clamp(16px,4vw,40px);display:flex;align-items:center;gap:32px;font-weight:500;font-size:16px;overflow-x:auto;white-space:nowrap">
+      <a href="#">Hekwerken</a><a href="#" style="color:#FB7029">Composiet</a><a href="#">Offerte</a><a href="#">Configurator</a><a href="#">Over ons</a>
+      <sc-if value="{{ navDesk }}" hint-placeholder-val="{{ true }}"><div style="margin-left:auto;display:flex;align-items:center;gap:24px;font-size:14px;color:#3E4150">
+        <a href="#contact" style="color:#3E4150">Contact klantenservice</a>
+        <a href="#" style="color:#3E4150">Account</a>
+        <button type="button" aria-label="Taal kiezen" style="display:flex;align-items:center;gap:7px;border:none;background:none;padding:0;cursor:pointer;font-size:14px;font-weight:500;color:#11131F;font-family:inherit"><svg width="18" height="18" viewBox="0 0 18 18" style="border-radius:99px;display:block"><rect width="18" height="6" fill="#AE1C28"></rect><rect y="6" width="18" height="6" fill="#fff"></rect><rect y="12" width="18" height="6" fill="#21468B"></rect></svg>NL<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></button>
+      </div></sc-if>
+    </div>
+  </nav></sc-if>
+</header>
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(247,245,241,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #E6E2DA;transform:{{ compactTransform }};opacity:{{ compactOpacity }};transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .3s ease;pointer-events:{{ compactPointer }}">
+  <div style="max-width:1320px;margin:0 auto;padding:10px clamp(16px,4vw,40px);display:flex;align-items:center;gap:28px">
+    <a href="#" onClick="{{ toTop }}" onMouseEnter="{{ logoAnim }}" style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:19px;letter-spacing:-.02em;flex:none"><svg width="32" height="32" viewBox="0 0 79 79" style="display:block;flex:none;overflow:visible"><circle data-lg="c" cx="39.5" cy="39.5" r="39.5" fill="#FB7029"></circle><g transform="translate(19.328 18.098)"><g data-lg="s"><path d="M183.984,199.425a18.32,18.32,0,0,0,18.3,18.3h3.746a18.319,18.319,0,0,0,18.3-18.3V172.441H183.984Zm4.294-22.691h31.756v22.691a14.021,14.021,0,0,1-14.005,14.006h-3.746a14.021,14.021,0,0,1-14-14.006Z" transform="translate(-183.984 -172.441)" fill="#fff"></path></g><g data-lg="t"><path d="M196.951,211.217H206.3v9.25H210.6v-9.25h9.352v-4.294h-23Z" transform="translate(-188.278 -183.858)" fill="#fff"></path></g><g data-lg="v"><path d="M219.956,189.772v-5.036l-11.513,7.054-11.513-7.053v5.036l11.513,7.054Z" transform="translate(-188.272 -176.512)" fill="#fff"></path></g></g></svg>MT hekwerken</a>
+    <sc-if value="{{ navDesk }}" hint-placeholder-val="{{ true }}"><nav class="hs" style="display:flex;gap:24px;font-weight:500;font-size:15px;overflow-x:auto;white-space:nowrap;min-width:0">
+      <a href="#">Hekwerken</a><a href="#" style="color:#FB7029">Composiet</a><a href="#">Offerte</a><a href="#">Configurator</a><a href="#">Over ons</a><a href="#">Contact</a>
+    </nav></sc-if>
+    <sc-if value="{{ navDesk }}" hint-placeholder-val="{{ true }}"><button onClick="{{ addToCart }}" style="margin-left:auto;flex:none;height:44px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:15px;font-weight:600;cursor:pointer;padding:0 18px;white-space:nowrap;display:flex;align-items:center;gap:8px" style-hover="background:#E9611C"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8a3 3 0 016 0"></path></svg>{{ ctaLabel }}</button></sc-if><sc-if value="{{ navMob }}" hint-placeholder-val="{{ false }}"><span style="margin-left:auto"></span></sc-if>
+    <sc-if value="{{ navMob }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mt-mobile-nav" from="./mobile-nav.js" hint-size="96px,44px"></x-import></sc-if>
+  </div>
+</div>
+
+<main>
+<section data-screen-label="01 Product" style="max-width:1320px;margin:0 auto;padding:20px clamp(16px,4vw,40px) 64px">
+  <div style="font-size:13px;color:#6B6E7A;display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap"><a href="#" style="color:#6B6E7A">Home</a><span>/</span><a href="#" style="color:#6B6E7A">Composiet gevelbekleding</a><span>/</span><span style="color:#11131F">Gevelbekleding {{ colorLabel }}</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(24px,4vw,56px);align-items:start">
+
+    <div id="pdp-gallery" style="display:flex;flex-direction:column;gap:12px;min-width:0;position:{{ galPos }};top:88px;align-self:start">
+      <div onMouseEnter="{{ galEnter }}" onMouseLeave="{{ galLeave }}" style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:#F1EEE8">
+        <img src="{{ mainImg }}" alt="Composiet gevelbekleding" style="width:100%;height:100%;object-fit:cover;display:block"><sc-if value="{{ mainIsVideo }}" hint-placeholder-val="{{ false }}"><video data-hls="https://vz-45716865-4aa.b-cdn.net/0391f42c-5cab-4342-9eb6-240511ac6a5e/playlist.m3u8" poster="https://vz-45716865-4aa.b-cdn.net/0391f42c-5cab-4342-9eb6-240511ac6a5e/thumbnail.jpg" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video></sc-if>
+        <button onClick="{{ prevImg }}" aria-label="Vorige" style="position:absolute;left:16px;bottom:16px;width:48px;height:48px;border-radius:99px;border:none;background:#fff;cursor:pointer;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><path d="M15 6l-6 6 6 6"></path></svg></button>
+        <button onClick="{{ nextImg }}" aria-label="Volgende" style="position:absolute;left:72px;bottom:16px;width:48px;height:48px;border-radius:99px;border:none;background:#fff;cursor:pointer;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg></button>
+        <span style="position:absolute;right:16px;bottom:16px;background:#fff;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;opacity:{{ imgLabelOp }};transition:opacity .25s ease;pointer-events:none">{{ imgLabel }}</span>
+      </div>
+      <div class="hs" style="display:grid;grid-auto-flow:column;grid-auto-columns:88px;gap:10px;overflow-x:auto">
+        <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="7">
+          <button onClick="{{ g.pick }}" style="padding:0;border:2px solid {{ g.border }};border-radius:6px;overflow:hidden;aspect-ratio:1/1;cursor:pointer;background:#F1EEE8"><img src="{{ g.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button>
+        </sc-for>
+      </div>
+      
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+
+      <div style="display:flex;flex-direction:column;gap:14px;padding-bottom:22px;border-bottom:1px solid #E6E2DA">
+        <a href="#reviews" style="display:flex;align-items:center;gap:8px;font-size:13px;color:#3E4150;text-decoration:none;width:fit-content">
+          <span style="color:#FB7029;font-size:14px;letter-spacing:1px">★★★★★</span>
+          <span><strong style="font-weight:600;color:#11131F">8,8</strong> · 220 Google reviews</span>
+        </a>
+        <h1 style="margin:0;font-size:clamp(28px,2.6vw,38px);line-height:1.08;letter-spacing:-.025em;font-weight:600;text-wrap:balance">Composiet gevelbekleding {{ colorName }}</h1>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;max-width:48ch;text-wrap:pretty">Een warme houtlook voor je gevel, zonder schilderen of beitsen. Composiet planken met een beschermende co-extrusion laag en 15 jaar garantie.</p>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:#11131F">
+          <div style="display:flex;align-items:center;gap:9px;height:22px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B51A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+            <div style="position:relative;flex:1;min-width:0;height:22px;overflow:hidden">
+              <sc-for list="{{ heroChecks }}" as="c" hint-placeholder-count="1"><span style="position:absolute;left:0;right:0;top:0;line-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:{{ c.op }};transform:{{ c.tf }};transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">{{ c.t }}</span></sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <div style="position:relative;display:flex;flex-direction:column;gap:8px;min-width:0">
+          <span style="font-size:14px;font-weight:600">Kleur</span>
+          <button type="button" onClick="{{ gCol.toggle }}" aria-expanded="{{ gCol.open }}" style="width:100%;height:50px;display:flex;align-items:center;gap:12px;border:1.5px solid {{ gCol.border }};border-radius:8px;background:#fff;padding:0 14px;cursor:pointer;text-align:left;font-family:inherit;transition:border-color .2s" style-hover="border-color:#11131F">
+            <sc-if value="{{ gCol.hasFill }}" hint-placeholder-val="{{ true }}"><span style="flex:none;width:24px;height:24px;border-radius:99px;background:{{ gCol.fill }};box-shadow:inset 0 0 0 1px rgba(14,17,32,.12)"></span></sc-if>
+            <span style="flex:1;min-width:0;font-size:15px;font-weight:500;color:#11131F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ gCol.label }}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round" style="flex:none;transform:{{ gCol.rot }};transition:transform .2s"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <sc-if value="{{ gCol.open }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;right:0;left:0;top:calc(100% + 6px);z-index:30;background:#fff;border-radius:10px;box-shadow:0 14px 40px rgba(14,17,32,.16),0 0 0 1px rgba(14,17,32,.06);display:flex;flex-direction:column;padding:6px;animation:upsellIn .25s cubic-bezier(.22,1,.36,1) both">
+              <sc-for list="{{ gCol.opts }}" as="o" hint-placeholder-count="3">
+                <button type="button" onClick="{{ o.pick }}" style="display:flex;align-items:center;gap:12px;border:none;border-radius:8px;background:{{ o.rowBg }};padding:10px;cursor:pointer;text-align:left;font-family:inherit;font-size:15px;font-weight:{{ o.weight }};color:#11131F" style-hover="background:#F7F5F1">
+                  <sc-if value="{{ o.hasFill }}" hint-placeholder-val="{{ true }}"><span style="flex:none;width:24px;height:24px;border-radius:99px;background:{{ o.fill }};box-shadow:inset 0 0 0 1px rgba(14,17,32,.12)"></span></sc-if>
+                  <span style="display:flex;flex-direction:column"><span>{{ o.label }}</span><span style="font-size:13px;font-weight:400;color:#6B6E7A">{{ o.sub }}</span></span>
+                </button>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:8px;min-width:0">
+          <span style="font-size:14px;font-weight:600">Achtergrond</span>
+          <button type="button" onClick="{{ gBg.toggle }}" aria-expanded="{{ gBg.open }}" style="width:100%;height:50px;display:flex;align-items:center;gap:12px;border:1.5px solid {{ gBg.border }};border-radius:8px;background:#fff;padding:0 14px;cursor:pointer;text-align:left;font-family:inherit;transition:border-color .2s" style-hover="border-color:#11131F">
+            <sc-if value="{{ gBg.hasFill }}" hint-placeholder-val="{{ true }}"><span style="flex:none;width:24px;height:24px;border-radius:99px;background:{{ gBg.fill }};box-shadow:inset 0 0 0 1px rgba(14,17,32,.12)"></span></sc-if>
+            <span style="flex:1;min-width:0;font-size:15px;font-weight:500;color:#11131F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ gBg.label }}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round" style="flex:none;transform:{{ gBg.rot }};transition:transform .2s"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <sc-if value="{{ gBg.open }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;right:0;left:0;top:calc(100% + 6px);z-index:30;background:#fff;border-radius:10px;box-shadow:0 14px 40px rgba(14,17,32,.16),0 0 0 1px rgba(14,17,32,.06);display:flex;flex-direction:column;padding:6px;animation:upsellIn .25s cubic-bezier(.22,1,.36,1) both">
+              <sc-for list="{{ gBg.opts }}" as="o" hint-placeholder-count="3">
+                <button type="button" onClick="{{ o.pick }}" style="display:flex;align-items:center;gap:12px;border:none;border-radius:8px;background:{{ o.rowBg }};padding:10px;cursor:pointer;text-align:left;font-family:inherit;font-size:15px;font-weight:{{ o.weight }};color:#11131F" style-hover="background:#F7F5F1">
+                  <sc-if value="{{ o.hasFill }}" hint-placeholder-val="{{ true }}"><span style="flex:none;width:24px;height:24px;border-radius:99px;background:{{ o.fill }};box-shadow:inset 0 0 0 1px rgba(14,17,32,.12)"></span></sc-if>
+                  <span style="display:flex;flex-direction:column"><span>{{ o.label }}</span><span style="font-size:13px;font-weight:400;color:#6B6E7A">{{ o.sub }}</span></span>
+                </button>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <strong style="font-size:16px;font-weight:600">Aantal planken</strong>
+          <div style="display:flex;align-items:center;justify-content:space-between;border:1.5px solid #E1DCD2;border-radius:8px;height:46px;width:124px"><button type="button" onClick="{{ gDec }}" aria-label="Minder" style="width:40px;height:100%;border:none;background:none;font-size:20px;color:#FB7029;cursor:pointer">−</button><span style="font-weight:600;font-size:16px">{{ gQty }}</span><button type="button" onClick="{{ gInc }}" aria-label="Meer" style="width:40px;height:100%;border:none;background:none;font-size:20px;color:#FB7029;cursor:pointer">+</button></div>
+        </div>
+        <span style="font-size:13px;color:#6B6E7A">{{ gM2Label }}</span>
+      </div>
+      <button onClick="{{ addToCart }}" style="width:100%;height:58px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:18px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;font-family:inherit" style-hover="background:#E9611C">
+        <span>{{ ctaLabel }}</span><span style="opacity:.6">·</span><span>{{ gTotalStr }}</span>
+      </button>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+          <strong style="font-size:15px;font-weight:600">Aanbevolen producten</strong>
+          <span style="font-size:13px;color:#6B6E7A">Vul zelf het aantal in</span>
+        </div>
+        <sc-for list="{{ gRecs }}" as="p" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:12px 14px;flex-wrap:wrap;background:#fff;border:1.5px solid {{ p.border }};border-radius:10px;padding:6px 8px 6px 6px;transition:border-color .2s">
+            <span style="flex:1 1 220px;display:flex;align-items:center;gap:14px;min-width:0">
+              <span style="flex:none;width:52px;height:52px;border-radius:6px;background:#F7F5F1;display:grid;place-items:center;overflow:hidden"><img src="{{ p.img }}" alt="" style="max-width:80%;max-height:84%;object-fit:contain;display:block"></span>
+              <span style="display:flex;flex-direction:column;gap:1px;min-width:0"><span style="font-size:14px;font-weight:500;line-height:1.25">{{ p.name }}</span><span style="font-size:13px;color:#6B6E7A">{{ p.priceStr }} per stuk · {{ p.note }}</span></span>
+            </span>
+            <span style="flex:none;margin-left:auto;display:flex;align-items:center;gap:8px">
+              <span style="display:flex;align-items:center;border:1.5px solid #E1DCD2;border-radius:8px;height:40px;background:#fff">
+                <button type="button" onClick="{{ p.dec }}" aria-label="Minder" style="width:32px;height:100%;border:none;background:none;font-size:18px;color:#FB7029;cursor:pointer">−</button>
+                <input type="text" inputMode="numeric" value="{{ p.qtyStr }}" onChange="{{ p.set }}" aria-label="{{ p.aria }}" placeholder="0" style="width:34px;height:100%;border:none;outline:none;text-align:center;font-family:inherit;font-size:15px;font-weight:600;color:#11131F;background:transparent;padding:0">
+                <button type="button" onClick="{{ p.inc }}" aria-label="Meer" style="width:32px;height:100%;border:none;background:none;font-size:18px;color:#FB7029;cursor:pointer">+</button>
+              </span>
+              <button type="button" onClick="{{ p.add }}" style="height:40px;min-width:104px;border-radius:8px;border:1.5px solid #11131F;background:{{ p.btnBg }};color:{{ p.btnColor }};font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:0 12px;opacity:{{ p.btnOp }};transition:background .2s,color .2s">{{ p.btnLabel }}</button>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+      <a href="https://www.mthekwerken.nl/composiet-gevelbekleding/gevelbekleding-samples/" style="display:flex;align-items:center;gap:16px;background:#F1EEE8;border-radius:12px;padding:12px 16px 12px 12px;color:#11131F;text-decoration:none" style-hover="background:#ECE7DF">
+        <img src="assets/gevel-samples.jpg" alt="" style="flex:none;width:60px;height:60px;border-radius:99px;display:block;object-fit:cover;object-position:50% 70%"></img>
+        <span style="flex:1;display:flex;flex-direction:column;gap:4px;min-width:0">
+          <strong style="font-size:16px;font-weight:600;line-height:1.25">Eerst zien en voelen?</strong>
+          <span style="font-size:14px;color:#3E4150">Bestel een sample en bekijk de kleur tegen je eigen gevel.</span>
+        </span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round" style="flex:none"><path d="M9 6l6 6-6 6"></path></svg>
+      </a>
+      <span style="display:flex;align-items:center;gap:8px;font-size:13px;color:#6B6E7A"><span style="width:6px;height:6px;border-radius:99px;background:#00B51A"></span>Op voorraad · levering in 5–10 werkdagen, of gratis afhalen in Boekel</span>
+      <sc-if value="{{ helpVisible }}" hint-placeholder-val="{{ false }}"><div style="position:relative;margin-top:6px">
+  <a href="#contact" style="position:relative;display:flex;align-items:center;background:#F1EEE8;border-radius:14px;overflow:hidden;height:96px" style-hover="background:#ECE8E0">
+    <div style="position:relative;z-index:1;padding:0 0 0 18px;display:flex;flex-direction:column;gap:6px;max-width:58%">
+      <strong style="font-size:15px;font-weight:600;line-height:1.2">Hulp nodig met jouw project? Vraag ons team!</strong>
+      <span style="font-size:13px;color:#3E4150;display:flex;align-items:center;gap:6px">Bereken je prijs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </div>
+    <img src="assets/help-team-sm.png" alt="Ons team" style="position:absolute;right:0;bottom:0;height:100%;width:auto;max-width:44%;object-fit:contain;object-position:right bottom">
+  </a>
+  <button onClick="{{ closeHelp }}" aria-label="Sluiten" style="position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:99px;border:none;background:#11131F;color:#fff;cursor:pointer;display:grid;place-items:center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div></sc-if>
+    </div>
+  </div>
+</section>
+
+<section style="background:#F1EEE8">
+  <div style="max-width:1320px;margin:0 auto;padding:28px clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+    <sc-for list="{{ usps }}" as="u" hint-placeholder-count="4">
+      <div style="display:flex;gap:14px;align-items:center">
+        <img src="assets/mt-mark.svg" alt="" style="width:44px;height:44px;flex:none">
+        <div style="display:flex;flex-direction:column;gap:2px"><strong style="font-size:17px;font-weight:600">{{ u.t }}</strong><span style="font-size:14px;color:#3E4150">{{ u.d }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<sc-if value="{{ afZoomOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ afCloseZoom }}" style="position:fixed;inset:0;z-index:50;background:rgba(14,17,32,.55);display:grid;place-items:center;padding:24px">
+    <div onClick="{{ afStop }}" style="width:min(640px,100%);background:#fff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="position:relative;background:#fff"><img src="{{ afZoom.img }}" alt="{{ afZoom.name }}" style="width:100%;aspect-ratio:16/11;object-fit:cover;display:block"></img>
+        <button type="button" onClick="{{ afCloseZoom }}" aria-label="Sluiten" style="position:absolute;right:14px;top:14px;width:40px;height:40px;border-radius:99px;border:none;background:#11131F;color:#fff;font-size:20px;cursor:pointer">×</button></div>
+      <div style="padding:24px 28px 28px;display:flex;flex-direction:column;gap:10px">
+        <strong style="font-size:24px;font-weight:600;letter-spacing:-.02em">Afwerking {{ afZoom.name }}</strong>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150">{{ afZoom.desc }}</p>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <button type="button" onClick="{{ afZoom.choose }}" style="height:48px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:16px;font-weight:600;padding:0 22px;cursor:pointer">{{ afZoom.cta }}</button>
+          <button type="button" onClick="{{ afCloseZoom }}" style="height:48px;border:1.5px solid #11131F;border-radius:8px;background:#fff;font-size:16px;font-weight:500;padding:0 22px;cursor:pointer">Sluiten</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ dimShow }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ dimClose }}" style="position:fixed;inset:0;z-index:70;background:rgba(14,17,32,.55);display:grid;place-items:center;padding:24px">
+    <div onClick="{{ afStop }}" style="position:relative;width:min(640px,100%);background:#fff;border-radius:12px;padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:start;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:22px;font-weight:600;letter-spacing:-.02em">Afmetingen per paneel</strong><span style="font-size:14px;color:#6B6E7A">Composiet schutting {{ finishName }} {{ colorName }} · {{ dimH }} cm</span></div>
+        <button type="button" onClick="{{ dimClose }}" aria-label="Sluiten" style="flex:none;width:36px;height:36px;border-radius:99px;border:none;background:#F1EEE8;font-size:20px;cursor:pointer;line-height:1">×</button>
+      </div>
+      <div style="height:1px;background:#E6E2DA"></div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:28px;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ dims }}" as="d" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:baseline;font-size:17px">
+              <strong style="font-weight:700">{{ d.k }}</strong>
+              <span style="display:flex;flex-direction:column;gap:2px"><strong style="font-weight:600">{{ d.t }}</strong><span style="font-size:13px;color:#6B6E7A">{{ d.s }}</span></span>
+              <span style="font-weight:600;color:#8A8C96;white-space:nowrap">{{ d.v }}</span>
+            </div>
+          </sc-for>
+          <a href="#" style="margin-top:8px;font-size:15px;color:#6B6E7A;text-decoration:underline;text-underline-offset:3px;width:fit-content">Hulp met inmeten?</a>
+        </div>
+        <svg viewBox="0 0 200 200" width="200" height="200" style="display:block;overflow:visible" font-family="inherit">
+          <rect x="44" y="{{ dimTop }}" width="8" height="{{ dimRectH }}" fill="#26272B"></rect>
+          <rect x="172" y="{{ dimTop }}" width="8" height="{{ dimRectH }}" fill="#26272B"></rect>
+          <rect x="52" y="{{ dimTop }}" width="120" height="{{ dimRectH }}" rx="1" fill="{{ dimFill }}" stroke="#26272B" stroke-width="2"></rect>
+          <sc-for list="{{ dimLines }}" as="l" hint-placeholder-count="9"><line x1="52" x2="172" y1="{{ l.y }}" y2="{{ l.y }}" stroke="rgba(0,0,0,.35)" stroke-width="1"></line></sc-for>
+          <line x1="30" x2="30" y1="{{ dimTop }}" y2="168" stroke="#C9C4BA" stroke-width="2"></line>
+          <text x="14" y="{{ dimMid }}" font-size="15" font-weight="700" fill="#11131F" text-anchor="middle" dominant-baseline="middle">A</text>
+          <line x1="44" x2="180" y1="184" y2="184" stroke="#C9C4BA" stroke-width="2"></line>
+          <text x="112" y="200" font-size="15" font-weight="700" fill="#11131F" text-anchor="middle">B</text>
+          <rect x="186" y="{{ dimTop }}" width="5" height="{{ dimRectH }}" fill="none" stroke="#C9C4BA" stroke-width="1.5"></rect>
+          <text x="198" y="{{ dimMid }}" font-size="15" font-weight="700" fill="#11131F" dominant-baseline="middle">C</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<section data-screen-label="02 Video" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px">
+    <h2 style="margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.03em;font-weight:600;max-width:16ch;text-wrap:balance">Strak tot in elke lijn</h2>
+    <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;max-width:40ch;text-wrap:pretty">Diepe groeven, een natuurlijke nerf en een kleur die blijft. Zo ziet composiet gevelbekleding er in het echt uit.</p>
+  </div>
+  <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#1B1D2A">
+    <video data-hls="https://vz-45716865-4aa.b-cdn.net/a3bf79e7-dc39-48b0-b487-14ec5632bcbf/playlist.m3u8" poster="https://vz-45716865-4aa.b-cdn.net/a3bf79e7-dc39-48b0-b487-14ec5632bcbf/thumbnail.jpg" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+  </div>
+</section>
+
+<section data-screen-label="07b Service" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));border-top:1px solid #E6E2DA;border-bottom:1px solid #E6E2DA">
+    <sc-for list="{{ infoTabs }}" as="t" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:10px;padding:28px 24px 28px 0">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{ t.p1 }}"></path><path d="{{ t.p2 }}"></path></svg>
+        <strong style="font-size:17px;font-weight:600">{{ t.title }}</strong>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#3E4150;text-wrap:pretty">{{ t.body }}</p>
+        <a href="#" style="font-size:14px;font-weight:500;color:#11131F;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#C9C4BA">{{ t.link }}</a>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="08 Specs & FAQ" style="background:#F1EEE8;margin-top:clamp(64px,9vw,104px)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(32px,5vw,72px);align-items:stretch">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.05;letter-spacing:-.03em;font-weight:600">Specificaties</h2>
+      <div style="flex:1;background:#fff;border-radius:10px;padding:8px 24px 22px;display:flex;flex-direction:column">
+        <sc-for list="{{ specs }}" as="s" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:minmax(120px,40%) 1fr;gap:16px;padding:15px 0;border-bottom:1px solid #EEEBE5;font-size:15px">
+            <span style="color:#6B6E7A">{{ s.k }}</span><span style="font-weight:500">{{ s.v }}</span>
+          </div>
+        </sc-for>
+        
+        <a href="#" style="margin-top:auto;padding-top:22px;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500;color:#11131F;text-decoration:underline;text-underline-offset:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Download plaatsingshandleiding (PDF)</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.05;letter-spacing:-.03em;font-weight:600">Veelgestelde vragen</h2>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div style="background:#fff;border-radius:10px">
+            <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;border:none;background:none;cursor:pointer;text-align:left;font-size:17px;font-weight:600;color:#11131F">
+              <span>{{ f.q }}</span><span style="flex:none;width:30px;height:30px;border-radius:99px;background:#F1EEE8;display:grid;place-items:center;font-size:18px;font-weight:500">{{ f.icon }}</span>
+            </button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 22px 22px;font-size:15px;line-height:1.6;color:#3E4150;text-wrap:pretty">{{ f.a }}</p></sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <a href="#contact" style="margin-top:auto;position:relative;display:flex;align-items:center;min-height:170px;background:#4EAB39;border-radius:10px;overflow:hidden;padding:24px 28px;color:#fff;text-decoration:none" style-hover="background:#46A033">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;max-width:54%">
+          <strong style="font-size:clamp(20px,1.9vw,26px);font-weight:600;line-height:1.15;letter-spacing:-.015em;text-wrap:balance">Heb je liever persoonlijk advies?</strong>
+          <span style="font-size:16px;opacity:.9;display:flex;align-items:center;gap:6px">Neem contact met ons op<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        </span>
+        <img src="assets/duo-heads.png" alt="Ons adviesteam" style="position:absolute;right:0;bottom:0;height:100%;max-width:52%;object-fit:contain;object-position:right bottom;display:block"></img>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02b Projecten" style="padding:clamp(64px,9vw,104px) 0 0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 32px">
+    <h2 style="margin:0;font-size:clamp(32px,3.6vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:600;max-width:18ch">Inspiratie</h2>
+  </div>
+  <div data-cascading-slider-wrap="" aria-label="Projecten van klanten" aria-roledescription="carousel" style="width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,40px);box-sizing:border-box;position:relative">
+    <div style="width:100%">
+      <div data-cascading-viewport="" style="--gap:0.5em;width:100%;height:clamp(24em,42vw,35em);position:relative;overflow:hidden">
+        <sc-for list="{{ cascSlides }}" as="c" hint-placeholder-count="5">
+          <div data-cascading-slide="" aria-roledescription="slide" role="group" style="--clip:0;--radius:0.75em;color:#fff;cursor:pointer;will-change:transform, clip-path;clip-path:inset(0px calc(var(--clip) * 1px) round var(--radius));user-select:none;height:100%;position:absolute;top:0;left:0">
+            <div style="width:100%;height:100%;position:relative;overflow:hidden;background:#1B1D2A">
+              <div style="position:absolute;inset:0;z-index:0">
+                <sc-if value="{{ c.isVideo }}" hint-placeholder-val="{{ false }}"><video data-hls="{{ c.src }}" poster="{{ c.poster }}" playsInline="{{ true }}" loop="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video></sc-if>
+                <sc-if value="{{ c.isImg }}" hint-placeholder-val="{{ true }}"><img src="{{ c.src }}" alt="" loading="lazy" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></sc-if>
+              </div>
+              <div style="position:absolute;left:0;right:0;bottom:0;z-index:2;background-image:linear-gradient(0deg,#0009,#0000);padding:2em 2em 2.5em 2.5em">
+                <h3 data-cascading-heading="" style="margin:0;font-size:clamp(22px,2.4vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1;opacity:0;transform:translate(0,.25em);transition:all .3s cubic-bezier(.645,.045,.355,1)">{{ c.h }}</h3>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <nav aria-label="Slider navigatie" style="display:flex;justify-content:center;align-items:center;gap:1em;margin-top:2.5em">
+      <button data-cascading-slider-prev="" aria-label="Vorige slide" style="width:3em;height:3em;padding:.75em;border:1.5px solid #11131F;border-radius:99px;background:#fff;color:#11131F;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="100%" viewBox="0 0 24 24" fill="none" style="transform:rotate(-180deg)"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-width="1.8"></path><path d="M21 12H2" stroke="currentColor" stroke-width="1.8"></path></svg></button>
+      <button data-cascading-slider-next="" aria-label="Volgende slide" style="width:3em;height:3em;padding:.75em;border:none;border-radius:99px;background:#11131F;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="100%" viewBox="0 0 24 24" fill="none"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-width="1.8"></path><path d="M21 12H2" stroke="currentColor" stroke-width="1.8"></path></svg></button>
+    </nav>
+  </div>
+</section>
+
+<div style="max-width:1320px;margin:0 auto;padding:52px clamp(16px,4vw,40px) 0"><div style="height:1px;background:#E6E2DA"></div></div>
+<section data-screen-label="03 Voordelen" style="max-width:1320px;margin:0 auto;padding:52px clamp(16px,4vw,40px) 0">
+  <h2 style="margin:0 0 32px;font-size:clamp(32px,3.6vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:600;max-width:16ch">Waarom composiet gevelbekleding</h2>
+  <div data-feature-pills-active="false" aria-label="Productvoordelen" data-feature-pills-init="" data-edit-mode="false" class="feature-pills__wrap">
+    <div class="feature-pills__layout">
+      <div class="feature-pills__col">
+        <div data-feature-pills-collection="" class="feature-pills__info-collection">
+        <ul role="list" data-feature-pills-list="" class="feature-pills__info-list">
+          <li data-feature-pills-item="" data-active="false" class="feature-pills__info-item">
+            <div class="feature-pills__item-bg"></div>
+            <button data-feature-pills-button="" aria-expanded="false" class="feature-pills__item-button"><span class="feature-pills__item-label">Onderhoudsvrij</span><span class="feature-pills__item-icon"><span class="feature-pills__item-icon-bar"></span><span class="feature-pills__item-icon-bar is--horizontal"></span></span></button>
+            <div aria-hidden="true" data-feature-pills-content="" class="feature-pills__item-content"><div class="feature-pills__item-mask"><div data-feature-pills-inner="" class="feature-pills__item-inner"><p class="feature-pills__item-body">Nooit meer de ladder op.<br><br><span class="feature-pills__item-body-span">Een co-extrusion laag beschermt de planken tegen vocht en UV-straling. Schilderen of beitsen is niet nodig, af en toe afspoelen is genoeg.</span></p></div></div></div>
+          </li>
+          <li data-feature-pills-item="" data-active="false" class="feature-pills__info-item">
+            <div class="feature-pills__item-bg"></div>
+            <button data-feature-pills-button="" aria-expanded="false" class="feature-pills__item-button"><span class="feature-pills__item-label">Kleurvast</span><span class="feature-pills__item-icon"><span class="feature-pills__item-icon-bar"></span><span class="feature-pills__item-icon-bar is--horizontal"></span></span></button>
+            <div aria-hidden="true" data-feature-pills-content="" class="feature-pills__item-content"><div class="feature-pills__item-mask"><div data-feature-pills-inner="" class="feature-pills__item-inner"><p class="feature-pills__item-body">Blijft mooi, ook op het zuiden.<br><br><span class="feature-pills__item-body-span">Doordat de kleur in de beschermlaag zit, verkleurt de gevel nauwelijks. Ook niet na jaren in de volle zon.</span></p></div></div></div>
+          </li>
+          <li data-feature-pills-item="" data-active="false" class="feature-pills__info-item">
+            <div class="feature-pills__item-bg"></div>
+            <button data-feature-pills-button="" aria-expanded="false" class="feature-pills__item-button"><span class="feature-pills__item-label">Echte houtlook</span><span class="feature-pills__item-icon"><span class="feature-pills__item-icon-bar"></span><span class="feature-pills__item-icon-bar is--horizontal"></span></span></button>
+            <div aria-hidden="true" data-feature-pills-content="" class="feature-pills__item-content"><div class="feature-pills__item-mask"><div data-feature-pills-inner="" class="feature-pills__item-inner"><p class="feature-pills__item-body">Warm als hout.<br><br><span class="feature-pills__item-body-span">Gerecycled kunststof en houtvezels met een natuurlijke nerf. De uitstraling van hout, zonder rot of splinters.</span></p></div></div></div>
+          </li>
+          <li data-feature-pills-item="" data-active="false" class="feature-pills__info-item">
+            <div class="feature-pills__item-bg"></div>
+            <button data-feature-pills-button="" aria-expanded="false" class="feature-pills__item-button"><span class="feature-pills__item-label">Eenvoudig te monteren</span><span class="feature-pills__item-icon"><span class="feature-pills__item-icon-bar"></span><span class="feature-pills__item-icon-bar is--horizontal"></span></span></button>
+            <div aria-hidden="true" data-feature-pills-content="" class="feature-pills__item-content"><div class="feature-pills__item-mask"><div data-feature-pills-inner="" class="feature-pills__item-inner"><p class="feature-pills__item-body">Op aluminium regelwerk.<br><br><span class="feature-pills__item-body-span">De planken bevestig je met clips op aluminium regelwerk. Met eind- en hoekprofielen werk je de randen strak af.</span></p></div></div></div>
+          </li>
+          <li data-feature-pills-item="" data-active="false" class="feature-pills__info-item">
+            <div class="feature-pills__item-bg"></div>
+            <button data-feature-pills-button="" aria-expanded="false" class="feature-pills__item-button"><span class="feature-pills__item-label">15 jaar garantie</span><span class="feature-pills__item-icon"><span class="feature-pills__item-icon-bar"></span><span class="feature-pills__item-icon-bar is--horizontal"></span></span></button>
+            <div aria-hidden="true" data-feature-pills-content="" class="feature-pills__item-content"><div class="feature-pills__item-mask"><div data-feature-pills-inner="" class="feature-pills__item-inner"><p class="feature-pills__item-body">Gemaakt om lang mee te gaan.<br><br><span class="feature-pills__item-body-span">Op de Highlander composiet planken krijg je 15 jaar garantie. Zo weet je zeker dat je gevel jarenlang strak blijft.</span></p></div></div></div>
+          </li>
+        </ul>
+        </div>
+      </div>
+      <div class="feature-pills__col is--visual">
+        <div class="feature-pills__visual-collection"><div class="feature-pills__visual-list">
+          <div aria-hidden="true" data-feature-pills-visual="" class="feature-pills__visual-item"><img src="assets/gevel-tuinwand.jpg" alt="" class="feature-pills__visual-img"></div>
+          <div aria-hidden="true" data-feature-pills-visual="" class="feature-pills__visual-item"><img src="assets/gevel-teak-zwart.jpg" alt="" class="feature-pills__visual-img"></div>
+          <div aria-hidden="true" data-feature-pills-visual="" class="feature-pills__visual-item"><img src="assets/gevel-plank-detail.jpg" alt="" class="feature-pills__visual-img"></div>
+          <div aria-hidden="true" data-feature-pills-visual="" class="feature-pills__visual-item"><img src="assets/gevel-carry.jpg" alt="" class="feature-pills__visual-img"></div>
+          <div aria-hidden="true" data-feature-pills-visual="" class="feature-pills__visual-item"><img src="assets/gevel-schuur-deur.jpg" alt="" class="feature-pills__visual-img"></div>
+        </div></div>
+        <div data-feature-pills-cover="" class="feature-pills__visual-cover"><img src="assets/gevel-walnoot.jpg" alt="Composiet gevelbekleding" class="feature-pills__visual-cover-img"></div>
+      </div>
+    </div>
+    <div class="feature-pills__close"><button data-feature-pills-close="" aria-hidden="true" aria-label="Sluiten" class="feature-pills__close-button"><span class="feature-pills__item-icon-bar"></span><span class="feature-pills__item-icon-bar is--horizontal"></span></button></div>
+  </div>
+</section>
+
+
+
+<section data-screen-label="03c Vergelijk" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-size:clamp(32px,3.6vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:600;max-width:14ch">Composiet of houten gevelbekleding?</h2>
+      <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;max-width:42ch">Houten gevelbekleding moet je om de paar jaar schilderen of beitsen, vaak op hoogte. Composiet houdt zijn kleur zonder onderhoud.</p>
+    </div>
+    <div style="border:1px solid #E6E2DA;border-radius:12px;overflow:hidden">
+      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:#F7F5F1;font-size:14px;font-weight:600"><span style="padding:14px 18px"></span><span style="padding:14px 12px;text-align:center;background:#11131F;color:#fff">Composiet</span><span style="padding:14px 12px;text-align:center;color:#6B6E7A">Hout</span></div>
+      <sc-for list="{{ compare }}" as="r" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;border-top:1px solid #EEEBE5;font-size:15px;align-items:center">
+          <span style="padding:14px 18px">{{ r.k }}</span>
+          <span style="padding:14px 12px;display:flex;justify-content:center;background:#FBFAF8"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B51A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+          <span style="padding:14px 12px;display:flex;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4B6BE" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section id="reviews" data-screen-label="07 Reviews" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:end;margin-bottom:40px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-size:clamp(32px,3.6vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:600;max-width:15ch">Benieuwd wat anderen vinden?</h2>
+    </div>
+    <div style="display:flex;gap:28px;align-items:center;justify-content:flex-end;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="width:44px;height:44px;border-radius:99px;background:#fff;border:1px solid #E6E2DA;display:grid;place-items:center;flex:none"><svg width="24" height="24" viewBox="0 0 48 48" style="display:block"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"></path></svg></span>
+        <span style="font-size:56px;font-weight:600;letter-spacing:-.04em;line-height:1">8,8</span>
+        <span style="display:flex;flex-direction:column;gap:4px"><span style="color:#FB7029;letter-spacing:2px">★★★★★</span><span style="font-size:14px;color:#3E4150">220 reviews op Google</span></span>
+      </div>
+      <a href="#" style="border:1.5px solid #11131F;border-radius:8px;padding:12px 18px;font-weight:500">Alle reviews</a>
+    </div>
+  </div>
+  <div style="position:relative">
+    <div id="rev-track" class="hs" onScroll="{{ revScroll }}" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px">
+      <sc-for list="{{ reviewMix }}" as="r" hint-placeholder-count="5">
+        <sc-if value="{{ r.photo }}" hint-placeholder-val="{{ false }}"><img src="{{ r.src }}" alt="Project van een klant" style="flex:0 0 clamp(240px,24vw,300px);height:400px;object-fit:cover;border-radius:12px;display:block;scroll-snap-align:start"></img></sc-if>
+        <sc-if value="{{ r.text }}" hint-placeholder-val="{{ true }}"><div style="flex:0 0 clamp(270px,28vw,340px);height:400px;box-sizing:border-box;background:#F1EEE8;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:16px;scroll-snap-align:start">
+          <span style="color:#FB7029;letter-spacing:2px">★★★★★</span>
+          <strong style="font-size:22px;font-weight:600;line-height:1.2;letter-spacing:-.01em">{{ r.t }}</strong>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;text-wrap:pretty;flex:1">{{ r.q }}</p>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="width:36px;height:36px;border-radius:99px;background:#0E1120;color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600">{{ r.i }}</span>
+            <span style="display:flex;flex-direction:column;line-height:1.25"><strong style="font-size:14px;font-weight:600">{{ r.n }}</strong><span style="font-size:13px;color:#6B6E7A">Geverifieerde koper · Google</span></span>
+          </div>
+        </div></sc-if>
+      </sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;margin-top:24px">
+      <div style="flex:1;height:2px;background:#E7E3DC;border-radius:2px;overflow:hidden"><div style="height:100%;width:{{ revProgress }};background:#11131F;transition:width .2s"></div></div>
+      <div style="display:flex;gap:10px">
+        <button type="button" onClick="{{ revPrev }}" aria-label="Vorige" style="width:48px;height:48px;border-radius:99px;border:1.5px solid #11131F;background:#fff;display:grid;place-items:center;cursor:pointer" style-hover="background:#11131F;color:#fff"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+        <button type="button" onClick="{{ revNext }}" aria-label="Volgende" style="width:48px;height:48px;border-radius:99px;border:1.5px solid #11131F;background:#fff;display:grid;place-items:center;cursor:pointer" style-hover="background:#11131F;color:#fff"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section data-screen-label="09 Blog" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:32px">
+    <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.05;letter-spacing:-.03em;font-weight:600">Lees verder</h2>
+    <a href="#" style="font-size:15px;font-weight:500;text-decoration:underline;text-underline-offset:4px">Alle artikelen</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+    <sc-for list="{{ blogs }}" as="p" hint-placeholder-count="3">
+      <a href="#" style="background:#F3F3F4;border:1px solid #E4E4E7;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;color:#11131F">
+        <img src="{{ p.img }}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block"></img>
+        <div style="padding:20px 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex:1">
+          <span style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:19px;font-weight:600;line-height:1.25;text-wrap:balance">{{ p.t }}</strong><span style="font-size:14px;color:#6B6E7A">Lees artikel</span></span>
+          <span style="flex:none;width:48px;height:48px;border-radius:99px;border:1.5px solid #11131F;display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+
+<section id="contact" data-screen-label="10 Contact" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <h2 style="margin:0;font-size:clamp(32px,3.6vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:600">Kunnen we je ergens mee helpen?</h2>
+        <p style="margin:0;font-size:17px;line-height:1.55;color:#3E4150;max-width:44ch;text-wrap:pretty">Twijfel je over de hoogte, het aantal palen of de levering? Bel of mail ons team, we rekenen het graag met je door.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #E6E2DA">
+        <a href="tel:+31855808704" style="display:flex;align-items:center;gap:18px;padding:20px 2px;border-bottom:1px solid #E6E2DA;color:#11131F" style-hover="color:#FB7029">
+          <span style="flex:none;width:44px;height:44px;border-radius:8px;background:#F1EEE8;display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"></path></svg></span>
+          <span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;color:#6B6E7A">Bel ons</span><strong style="font-size:20px;font-weight:600;letter-spacing:-.01em">+31 85 580 8704</strong></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a href="mailto:info@mthekwerken.nl" style="display:flex;align-items:center;gap:18px;padding:20px 2px;border-bottom:1px solid #E6E2DA;color:#11131F" style-hover="color:#FB7029">
+          <span style="flex:none;width:44px;height:44px;border-radius:8px;background:#F1EEE8;display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM3 7l9 6 9-6"></path></svg></span>
+          <span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;color:#6B6E7A">Mail ons</span><strong style="font-size:20px;font-weight:600;letter-spacing:-.01em">info@mthekwerken.nl</strong></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a href="#" style="display:flex;align-items:center;gap:18px;padding:20px 2px;border-bottom:1px solid #E6E2DA;color:#11131F" style-hover="color:#FB7029">
+          <span style="flex:none;width:44px;height:44px;border-radius:8px;background:#F1EEE8;display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21zM12 7.5a2 2 0 100 4 2 2 0 000-4z"></path></svg></span>
+          <span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;color:#6B6E7A">Kom langs in ons magazijn, op afspraak</span><strong style="font-size:20px;font-weight:600;letter-spacing:-.01em">De Vlonder 213B, Boekel</strong></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;max-height:640px;background:#F1EEE8">
+      <img src="assets/team-woman.jpg" alt="Klantenservice van MT Hekwerken" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block"></img>
+    </div>
+  </div>
+</section>
+</main>
+
+<section data-screen-label="11 Passie" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 72px">
+  <div style="position:relative;background:#FB7029;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:end">
+    <div style="position:absolute;inset:auto 0 0 0;height:60%;background:#EE6A24;clip-path:polygon(25% 100%,100% 0,100% 100%)"></div>
+    <div style="position:relative;padding:clamp(32px,6vw,80px);display:flex;flex-direction:column;gap:24px;color:#fff;align-self:center">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span style="width:40px;height:40px;border-radius:99px;background:#fff;display:grid;place-items:center"><svg width="24" height="24" viewBox="0 0 48 48" style="flex:none;display:block"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"></path></svg></span>
+        <span style="display:flex;gap:2px"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.7l7.1-.6z"></path></svg></span>
+        <span style="font-size:17px;font-weight:600">220+ Google reviews</span>
+      </div>
+      <h2 style="margin:0;font-size:clamp(40px,5.4vw,80px);line-height:1;letter-spacing:-.035em;font-weight:600">Dé expert in<br>hekwerken &amp; poorten</h2>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <span style="background:rgba(255,255,255,.25);border-radius:8px;padding:9px 18px;font-size:16px;font-weight:500">Eerlijke prijzen</span>
+        <span style="background:rgba(255,255,255,.25);border-radius:8px;padding:9px 18px;font-size:16px;font-weight:500">Premium kwaliteit</span>
+        <span style="background:rgba(255,255,255,.25);border-radius:8px;padding:9px 18px;font-size:16px;font-weight:500">Eigen bezorgservice</span>
+      </div>
+      <a href="#contact" style="align-self:start;background:#fff;color:#11131F;border-radius:8px;padding:15px 24px;font-size:16px;font-weight:600">Vraag ons team</a>
+    </div>
+    <div style="position:relative;display:flex;justify-content:center;align-items:end;padding-top:40px;min-height:460px;overflow:hidden;align-self:stretch">
+      <div style="position:absolute;left:50%;bottom:-14%;width:min(86%,520px);aspect-ratio:1;border-radius:50%;background:#4EAB39;transform:translateX(-50%)"></div>
+      <img src="assets/duo-cutout.png" alt="Het team van MT Hekwerken" style="position:relative;width:min(118%,640px);max-width:none;height:auto;display:block;margin-bottom:-22%">
+    </div>
+  </div>
+</section>
+
+<footer style="background:#F1EEE8">
+  <div style="max-width:1320px;margin:0 auto;padding:88px clamp(16px,4vw,40px) 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px">
+      <div style="display:flex;flex-direction:column;gap:40px">
+        <h2 style="margin:0;font-size:clamp(34px,3.6vw,50px);line-height:1.06;letter-spacing:-.03em;font-weight:600;max-width:13ch">Dé expert in hekwerk, poorten en composiet voor tuin en gevel</h2>
+        <div style="border:1.5px solid #D9D5CC;border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:16px;max-width:520px">
+          <strong style="font-size:17px;font-weight:600">Meld je aan voor onze nieuwsbrief</strong>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <input type="email" placeholder="john@doe.nl" style="flex:1;min-width:180px;height:52px;border:1.5px solid #D9D5CC;border-radius:6px;padding:0 16px;font-family:inherit;font-size:16px;background:#fff">
+            <button style="height:52px;border:none;border-radius:6px;background:#FB7029;color:#fff;padding:0 24px;font-size:16px;font-weight:600;cursor:pointer">Aanmelden</button>
+          </div>
+        </div>
+        <span style="display:flex;align-items:center;gap:12px;font-weight:700;font-size:28px;letter-spacing:-.02em"><img src="assets/mt-mark.svg" alt="" style="width:48px;height:48px">MT hekwerken</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:40px 24px;align-content:start">
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <strong style="font-size:17px;font-weight:600">{{ col.t }}</strong>
+            <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="5"><a href="#" style="font-size:15px;color:#3E4150">{{ l }}</a></sc-for>
+          </div>
+        </sc-for>
+        <div style="display:flex;flex-direction:column;gap:14px;justify-content:end">
+          <span style="align-self:start;display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 4px 18px rgba(14,17,32,.06)"><strong style="font-size:18px;font-weight:600">8,8</strong><span style="color:#FB7029;letter-spacing:1px">★★★★★</span><span style="font-size:14px;color:#6B6E7A">(220)</span></span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid #DCD7CE;padding:24px 0 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:14px">
+      <div style="display:flex;gap:28px;flex-wrap:wrap"><a href="#" style="color:#8A8C96">Algemene voorwaarden</a><a href="#" style="color:#8A8C96">Privacy</a><a href="#" style="color:#8A8C96">Cookies</a></div>
+      <div style="display:flex;gap:18px;font-weight:600"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a><a href="#">Facebook</a><a href="#">Pinterest</a></div>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid #E6E2DA;box-shadow:0 -8px 30px rgba(14,17,32,.08)">
+    <div style="max-width:1320px;margin:0 auto;padding:12px clamp(16px,4vw,40px);display:flex;align-items:center;gap:16px">
+      <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><img src="assets/gevel-plank-detail.jpg" alt="Composiet gevelbekleding" style="width:52px;height:52px;border-radius:6px;object-fit:cover;background:#F1EEE8"></sc-if>
+      <div style="display:flex;flex-direction:column;min-width:0;flex:1"><strong style="font-size:16px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Composiet gevelbekleding {{ colorName }}</strong><span style="font-size:13px;color:#6B6E7A">{{ stickySub }}</span></div>
+      <button onClick="{{ addToCart }}" style="height:50px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:16px;font-weight:600;cursor:pointer;padding:0 16px;white-space:nowrap;flex:none;max-width:52%;display:flex;align-items:center;justify-content:center;gap:6px"><span>{{ ctaLabel }}</span><sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><span>· {{ gTotalStr }}</span></sc-if></button>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ pv.show }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ pv.close }}" style="position:fixed;inset:0;z-index:90;background:rgba(14,17,32,.45);backdrop-filter:blur(3px);display:grid;place-items:center;padding:20px">
+    <div onClick="{{ pv.stop }}" role="dialog" aria-label="{{ pv.title }}" style="position:relative;width:min(100%,440px);background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(14,17,32,.25)">
+      <button onClick="{{ pv.close }}" aria-label="Sluiten" style="position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:99px;border:none;background:#fff;cursor:pointer;display:grid;place-items:center;z-index:1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      <div style="background:#F7F5F1;height:260px;display:grid;place-items:center"><img src="{{ pv.img }}" alt="" style="max-height:220px;max-width:70%;object-fit:contain;display:block"></div>
+      <div style="padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+          <strong style="font-size:19px;font-weight:600;line-height:1.2">{{ pv.title }}</strong>
+          <span style="font-size:17px;font-weight:600;white-space:nowrap">{{ pv.price }}</span>
+        </div>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#3E4150;text-wrap:pretty">{{ pv.desc }}</p>
+        <span style="font-size:13px;color:#6B6E7A">{{ pv.need }}</span>
+        <button onClick="{{ pv.toggle }}" style="margin-top:4px;height:50px;border-radius:8px;border:1.5px solid #11131F;background:{{ pv.btnBg }};color:{{ pv.btnColor }};font-family:inherit;font-size:16px;font-weight:600;cursor:pointer">{{ pv.btnLabel }}</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ show3d }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:95;background:rgba(14,17,32,.55);backdrop-filter:blur(4px);display:grid;place-items:center;padding:clamp(8px,3vw,32px)">
+    <div role="dialog" aria-label="3D weergave" style="position:relative;width:min(100%,1180px);height:min(88vh,760px);background:#F1EEE8;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;flex-wrap:wrap;position:relative;z-index:1">
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <strong style="font-size:19px;font-weight:600">Jouw schutting in 3D</strong>
+          <span style="font-size:14px;color:#6B6E7A">{{ qty }} panelen · {{ meterLabel }} · {{ height }} cm hoog</span>
+        </div>
+        <button onClick="{{ close3d }}" aria-label="Sluiten" style="width:42px;height:42px;border-radius:99px;border:none;background:#fff;cursor:pointer;display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+      <div id="fence3d-root" style="position:relative;flex:1;min-height:0;cursor:grab"></div>
+      <div style="position:absolute;left:20px;top:96px;display:flex;flex-direction:column;gap:8px;background:#fff;border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(14,17,32,.1);width:200px">
+        <strong style="font-size:14px;font-weight:600">Maak je patroon</strong>
+        <span style="font-size:12px;color:#6B6E7A;line-height:1.4">Voeg het volgende paneel toe:</span>
+        <sc-for list="{{ routeBtns }}" as="b" hint-placeholder-count="3">
+          <button onClick="{{ b.add }}" style="display:flex;align-items:center;gap:10px;height:40px;border:1.5px solid #E1DCD2;border-radius:8px;background:#fff;cursor:pointer;font-family:inherit;font-size:14px;font-weight:500;color:#11131F;padding:0 10px" style-hover="border-color:#11131F">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB7029" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="{{ b.icon }}"></path></svg>{{ b.label }}
+          </button>
+        </sc-for>
+        <div style="display:flex;gap:6px;margin-top:2px">
+          <button onClick="{{ routeUndo }}" style="flex:1;height:34px;border:none;border-radius:8px;background:#F1EEE8;cursor:pointer;font-family:inherit;font-size:13px;color:#11131F">Ongedaan</button>
+          <button onClick="{{ routeReset }}" style="flex:1;height:34px;border:none;border-radius:8px;background:#F1EEE8;cursor:pointer;font-family:inherit;font-size:13px;color:#11131F">Recht maken</button>
+        </div>
+        <span style="font-size:12px;color:#6B6E7A">{{ cornerLabel }}</span>
+      </div>
+      <span style="position:absolute;left:50%;top:84px;transform:translateX(-50%);font-size:13px;color:#6B6E7A;background:rgba(255,255,255,.7);border-radius:8px;padding:6px 14px;pointer-events:none">Sleep om rond te kijken · scroll om te zoomen</span>
+      <div style="position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;background:#fff;border-radius:8px;padding:8px 10px 8px 18px;box-shadow:0 10px 30px rgba(14,17,32,.12);flex-wrap:wrap;justify-content:center;max-width:calc(100% - 32px)">
+        <span style="font-size:14px;font-weight:600">Panelen</span>
+        <div style="display:flex;align-items:center;border:1.5px solid #E1DCD2;border-radius:8px;height:42px">
+          <button onClick="{{ dec }}" aria-label="Minder" style="width:42px;height:100%;border:none;background:none;font-size:20px;cursor:pointer;color:#FB7029">−</button>
+          <span style="min-width:28px;text-align:center;font-size:16px;font-weight:600">{{ qty }}</span>
+          <button onClick="{{ inc }}" aria-label="Meer" style="width:42px;height:100%;border:none;background:none;font-size:20px;cursor:pointer;color:#FB7029">+</button>
+        </div>
+        <div style="display:flex;gap:6px">
+          <sc-for list="{{ colors }}" as="c" hint-placeholder-count="3"><button onClick="{{ c.pick }}" aria-label="{{ c.label }}" style="width:34px;height:34px;padding:2px;border-radius:99px;border:2px solid {{ c.ring }};background:#fff;cursor:pointer"><span style="display:block;width:100%;height:100%;border-radius:99px;background:{{ c.fill }}"></span></button></sc-for>
+        </div>
+        <button onClick="{{ addToCart }}" style="height:42px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;padding:0 18px;white-space:nowrap">{{ ctaLabel }} · {{ totalStr }}</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+
+
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showUpsell&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversie&quot;},&quot;stickyBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversie&quot;},&quot;videoAutoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Video&quot;}}">
+class Component extends DCLogic {
+  state = { mob: typeof window !== 'undefined' && window.innerWidth < 760, tab: typeof window !== 'undefined' && window.innerWidth < 1100, img: 0, height: '180', pattern: 'Horizontaal', qty: 5, addons: { paal: false }, faq: 0, sticky: false, added: false };
+  componentDidMount() {
+    this.onKey = (e) => { if (e.key === 'Escape' && (this.state.hsOpen ?? true)) this.setState({ hsOpen: false }); }; window.addEventListener('keydown', this.onKey);
+    this.onScroll = () => { const hp = document.getElementById('hs-parallax'); if (hp) { const r = hp.getBoundingClientRect(); if (r.bottom > 0 && r.top < window.innerHeight) { const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight; const v = Math.round(p * -r.height * 0.1 * 10) / 10; if (v !== this.state.plx) this.setState({ plx: v }); } } const y = window.scrollY; const s = y > 900, c = y > 160; const pe = document.querySelector('[data-screen-label="01 Product"]'); const gl = document.getElementById('pdp-gallery'); const past = !this.state.mob || !gl || gl.getBoundingClientRect().bottom < 0; const h = past && (pe ? pe.getBoundingClientRect().bottom > window.innerHeight * 0.75 : y < 1200); if (s !== this.state.sticky || c !== this.state.compact || h !== this.state.helpIn) this.setState({ sticky: s, compact: c, helpIn: h }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onResize = () => { const m = window.innerWidth < 760, t = window.innerWidth < 1100; if (m !== this.state.mob || t !== this.state.tab) this.setState({ mob: m, tab: t }); }; window.addEventListener('resize', this.onResize); this.onResize();
+    this.hlsTimer = setInterval(() => this.attachVideos(), 600);
+    this.chkTimer = setInterval(() => { if (!document.hidden) this.setState(s => ({ chk: (s.chk || 0) + 1 })); }, 3000);
+    this.projTimer = setInterval(() => { if (!this.projPaused && !document.hidden) this.projStep(1); }, 3200);
+    this.projScroll = () => { const el = document.getElementById('proj-track'); if (!el) return; const max = el.scrollWidth - el.clientWidth; const p = max > 0 ? el.scrollLeft / max : 0; if (Math.abs(p - (this.state.proj || 0)) > 0.02) this.setState({ proj: p }); };
+    this.projBind = setInterval(() => { const el = document.getElementById('proj-track'); if (el && !el.__b) { el.__b = true; el.addEventListener('scroll', this.projScroll, { passive: true }); } }, 800);
+    this.attachVideos();
+    this.fpTimer = setInterval(() => { if (window.initExpandingFeaturePills && document.querySelector('[data-feature-pills-item]')) { window.initExpandingFeaturePills(); clearInterval(this.fpTimer); } }, 400);
+    this.cascTimer = setInterval(() => { if (window.initCascadingSlider && document.querySelector('[data-cascading-slide]')) { window.initCascadingSlider(); clearInterval(this.cascTimer); } }, 400);
+  }
+  componentDidUpdate() { this.sync3d(); }
+  effTurns() { const t = (this.state.turns || []).slice(0, this.state.qty); while (t.length < this.state.qty) t.push(0); t[0] = 0; return t; }
+  async sync3d() {
+    const s = this.state; const el = document.getElementById('fence3d-root');
+    if (!s.show3d) { if (this.fence) { this.fence.dispose(); this.fence = null; } return; }
+    if (!el) return;
+    if (!this.fence && !this.fenceLoading) { this.fenceLoading = true; try { const m = await import(new URL('fence3d.js', document.baseURI).href); this.fence = await m.mountFence(el, { turns: this.effTurns(), color: s.color || 'teak', height: s.height === '200' ? 2.0 : 1.8 }); } finally { this.fenceLoading = false; } }
+    if (this.fence) { this.fence.setTurns(this.effTurns()); this.fence.setColor(this.state.color || 'teak'); this.fence.setHeight(this.state.height === '200' ? 2.0 : 1.8); }
+  }
+  componentWillUnmount() { if (this.fence) this.fence.dispose(); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize); clearInterval(this.hlsTimer); clearInterval(this.chkTimer); clearInterval(this.projTimer); clearInterval(this.projBind); }
+  revVals() {
+    const rv = [
+      { t: 'Ziet er echt uit als hout', q: 'Precies de warme look die we zochten. Na een weekend stond alles, en de planken zijn lekker dik.', n: 'Sanne', i: 'S' },
+      { t: 'Snel en netjes bezorgd', q: 'Binnen een week geleverd met hun eigen bezorgservice. Alles compleet en goed verpakt.', n: 'Mark', i: 'M' },
+      { t: 'Fijn advies vooraf', q: 'Ik twijfelde over de hoogte. Ze hebben aan de telefoon rustig meegedacht en alles voor me uitgerekend.', n: 'Linda', i: 'L' },
+      { t: 'Goede prijs-kwaliteit', q: 'Vergeleken met andere webshops scherper geprijsd, en de kwaliteit is top.', n: 'Ruben', i: 'R' }
+    ];
+    const ph = ['assets/garden-teak.jpg','assets/carry-alley.jpg','assets/sofa-wide.jpg','assets/blossom-plank.jpg','assets/watering.jpg'];
+    const mix = []; rv.forEach((r, k) => { mix.push({ ...r, text: true, photo: false }); if (ph[k]) mix.push({ photo: true, text: false, src: ph[k] }); });
+    const step = (d) => () => { const el = document.getElementById('rev-track'); if (el) el.scrollBy({ left: d * Math.min(el.clientWidth * .8, 700), behavior: 'smooth' }); };
+    return { reviewMix: mix, revPrev: step(-1), revNext: step(1), revProgress: Math.round(20 + 80 * (this.state.revP || 0)) + '%', revScroll: (e) => { const el = e.currentTarget; const m = el.scrollWidth - el.clientWidth; this.setState({ revP: m > 0 ? el.scrollLeft / m : 0 }); } };
+  }
+  libVals() {
+    const L = [
+      { id: '383c129c-ac29-495b-bf4d-7cf4c897e2ba', cat: 'Blog', title: 'Nooit meer schilderen', sub: 'Waarom composiet het onderhoud overneemt' },
+      { id: '695d9d2c-30a3-4556-b96c-41f9bf09f693', cat: 'Installatievideo', title: 'Zo monteer je de Rhombus schutting', sub: 'Van palen zetten tot afwerklijst' },
+      { id: 'e8ff43a6-e0e6-4692-8acc-ae7a7cc62400', cat: 'Bedrijfsvideo', title: 'Het verhaal van MT Hekwerken', sub: 'Ons team en ons eigen magazijn' }
+    ];
+    const idx = this.state.libIdx || 0, snd = this.state.libSnd;
+    const pick = (i) => () => {
+      this.setState({ libIdx: i });
+      document.querySelectorAll('video[data-lib-i]').forEach(v => { if (+v.getAttribute('data-lib-i') === i) { v.muted = !snd; v.currentTime = 0; v.play().catch(() => {}); } else { v.muted = true; v.pause(); } });
+    };
+    return {
+      libVideos: L.map((v, i) => ({ ...v, i, src: 'https://vz-45716865-4aa.b-cdn.net/' + v.id + '/playlist.m3u8', poster: 'https://vz-45716865-4aa.b-cdn.net/' + v.id + '/thumbnail.jpg', op: i === idx ? 1 : 0, dim: i === idx ? 1 : .62, ring: 'none', badge: i === idx ? 'Speelt nu' : 'Bekijk', dot: i === idx ? '#FB7029' : 'rgba(14,17,32,.6)', catLabel: i === idx ? 'Speelt nu · ' + v.cat : v.cat, catColor: i === idx ? '#C24E12' : '#6B6E7B', pick: pick(i) })),
+      socials: [['Instagram','M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zM12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM17.3 6.7h.01'],['Facebook','M14 8h3V4h-3a4 4 0 00-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5a.5.5 0 01.5-.5z'],['TikTok','M14 3v11.5a3.5 3.5 0 11-3.5-3.5M14 3c.4 2.6 2.2 4.4 5 4.6'],['YouTube','M3.5 7.5c.2-1.6 1.4-2.7 3-2.8C8.5 4.6 10.2 4.5 12 4.5s3.5.1 5.5.2c1.6.1 2.8 1.2 3 2.8.2 1.5.2 3 .2 4.5s0 3-.2 4.5c-.2 1.6-1.4 2.7-3 2.8-2 .1-3.7.2-5.5.2s-3.5-.1-5.5-.2c-1.6-.1-2.8-1.2-3-2.8C3.3 15 3.3 13.5 3.3 12s0-3 .2-4.5zM10 9v6l5-3z'],['LinkedIn','M4 9h3.5v11H4zM5.75 3.5a2 2 0 110 4 2 2 0 010-4zM10.5 9H14v1.6c.6-1 1.8-1.9 3.6-1.9 3 0 3.9 1.9 3.9 4.7V20H18v-5.8c0-1.4-.3-2.6-1.8-2.6s-2.2 1.1-2.2 2.6V20h-3.5z']].map(([n, p]) => ({ n, p })),
+      libActive: L[idx], libCount: L.length + " video's", libSoundLabel: snd ? 'Geluid uit' : 'Geluid aan',
+      libSoundIcon: snd ? 'M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14' : 'M22 9l-6 6M16 9l6 6',
+      libSound: () => { const on = !this.state.libSnd; const v = document.querySelector('video[data-lib-i="' + idx + '"]'); document.querySelectorAll('video[data-hls]').forEach(o => { o.muted = true; }); if (v) { v.muted = !on; v.play().catch(() => {}); } this.setState({ libSnd: on }); }
+    };
+  }
+  syncLib() { const idx = this.state.libIdx || 0; document.querySelectorAll('video[data-lib-i]').forEach(v => { if (+v.getAttribute('data-lib-i') !== idx) v.pause(); }); }
+  attachVideos() {
+    setTimeout(() => this.syncLib(), 1200);
+    const autoplay = this.props.videoAutoplay ?? true;
+    document.querySelectorAll('video[data-hls]').forEach(v => {
+      const poster = v.getAttribute('poster');
+      if (!v.__guard && poster) {
+        v.__guard = true;
+        const p = v.parentElement;
+        if (p) { p.style.backgroundImage = 'url("' + poster + '")'; p.style.backgroundSize = 'cover'; p.style.backgroundPosition = 'center'; }
+        v.style.transition = 'opacity .35s ease'; v.style.opacity = '0'; v.style.background = 'transparent';
+        const show = () => { if (v.currentTime > 0 && v.readyState >= 2 && v.videoWidth > 0) v.style.opacity = '1'; };
+        const hide = () => { if (v.readyState < 2) v.style.opacity = '0'; };
+        v.addEventListener('timeupdate', show); v.addEventListener('playing', show); v.addEventListener('seeked', show);
+        v.addEventListener('emptied', hide); v.loop = true; v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); }); v.addEventListener('error', () => { v.style.opacity = '0'; });
+      }
+      if (v.__hlsAttached) {
+        if (autoplay && v.paused && v.readyState >= 2) { const r = v.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight && r.width > 0) v.play().catch(() => {}); }
+        return;
+      }
+      const src = v.getAttribute('data-hls'); if (!src) return;
+      v.muted = true; v.__hlsAttached = true;
+      if (window.Hls && window.Hls.isSupported()) {
+        const h = new window.Hls({ capLevelToPlayerSize: true, startLevel: -1 }); let tries = 0;
+        h.on(window.Hls.Events.ERROR, (_, d) => {
+          if (!d.fatal) return;
+          v.style.opacity = '0';
+          if (tries++ > 4) { h.destroy(); v.__hlsAttached = false; return; }
+          if (d.type === window.Hls.ErrorTypes.NETWORK_ERROR) setTimeout(() => h.startLoad(), 1000 * tries);
+          else if (d.type === window.Hls.ErrorTypes.MEDIA_ERROR) h.recoverMediaError();
+          else { h.destroy(); v.__hlsAttached = false; }
+        });
+        h.loadSource(src); h.attachMedia(v);
+      }
+      else if (v.canPlayType('application/vnd.apple.mpegurl')) v.src = src;
+      else { v.__hlsAttached = false; return; }
+      if (autoplay) v.play().catch(() => {});
+    });
+    document.querySelectorAll('video[data-thumb]').forEach(v => { v.muted = true; if (v.paused && v.readyState >= 2) v.play().catch(() => {}); });
+  }
+  soundCtl(key) {
+    const on = this.state.sound === key;
+    return {
+      label: on ? 'Geluid uit' : 'Tik voor geluid', icon: on ? 'M16 9a4 4 0 010 6M19 6.5a8 8 0 010 11' : 'M17 9l4 6M21 9l-4 6',
+      toggle: (e) => {
+        const v = e.currentTarget.querySelector('video'); if (!v) return;
+        document.querySelectorAll('video[data-hls]').forEach(o => { o.muted = true; });
+        v.muted = on; v.play().catch(() => {});
+        this.setState({ sound: on ? null : key });
+      }
+    };
+  }
+  projStep(dir) {
+    const el = document.getElementById('proj-track'); if (!el) return;
+    const card = el.querySelector('div'); const w = card ? card.getBoundingClientRect().width + 14 : 300;
+    const max = el.scrollWidth - el.clientWidth;
+    let x = el.scrollLeft + dir * w;
+    if (dir > 0 && el.scrollLeft >= max - 4) x = 0;
+    if (dir < 0 && el.scrollLeft <= 4) x = max;
+    el.scrollTo({ left: x, behavior: 'smooth' });
+  }
+  hotspotVals() {
+    const s = this.state, open = s.hsOpen ?? true, idx = s.hsIdx || 0, dir = s.hsDir || 1;
+    const D = [
+      { key: 'paal', label: 'Paaltjes', x: '18%', y: '55%', img: 'assets/p-paal.png', fit: 'contain', pos: 'center', h: 'Aluminium paal, compleet geleverd', p1: 'De robuuste aluminium paal is 8×8 cm dik en 280 cm lang. De composiet planken schuif je eenvoudig tussen twee palen, dus er komt geen schroef aan te pas.', p2: 'Per schutting heb je één paal meer nodig dan het aantal panelen. Zet de palen vast met een zak betonmortel per paal.' },
+      { key: 'regelwerk', label: 'Regelwerk', x: '34.4%', y: '34%', img: 'assets/panel.jpg', fit: 'cover', pos: '50% 0%', h: 'Afwerklijsten boven en onder', p1: 'Elk paneel krijgt standaard een boven- en onderafwerklijst. Ze klemmen de planken strak op hun plek en geven de schutting een rechte, strakke lijn.', p2: 'De lijsten worden bevestigd met 4 hoekjes plus parkers. Alles zit bij het paneel inbegrepen.' },
+      { key: 'hout', label: 'Hout', x: '11%', y: '68%', img: 'assets/blossom-plank.jpg', fit: 'cover', pos: '45% 30%', h: 'Composiet met een echte houtlook', p1: 'De planken zijn gemaakt van gerecycled kunststof en houtvezels. Zo heb je het warme uiterlijk van hout met de duurzaamheid van kunststof, inclusief geborsteld teak motief.', p2: 'Een co-extrusion laag beschermt tegen vocht en UV-straling. De planken zijn extra dik (2,5 cm) en 18 cm hoog, en je krijgt er 15 jaar garantie op.' }
+    ];
+    const go = (n) => this.setState(st => ({ hsOpen: true, hsDir: n > (st.hsIdx || 0) ? 1 : -1, hsIdx: n }));
+    return {
+      hsModalStatus: open ? 'active' : 'not-active', hsHidden: open ? 'false' : 'true',
+      hsSide: open ? 'translateX(0%)' : 'translateX(30%)', hsSideOp: open ? 1 : 0,
+      hsClose: (e) => { if (e && e.target && e.target.closest && e.target.closest('[data-hotspot-target]')) return; if (this.state.hsOpen ?? true) this.setState({ hsOpen: false }); },
+      hsNext: () => this.setState(st => ({ hsDir: 1, hsIdx: ((st.hsIdx || 0) + 1) % D.length })),
+      hsPrev: () => this.setState(st => ({ hsDir: -1, hsIdx: ((st.hsIdx || 0) - 1 + D.length) % D.length })),
+      hotspots: D.map((d, i) => { const tip = false; const act = (open && i === idx) || tip; return { tip, noTip: !tip, tipTitle: d.h, tipText: d.p1.split('. ')[0] + '.', key: d.key, label: d.label, x: d.x, y: d.y, aria: 'Bekijk ' + d.label.toLowerCase(), status: act ? 'active' : 'not-active', expanded: act ? 'true' : 'false', bg: act ? '#FB7029' : '#fff', fg: act ? '#fff' : '#11131F', tf: act ? 'scale(1.1) rotate(45deg)' : 'scale(1) rotate(-45deg)', open: (e) => { e.stopPropagation(); if (open && i === idx) this.setState({ hsOpen: false }); else go(i); } }; }),
+      hsCards: D.map((d, i) => { const act = i === idx; return { ...d, num: String(i + 1), status: act ? 'active' : 'not-active', op: act ? 1 : 0, vis: act ? 'visible' : 'hidden', tf: act ? 'translateX(0em)' : 'translateX(' + (i < idx ? -1 : 1) * dir + 'em)', dotStatus: act ? 'active' : 'not-active', dot: act ? '#11131F' : '#C4C0BC', dotAria: 'Ga naar detail ' + (i + 1), go: () => go(i) }; })
+    };
+  }
+  eur(n) { return '€ ' + n.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  baseVals() {
+    const s = this.state;
+    const COLORS = { teak: { label: 'Teak', fill: 'repeating-linear-gradient(90deg,#B07A45 0 5px,#9A6634 5px 7px)' }, grijs: { label: 'Grijs', fill: 'repeating-linear-gradient(90deg,#8E8D89 0 5px,#77766F 5px 7px)' }, zwart: { label: 'Zwart', fill: 'repeating-linear-gradient(90deg,#2E2F33 0 5px,#1E1F22 5px 7px)' } };
+    const col = s.color || 'teak';
+    const AF = [
+      { name: 'Rhombus', img: 'assets/af-rhombus.png', short: 'Schuine rand, strak schaduwspel', desc: 'Planken met een schuin afgewerkte, ruitvormige rand. Tussen de planken ontstaat een fijne schaduwlijn, wat de schutting een strak en modern lijnenspel geeft.' },
+      { name: 'Geborsteld', img: 'assets/af-geborsteld.png', short: 'Vlak, fijn geborstelde structuur', desc: 'Een vlakke plank met een fijn geborstelde houtstructuur. Rustig van uitstraling en makkelijk te combineren met elke tuinstijl.' },
+      { name: 'Houtnerf', img: 'assets/af-houtnerf.png', short: 'Vlak, diepe nerf als echt hout', desc: 'Een vlakke plank met een diepere houtnerf in het oppervlak. Dit komt het dichtst bij het beeld van echt hout, zonder het onderhoud.' },
+      { name: 'Lamellen', img: 'assets/af-lamellen.png', short: 'Verticale lamellen met donkere groeven', desc: 'Brede lamellen met donkere groeven ertussen. Geeft een ritmische, eigentijdse uitstraling, vooral mooi in een moderne tuin.' }
+    ];
+    const af = s.af ?? 0, afz = s.afZoom ?? -1, AZ = AF[afz] || AF[0];
+    const galleryTeak = ['https://www.mthekwerken.nl/wp-content/uploads/Highlander-composiet-schutting-rhombus-teak-e1773499212856.webp','assets/garden-teak.jpg','assets/carry-alley2.jpg','assets/blossom-plank.jpg','assets/watering.jpg','assets/install.jpg','assets/lounge.jpg','assets/carry-plank.jpg'];
+    const gallery = col === 'teak' ? galleryTeak : col === 'grijs' ? ['assets/detail-grey.jpg', ...galleryTeak.slice(1)] : ['assets/loungers-dark.jpg','assets/wine-dark.jpg', ...galleryTeak.slice(1)];
+    const unit = s.height === '180' ? 139.95 : 149.95;
+    const posts = s.qty + 1;
+    const addonDefs = [
+      { k: 'paal', short: 'Aluminium composiet schutting paal compleet', name: 'Aluminium composiet schutting paal compleet', note: posts + '× · 8×8 cm, 280 cm lang', desc: 'Aluminium paal om je composiet schutting mee te plaatsen. De paal wordt compleet geleverd, is 8×8 cm dik en heeft een lengte van 280 cm. De planken schuif je tussen twee palen.', need: 'Je hebt één paal meer nodig dan het aantal panelen.', price: 69.95, n: posts, img: 'assets/p-paal.png' },
+    ];
+    const showUpsell = (this.props.showUpsell ?? true) && !!(s.tColor && s.tHeight && s.tQty);
+    let total = unit * s.qty;
+    if (showUpsell) addonDefs.forEach(a => { if (s.addons[a.k]) total += a.price * a.n; });
+    const setAddon = (k, v) => this.setState(st => ({ addons: { ...st.addons, [k]: v } }));
+    const extra = showUpsell ? addonDefs.filter(a => s.addons[a.k]).length : 0;
+    const faqs = [
+      ['Wat heb ik nog meer nodig?', 'Een paneel wordt compleet geleverd met planken, afwerklijsten, hoekjes en parkers. Het enige dat je nog nodig hebt zijn onze aluminium composiet schuttingpalen: één paal meer dan het aantal panelen.'],
+      ['Hoe hoog wordt de schutting precies?', 'Uitgaande van 5 cm bodemvrijheid is de opgestelde hoogte 177 cm (bij 180 cm) of 194 cm (bij 200 cm). De planken verliezen wat hoogte omdat ze in elkaar geschoven worden.'],
+      ['Moet ik de schutting onderhouden?', 'Nee. De planken hebben een co-extrusion laag die beschermt tegen vocht en UV-straling. Af en toe afspoelen met water is genoeg.'],
+      ['Kan ik mijn bestelling zelf ophalen?', 'Ja, gratis afhalen in ons magazijn in Boekel kan op afspraak. Meet je aanhanger of bus vooraf goed op en neem voldoende spanbanden mee.'],
+    ];
+    return {
+      stars5: [1,2,3,4,5],
+      cartCount: s.added ? s.qty + extra : 0,
+      mainImg: gallery[s.img],
+      imgLabel: (s.img + 1) + ' / ' + gallery.length, imgLabelOp: s.galHover ? 1 : 0, galEnter: () => this.setState({ galHover: true }), galLeave: () => this.setState({ galHover: false }),
+      helpVisible: !s.helpClosed,
+      logoAnim: (e) => {
+        const root = e.currentTarget; if (root.__lgBusy || matchMedia('(prefers-reduced-motion: reduce)').matches) return; root.__lgBusy = true;
+        const q = k => root.querySelector('[data-lg="' + k + '"]'); const ease = 'cubic-bezier(.34,1.56,.64,1)';
+        ['c', 's', 't', 'v'].forEach(k => { const el = q(k); if (el) { el.style.transformBox = 'fill-box'; el.style.transformOrigin = k === 'c' ? '50% 50%' : '50% 50%'; } });
+        q('c').animate([{ transform: 'scale(1)' }, { transform: 'scale(.86)', offset: .28 }, { transform: 'scale(1.08)', offset: .62 }, { transform: 'scale(1)' }], { duration: 900, easing: 'cubic-bezier(.45,0,.25,1)' });
+        q('s').animate([{ transform: 'none', opacity: 1 }, { transform: 'scale(.3) rotate(-25deg)', opacity: 0, offset: .22 }, { transform: 'scale(1.12) rotate(6deg)', opacity: 1, offset: .62 }, { transform: 'none', opacity: 1 }], { duration: 900, easing: 'cubic-bezier(.45,0,.25,1)' });
+        q('v').animate([{ transform: 'none', opacity: 1 }, { transform: 'translateY(-8px)', opacity: 0, offset: .2 }, { transform: 'translateY(-12px)', opacity: 0, offset: .4 }, { transform: 'translateY(2px)', opacity: 1, offset: .72 }, { transform: 'none', opacity: 1 }], { duration: 950, easing: 'ease-out' });
+        q('t').animate([{ transform: 'none', opacity: 1 }, { transform: 'translateY(8px) scaleY(.4)', opacity: 0, offset: .2 }, { transform: 'translateY(12px) scaleY(.4)', opacity: 0, offset: .46 }, { transform: 'translateY(-2px) scaleY(1.1)', opacity: 1, offset: .78 }, { transform: 'none', opacity: 1 }], { duration: 1000, easing: 'ease-out' }).onfinish = () => { root.__lgBusy = false; };
+      },
+      gallery: gallery.map((src, i) => ({ src, border: i === s.img ? '#11131F' : 'transparent', pick: () => this.setState({ img: i }) })),
+      prevImg: () => this.setState({ img: (s.img - 1 + gallery.length) % gallery.length }),
+      nextImg: () => this.setState({ img: (s.img + 1) % gallery.length }),
+      unitPriceStr: this.eur(unit),
+      heights: [['180', '180 cm', '10 planken · € 139,95'], ['200', '200 cm', '11 planken · € 149,95']].map(([k, label, sub]) => ({ label, sub, border: s.height === k ? '#11131F' : '#E1DCD2', bg: s.height === k ? '#fff' : '#FAF9F6', pick: () => this.setState({ height: k, pattern: k === '200' ? 'Horizontaal' : s.pattern, tHeight: true }) })),
+      patterns: ['Horizontaal', 'Verticaal'].map(p => { const dis = p === 'Verticaal' && s.height === '200'; return { label: p, border: s.pattern === p ? '#11131F' : '#E1DCD2', color: dis ? '#B4B6BE' : '#11131F', pick: () => { if (!dis) this.setState({ pattern: p }); } }; }),
+      verticalNote: s.height === '200',
+      ...this.hotspotVals(),
+      cascSlides: [
+        ['img','assets/projects/p01.jpg','Rhombus teak · Utrecht'],
+        ['img','assets/projects/p02.jpg','Rhombus teak · Zwolle'],
+        ['img','assets/projects/p03.jpg','Rhombus grijs · Breda'],
+        ['img','assets/projects/p04.jpg','Rhombus teak · Groningen'],
+        ['img','assets/projects/p05.jpg','Rhombus zwart · Haarlem'],
+        ['img','assets/projects/p09.jpg','Rhombus teak · Eindhoven'],
+        ['img','assets/projects/p11.jpg','Rhombus teak · Apeldoorn'],
+        ['img','assets/projects/p13.jpg','Rhombus grijs · Leeuwarden'],
+        ['img','assets/projects/p15.jpg','Rhombus teak · Middelburg'],
+        ['img','assets/projects/p17.jpg','Rhombus zwart · Maastricht']
+      ].map(([k, s2, h]) => k === 'vid' ? { isVideo: true, isImg: false, src: 'https://vz-45716865-4aa.b-cdn.net/' + s2 + '/playlist.m3u8', poster: 'https://vz-45716865-4aa.b-cdn.net/' + s2 + '/thumbnail.jpg', h } : { isVideo: false, isImg: true, src: s2, h }),
+      plxTf: 'translate3d(0,' + (s.plx || 0).toFixed(1) + 'px,0)',
+      helpBottom: s.sticky ? '92px' : 'clamp(12px,2vw,24px)',
+      helpTransform: (s.helpIn !== false && !s.helpClosed) ? 'translateY(0)' : 'translateY(24px)',
+      helpOpacity: (s.helpIn !== false && !s.helpClosed) ? 1 : 0,
+      helpPointer: (s.helpIn !== false && !s.helpClosed) ? 'auto' : 'none',
+      closeHelp: () => this.setState({ helpClosed: true }),
+      compare: ['Geen schilderen of beitsen', 'Rot en splintert niet', 'Kleurvast door co-extrusion', '15 jaar garantie', 'Modulair, hoogte naar wens'].map(k => ({ k })),
+      show3d: !!s.show3d, height: s.height,
+      routeBtns: [['Rechtdoor', 0, 'M4 12h16M14 6l6 6-6 6'], ['Hoek naar links', 1, 'M6 20V10a2 2 0 012-2h10M14 4l4 4-4 4'], ['Hoek naar rechts', -1, 'M18 20V10a2 2 0 00-2-2H6M10 4L6 8l4 4']].map(([label, d, icon]) => ({ label, icon, add: () => { const tt = this.effTurns(); tt.push(d); this.setState({ turns: tt, qty: tt.length }); } })),
+      routeUndo: () => { const tt = this.effTurns(); if (tt.length > 1) { tt.pop(); this.setState({ turns: tt, qty: tt.length }); } },
+      routeReset: () => this.setState({ turns: [] }),
+      cornerLabel: (() => { const c = this.effTurns().filter(x => x !== 0).length; return c === 0 ? 'Rechte schutting' : c + (c === 1 ? ' hoek' : ' hoeken') + ' in je schutting'; })(),
+      open3d: () => this.setState({ show3d: true }), close3d: () => this.setState({ show3d: false }),
+      heroChecks: ['De scherpste prijzen van Nederland', 'Premium robuuste kwaliteit', 'Co-Extrusion bescherming en 15 jaar garantie'].map((t, i, a) => { const cur = (s.chk || 0) % a.length; const prev = (cur - 1 + a.length) % a.length; return { t, op: i === cur ? 1 : 0, tf: i === cur ? 'translateY(0)' : i === prev ? 'translateY(-100%)' : 'translateY(100%)' }; }),
+      projects: Array.from({ length: 18 }, (_, i) => 'assets/projects/p' + String(i + 1).padStart(2, '0') + '.jpg'),
+      projProgress: Math.round(12 + 88 * (s.proj || 0)) + '%',
+      projNext: () => this.projStep(1), projPrev: () => this.projStep(-1),
+      projPause: () => { this.projPaused = true; }, projResume: () => { this.projPaused = false; },
+      spin3d: this.spin3d || (this.spin3d = React.createElement('span', { style: { display: 'inline-block', animation: 'spin3d 3.6s cubic-bezier(.45,0,.25,1) infinite', transformStyle: 'preserve-3d' } }, '3D')),
+      colorName: COLORS[col].label.toLowerCase(),
+      finishName: AF[af].name, finishImg: AF[af].img, ddOpen: !!s.afDd, ddRot: s.afDd ? 'rotate(180deg)' : 'none', ddBorder: s.afDd ? '#11131F' : '#E1DCD2', ddToggle: () => this.setState({ afDd: !s.afDd, colDd: false }),
+      finishes: AF.map((x, i) => ({ ...x, weight: i === af ? 600 : 400, rowBg: i === af ? '#F7F5F1' : 'transparent', pickClose: () => this.setState({ af: i, afDd: false }), zoom: () => this.setState({ afZoom: i }) })),
+      afZoomOpen: afz >= 0, afZoom: { ...AZ, cta: afz === af ? 'Gekozen ✓' : 'Kies ' + AZ.name, choose: () => this.setState({ af: afz, afZoom: -1, afDd: false }) },
+      ...(() => {
+        const sides = s.calcSides || ['', '', ''];
+        const nums = sides.map(v => parseFloat(String(v).replace(',', '.')) || 0).filter(n => n > 0);
+        const perSide = nums.map(n => Math.ceil(n / 1.8 - 0.001));
+        const panels = perSide.reduce((a, b) => a + b, 0);
+        const total = nums.reduce((a, b) => a + b, 0);
+        const posts = panels ? panels + 1 : 0;
+        const applied = panels > 0 && s.qty === panels && s.calcApplied;
+        return {
+          calcOpen: !!s.calcOpen, calcRot: s.calcOpen ? 'rotate(180deg)' : 'none', calcBorder: s.calcOpen ? '#11131F' : '#E1DCD2',
+          calcToggle: () => this.setState({ calcOpen: !s.calcOpen }),
+          calcFields: ['Zijde 1', 'Zijde 2', 'Zijde 3'].map((label, i) => ({ label, val: sides[i], set: (e) => { const n = sides.slice(); n[i] = e.target.value.replace(/[^0-9.,]/g, ''); this.setState({ calcSides: n, calcApplied: false }); } })),
+          calcResult: panels ? panels + ' panelen en ' + posts + ' palen' : 'Vul je maten in',
+          calcSub: panels ? 'Voor ' + total.toFixed(1).replace('.', ',') + ' meter schutting · ' + (panels * 1.8).toFixed(1).replace('.', ',') + ' m aan panelen' : 'Een paneel is 180 cm breed, inclusief paal',
+          calcCta: applied ? 'Overgenomen ✓' : 'Neem over',
+          calcBtnOp: panels ? 1 : .4,
+          calcApply: () => { if (panels) this.setState({ qty: panels, calcApplied: true, }); }
+        };
+      })(),
+      blogs: [
+        { cat: 'Advies', t: 'Composiet of hout: welke schutting past bij jouw tuin?', img: 'assets/garden-teak.jpg' },
+        { cat: 'Montage', t: 'Zo plaats je zelf een composiet schutting', img: 'assets/install.jpg' },
+        { cat: 'Onderhoud', t: 'Zo blijft je composiet schutting jarenlang mooi', img: 'assets/sofa-wide.jpg' }
+      ],
+      dimShow: !!s.dimOpen, dimOpen: () => this.setState({ dimOpen: true }), dimClose: () => this.setState({ dimOpen: false }),
+      dimH: s.height,
+      dims: [['A', 'Hoogte', 'Opgesteld ' + (s.height === '200' ? '194' : '177') + ' cm, bij 5 cm bodemvrijheid', s.height + ' cm'], ['B', 'Breedte', 'Per paneel, inclusief paal', '180 cm'], ['C', 'Dikte plank', (s.height === '200' ? '11' : '10') + ' planken van 18 cm hoog', '2,5 cm']].map(([k, tt, sub, v]) => ({ k, t: tt, s: sub, v })),
+      ...(() => { const n = s.height === '200' ? 11 : 10, h = n * 13.5, top = 168 - h; return { dimTop: top, dimRectH: h, dimMid: top + h / 2, dimLines: Array.from({ length: n - 1 }, (_, i) => ({ y: top + (i + 1) * 13.5 })), dimFill: col === 'teak' ? '#B07A45' : col === 'grijs' ? '#8E8D89' : '#3A3B40' }; })(),
+      afCloseZoom: () => this.setState({ afZoom: -1 }), afStop: (e) => e.stopPropagation(),
+      hSeg: [['180', '180 cm'], ['200', '200 cm']].map(([k, label]) => ({ label, bg: s.height === k ? '#fff' : 'transparent', sh: 'none', pick: () => this.setState({ height: k, tHeight: true }) })),
+      colors: Object.entries(COLORS).map(([k, c]) => ({ label: c.label, fill: c.fill, ring: k === col ? '#11131F' : 'transparent', rowBg: k === col ? '#F7F5F1' : 'transparent', weight: k === col ? 600 : 400, pick: () => this.setState({ color: k, img: 0, tColor: true, colDd: false }) })),
+      colorLabel: COLORS[col].label, colorFill: COLORS[col].fill, colOpen: !!s.colDd, colRot: s.colDd ? 'rotate(180deg)' : 'none', colBorder: s.colDd ? '#11131F' : '#E1DCD2', colToggle: () => this.setState({ colDd: !s.colDd, afDd: false }),
+      meterLabel: s.qty + (s.qty === 1 ? ' scherm' : ' schermen') + ' = circa ' + (s.qty * 1.8).toFixed(1).replace('.', ',') + ' meter schutting',
+      selectAllLabel: addonDefs.every(a => s.addons[a.k]) ? 'Alles verwijderen' : 'Alles toevoegen',
+      selectAllAddons: () => { const all = addonDefs.every(a => s.addons[a.k]); this.setState({ addons: { paal: !all } }); },
+      infoTabs: [
+        { title: 'Bezorging & levertijd', sub: 'Levering in 5–10 werkdagen', p1: 'M3 7h11v9H3zM14 10h4l3 3v3h-7', p2: 'M5.5 18.5a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0M15.5 18.5a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0', body: 'We bezorgen met onze eigen bezorgservice. Zo weet je zeker dat alles compleet en netjes bij je thuis aankomt. Alles wordt met zorg verpakt en vervoerd.', link: 'Levertijden en verzendkosten' },
+        { title: 'Gratis afhalen in Boekel', sub: 'Op afspraak in ons magazijn', p1: 'M3 10l9-6 9 6v10H3z', p2: 'M9 20v-6h6v6', body: 'Haal je bestelling gratis op bij De Vlonder 213B in Boekel, op afspraak (ma t/m vr 09:00–16:00). Meet je aanhanger of bus vooraf goed op en neem voldoende spanbanden mee.', link: 'Afspraak maken' },
+        { title: '14 dagen bedenktijd', sub: 'Zorgeloos retourneren', p1: 'M4 12a8 8 0 108-8 8 8 0 00-6 2.7', p2: 'M4 4v4h4', body: 'Toch niet helemaal wat je zocht? Je hebt 14 dagen bedenktijd. Neem contact met ons op, dan regelen we de retour samen met je.', link: 'Retourvoorwaarden' },
+        { title: '15 jaar garantie', sub: 'Gemaakt om 25 jaar mee te gaan', p1: 'M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z', p2: 'M9 12l2 2 4-4', body: 'Highlander composiet is voorzien van een co-extrusion laag die beschermt tegen vocht en UV-straling. Daarom krijg je 15 jaar garantie op de planken.', link: 'Garantievoorwaarden' }
+      ].map((t, i) => { const open = s.info === i; return { ...t, open, rot: open ? 'rotate(180deg)' : 'rotate(0deg)', iconColor: open ? '#FB7029' : '#11131F', toggle: () => this.setState({ info: open ? -1 : i }) }; }),
+      compactTransform: s.compact ? 'translateY(0)' : 'translateY(-110%)',
+      compactOpacity: s.compact ? 1 : 0,
+      compactPointer: s.compact ? 'auto' : 'none',
+      miniProgress: Math.round(30 + 70 * (s.mini || 0)) + '%',
+      onMiniScroll: (e) => { const el = e.currentTarget; const max = el.scrollWidth - el.clientWidth; this.setState({ mini: max > 0 ? el.scrollLeft / max : 0 }); },
+      ...this.libVals(),
+      soundProduct: this.soundCtl('product'), soundInstall: this.soundCtl('install'), soundStory: this.soundCtl('story'),
+      footerCols: [
+        { t: 'Klantenservice', links: ['Contact', 'Klantenservice', 'Veelgestelde vragen', 'Retourneren', 'Garantie', 'Klachten', 'Levertijd & verzendkosten', 'Betaalmethodes', 'Montagehandleidingen'] },
+        { t: 'MT Hekwerken', links: ['Hekwerk configurator', 'Offerte', 'Over ons', 'Contact', 'mthekwerken.be', 'mtzaune.de'] },
+        { t: 'Ga direct naar', links: ['Hekwerken', 'Dubbelstaafmat hekwerken', 'Spijlen hekwerken', 'Poorten', 'Composiet schuttingen', 'Composiet gevelbekleding', 'Composiet vlonderplanken'] },
+        { t: 'Webshop', links: ['Mijn account', 'Winkelwagen'] }
+      ],
+      showUpsell, showUpsellNow: showUpsell,
+      qty: s.qty,
+      addons: addonDefs.map(a => { const on = !!s.addons[a.k]; return { ...a, on, off: !on, priceStr: this.eur(a.price * a.n), border: on ? '#11131F' : '#E6E2DA', checkBg: on ? '#11131F' : '#fff', checkBorder: on ? '#11131F' : '#C9C4BA', toggle: () => setAddon(a.k, !on), preview: (e) => { e.stopPropagation(); this.setState({ pv: a.k }); } }; }),
+      pv: (() => { const a = addonDefs.find(x => x.k === s.pv); if (!a) return { show: false }; const on = !!s.addons[a.k]; return { show: true, title: a.short, img: a.img, desc: a.desc, need: a.need, price: (a.k === 'deur' ? 'Vanaf ' : '') + this.eur(a.price) + (a.n > 1 ? ' p/st' : ''), btnLabel: on ? 'Toegevoegd ✓' : 'Toevoegen (' + a.n + '×)', btnBg: on ? '#11131F' : '#fff', btnColor: on ? '#fff' : '#11131F', toggle: () => setAddon(a.k, !on), close: () => this.setState({ pv: null }), stop: (e) => e.stopPropagation() }; })(),
+      dec: () => this.setState({ qty: Math.max(1, s.qty - 1), tQty: true }),
+      inc: () => this.setState({ qty: s.qty + 1, tQty: true }),
+      totalStr: this.eur(total),
+      ctaLabel: s.added ? 'Toegevoegd ✓' : 'In winkelwagen',
+      addToCart: () => { this.setState({ added: true }); clearTimeout(this.t); this.t = setTimeout(() => this.setState({ added: false }), 2200); },
+      addPalen: () => { setAddon('paal', true); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      palenCta: s.addons.paal ? posts + ' palen toegevoegd ✓' : 'Voeg ' + posts + ' palen toe',
+      toTop: (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      usps: [
+        { t: 'Scherpste prijzen', d: 'Goedkoper gezien? Laat het ons weten' },
+        { t: '15 jaar garantie', d: 'Gemaakt om 25 jaar mee te gaan' },
+        { t: 'Eigen magazijn', d: 'Direct uit voorraad in Boekel' },
+        { t: '14 dagen bedenktijd', d: 'Zorgeloos bestellen' }
+      ],
+      videos: ['b0519349-14c6-48f6-9ebe-4d79ddc2253f','b95b7ab4-8103-4b14-a771-cdd40c1aab7a','742ce440-fbc5-4463-8ace-ec408c432390','672affb0-476f-421c-a195-ce8a19360b7a'].map((id, i) => ({
+        src: 'https://vz-45716865-4aa.b-cdn.net/' + id + '/playlist.m3u8',
+        poster: 'https://vz-45716865-4aa.b-cdn.net/' + id + '/thumbnail.jpg',
+        caption: 'Tik voor geluid',
+        toggleSound: (e) => { const v = e.currentTarget.querySelector('video'); if (!v) return; document.querySelectorAll('video[data-hls]').forEach(o => { if (o !== v) o.muted = true; }); v.muted = !v.muted; v.play().catch(() => {}); }
+      })),
+      benefits: [
+        { t: 'Onderhoudsvrij', d: 'Co-extrusion laag beschermt tegen vocht en UV.', img: 'assets/sofa-portrait.jpg' },
+        { t: 'Extra dik: 2,5 cm', d: 'Robuuste planken van 18 cm hoog. Stevig en stil.', img: 'assets/carry-plank.jpg' },
+        { t: 'Echte houtlook', d: 'Geborsteld teak motief, warm als hout.', img: 'assets/blossom-plank.jpg' },
+        { t: 'Zelf te monteren', d: 'Planken schuif je tussen de palen. Hoogte naar wens.', img: 'assets/install.jpg' }
+      ],
+      inBox: [
+        { n: '10', t: 'Composiet planken', d: '2,5 × 18 cm · 11 bij 200 cm' },
+        { n: '2', t: 'Afwerklijsten', d: 'boven en onder' },
+        { n: '4', t: 'Hoekjes met parkers', d: 'voor de afwerklijsten' }
+      ],
+      steps: [
+        { n: '1', t: 'Palen plaatsen', d: 'Zet de aluminium palen in betonmortel, steeds 180 cm hart-op-hart.', img: 'assets/watering.jpg' },
+        { n: '2', t: 'Planken inschuiven', d: 'Schuif de planken tussen de palen. Een plank meer of minder bepaalt de hoogte.', img: 'assets/install.jpg' },
+        { n: '3', t: 'Afwerken en genieten', d: 'Klik de afwerklijsten erop. Klaar voor jaren zonder onderhoud.', img: 'assets/lounge.jpg' }
+      ],
+      teamCards: [
+        { t: 'Hulp nodig met jouw project? Vraag ons team!', d: 'Bereken je prijs', img: 'assets/team-laptop.jpg', pos: '50% 30%' },
+        { t: 'Eigen magazijn in Nederland', d: 'Alles op voorraad in Boekel', img: 'assets/team-mesh.jpg', pos: '50% 30%' },
+        { t: 'Kom kijken in onze showroom', d: 'Op afspraak', img: 'assets/team-showroom.jpg', pos: '60% 30%' }
+      ],
+      reviews: [
+        { t: 'Ziet er echt uit als hout', q: 'Precies de warme look die we zochten. Na een weekend stond alles, en de planken zijn lekker dik.', n: 'Sanne', i: 'S' },
+        { t: 'Snel en netjes bezorgd', q: 'Binnen een week geleverd met hun eigen bezorgservice. Alles compleet en goed verpakt.', n: 'Mark', i: 'M' },
+        { t: 'Fijn meegedacht', q: 'Ik twijfelde over de hoogte. Even gebeld en ze rekenden direct uit hoeveel palen en panelen ik nodig had.', n: 'Joyce', i: 'J' },
+        { t: 'Goede prijs-kwaliteit', q: 'Vergeleken met andere webshops scherper geprijsd, en de kwaliteit is top.', n: 'Ruben', i: 'R' }
+      ],
+      ...this.revVals(),
+      ugc: ['assets/garden-teak.jpg','assets/carry-alley.jpg','assets/sofa-wide.jpg','assets/blossom-plank.jpg','assets/watering.jpg'],
+      specs: [
+        ['Merk', 'Highlander'], ['Kleur', 'Teak, geborsteld motief'], ['Hoogte', '180 cm of 200 cm'], ['Opgestelde hoogte', '177 cm / 194 cm (5 cm bodemvrijheid)'],
+        ['Breedte paneel + paal', '180 cm'], ['Plank', '2,5 cm dik · 18 cm hoog'], ['Patroon', 'Horizontaal of verticaal (alleen 180 cm)'],
+        ['Materiaal', 'Gerecycled kunststof en houtvezels'], ['Bescherming', 'Co-extrusion laag tegen vocht en UV'], ['Garantie', '15 jaar'], ['Levertijd', '5 – 10 werkdagen']
+      ].map(([k, v]) => ({ k, v })),
+      faqs: faqs.map(([q, a], i) => ({ q, a, open: s.faq === i, icon: s.faq === i ? '−' : '+', toggle: () => this.setState({ faq: s.faq === i ? -1 : i }) })),
+      related: [
+        { t: 'Aluminium schuttingpaal', price: '€ 69,95 per stuk', img: 'assets/install.jpg' },
+        { t: 'Composiet tuindeur Rhombus teak', price: 'Vanaf € 369,00', img: 'assets/carry-alley.jpg' },
+        { t: 'Zak betonmortel 25 kg', price: '€ 9,95', img: 'assets/watering.jpg' }
+      ],
+      showSticky: (this.props.stickyBar ?? true) && s.sticky,
+      isDesk: !s.mob, isMob: !!s.mob, navDesk: !s.tab, navMob: !!s.tab, galPos: s.mob ? 'static' : 'sticky',
+      stickySub: s.qty + ' panelen · ' + s.height + ' cm · ' + s.pattern.toLowerCase()
+    };
+  }
+  renderVals() {
+    const b = this.baseVals(), s = this.state;
+    const COL = [['teak', 'Teak', 'repeating-linear-gradient(90deg,#9C6B45 0 5px,#8A5C38 5px 7px)'], ['grijs', 'Grijs', 'repeating-linear-gradient(90deg,#8E8D89 0 5px,#77766F 5px 7px)'], ['zwart', 'Zwart', 'repeating-linear-gradient(90deg,#2E2F33 0 5px,#1E1F22 5px 7px)']];
+    const BG = [['standaard', 'Standaard', 'Groef in de kleur van de plank'], ['zwart', 'Zwart', 'Donkere groef voor extra diepte']];
+    const col = s.gCol || 'teak', bg = s.gBg || 'standaard', q = s.gQty ?? 1, dd = s.gDd || '';
+    const C = COL.find(c => c[0] === col), B = BG.find(x => x[0] === bg);
+    const unit = 23.95;
+    const RECS = [
+      { k: 'regel', name: 'Aluminium regelwerk 300 cm', note: 'onderconstructie', img: 'assets/p-paal.png', price: 14.95 },
+      { k: 'eind', name: 'Aluminium eindprofiel', note: 'afwerking zijkant', img: 'assets/p-paal.png', price: 12.95 },
+      { k: 'hoek', name: 'Aluminium hoekprofiel', note: 'buitenhoeken', img: 'assets/p-paal.png', price: 16.95 }
+    ];
+    const pq = s.pq || {}, pa = s.pa || {};
+    let total = unit * q; RECS.forEach(p => { if (pa[p.k]) total += p.price * pa[p.k]; });
+    const setQ = (k, v) => this.setState(st => ({ pq: { ...(st.pq || {}), [k]: Math.max(0, Math.min(999, v | 0)) } }));
+    const gallery = ['https://vz-45716865-4aa.b-cdn.net/0391f42c-5cab-4342-9eb6-240511ac6a5e/thumbnail.jpg', 'assets/gevel-plank-detail.jpg', 'assets/gevel-plank-stapel.jpg', 'assets/gevel-walnoot.jpg', 'assets/gevel-teak-zwart.jpg', 'assets/gevel-schuur-deur.jpg', 'assets/gevel-tuinwand.jpg', 'assets/gevel-plank-lang.jpg'];
+    const img = Math.min(s.img || 0, gallery.length - 1);
+    const dropdown = (key, opts, cur, withFill) => ({ open: dd === key, rot: dd === key ? 'rotate(180deg)' : 'none', border: dd === key ? '#11131F' : '#E1DCD2', hasFill: withFill, fill: withFill ? opts.find(o => o[0] === cur)[2] : '', label: opts.find(o => o[0] === cur)[1], toggle: () => this.setState({ gDd: dd === key ? '' : key }),
+      opts: opts.map(o => ({ label: o[1], sub: withFill ? '' : o[2], hasFill: withFill, fill: withFill ? o[2] : '', weight: o[0] === cur ? 600 : 400, rowBg: o[0] === cur ? '#F7F5F1' : 'transparent', pick: () => this.setState({ [key]: o[0], gDd: '' }) })) });
+    const rv = [
+      { t: 'Gevel ziet er weer strak uit', q: 'Onze oude houten gevel moest elke paar jaar geschilderd worden. Nu is het klaar, en het ziet er echt uit als hout.', n: 'Ilse', i: 'I' },
+      { t: 'Snel en netjes bezorgd', q: 'Planken, regelwerk en profielen in één levering. Alles compleet en goed verpakt.', n: 'Mark', i: 'M' },
+      { t: 'Eerst een sample besteld', q: 'Met de sample konden we de kleur naast onze stenen houden. Daarna wisten we het zeker.', n: 'Linda', i: 'L' },
+      { t: 'Goede prijs-kwaliteit', q: 'Vergeleken met andere aanbieders scherper geprijsd, en de planken voelen stevig aan.', n: 'Ruben', i: 'R' }
+    ];
+    const ph = ['assets/gevel-teak-huis.jpg', 'assets/gevel-wand-tuin.jpg', 'assets/gevel-samples.jpg', 'assets/gevel-carry.jpg'];
+    const mix = []; rv.forEach((r, k) => { mix.push({ ...r, text: true, photo: false }); if (ph[k]) mix.push({ photo: true, text: false, src: ph[k] }); });
+    const addedCount = RECS.reduce((n, p) => n + (pa[p.k] || 0), 0);
+    return {
+      ...b,
+      reviewMix: mix,
+      mainImg: gallery[img], mainIsVideo: img === 0, imgLabel: (img + 1) + ' / ' + gallery.length,
+      gallery: gallery.map((src, i) => ({ src, border: i === img ? '#11131F' : 'transparent', pick: () => this.setState({ img: i }) })),
+      prevImg: () => this.setState({ img: (img - 1 + gallery.length) % gallery.length }),
+      nextImg: () => this.setState({ img: (img + 1) % gallery.length }),
+      colorName: C[1].toLowerCase(), colorLabel: C[1].toLowerCase(),
+      gCol: dropdown('gCol', COL, col, true), gBg: dropdown('gBg', BG, bg, false),
+      gQty: q, gDec: () => this.setState({ gQty: Math.max(1, q - 1) }), gInc: () => this.setState({ gQty: q + 1 }),
+      gM2Label: q + (q === 1 ? ' plank' : ' planken') + ' = circa ' + (q * 0.58).toFixed(1).replace('.', ',') + ' m² gevelbekleding',
+      gTotalStr: this.eur(total),
+      gRecs: RECS.map(p => { const n = pq[p.k] || 0, added = pa[p.k] || 0, done = added > 0 && added === n; return { ...p, priceStr: this.eur(p.price), qtyStr: n ? String(n) : '', aria: 'Aantal ' + p.name.toLowerCase(), border: added ? '#11131F' : '#E6E2DA',
+        dec: () => setQ(p.k, n - 1), inc: () => setQ(p.k, n + 1), set: (e) => setQ(p.k, parseInt(String(e.target.value).replace(/[^0-9]/g, ''), 10) || 0),
+        btnLabel: done ? 'Toegevoegd ✓' : added ? 'Bijwerken' : 'Toevoegen', btnBg: done ? '#11131F' : '#fff', btnColor: done ? '#fff' : '#11131F', btnOp: n || added ? 1 : .45,
+        add: () => { if (!n && !added) return; this.setState(st => ({ pa: { ...(st.pa || {}), [p.k]: done ? 0 : n } })); } }; }),
+      cartCount: s.added ? q + addedCount : 0,
+      stickySub: q + ' planken · ' + C[1].toLowerCase() + ' · achtergrond ' + B[1].toLowerCase(),
+      cascSlides: [['vid:557acb1f-cc49-4f3f-98ff-85bfddca88b7', 'Gevelbekleding in de praktijk'], ['assets/gevel-walnoot.jpg', 'Tuinwand in walnoot'], ['assets/gevel-schuur-deur.jpg', 'Bijgebouw met verborgen deur'], ['assets/gevel-teak-zwart.jpg', 'Tuinhuis in teak'], ['assets/gevel-tuinwand.jpg', 'Strakke tuinwand'], ['assets/gevel-wand-lamp.jpg', 'Wand met buitenlamp'], ['assets/gevel-teak-huis.jpg', 'Gevel aan huis'], ['assets/gevel-wand-tuin.jpg', 'Langs de border'], ['assets/gevel-house.jpg', 'Gevelbekleding teak'], ['assets/gevel-lounge.jpg', 'Tuinkamer met composiet gevel']].map(([src, h2]) => src.startsWith('vid:') ? { isVideo: true, isImg: false, src: 'https://vz-45716865-4aa.b-cdn.net/' + src.slice(4) + '/playlist.m3u8', poster: 'https://vz-45716865-4aa.b-cdn.net/' + src.slice(4) + '/thumbnail.jpg', h: h2 } : { isVideo: false, isImg: true, src, h: h2 }),
+      compare: ['Geen schilderen of beitsen', 'Rot en splintert niet', 'Kleurvast door co-extrusion', '15 jaar garantie', 'Geen werk op hoogte voor onderhoud'].map(k => ({ k })),
+      specs: [['Merk', 'Highlander'], ['Kleuren', 'Teak, grijs of zwart'], ['Achtergrond', 'Standaard of zwart'], ['Afmeting plank', '290 × 20 cm (circa 0,58 m²)'], ['Materiaal', 'Gerecycled kunststof en houtvezels'], ['Bescherming', 'Co-extrusion laag tegen vocht en UV'], ['Montage', 'Met clips op aluminium regelwerk'], ['Garantie', '15 jaar'], ['Levertijd', '5 – 10 werkdagen']].map(([k, v]) => ({ k, v })),
+      faqs: [['Hoeveel planken heb ik nodig?', 'Reken het oppervlak van je gevel uit in m² en deel dat door 0,58. Tel daar circa 5% bij op voor zaagverlies.'], ['Wat heb ik nog meer nodig?', 'Aluminium regelwerk als onderconstructie, en eind- en hoekprofielen om de randen af te werken. Die vind je hierboven bij de aanbevolen producten.'], ['Moet ik de gevel onderhouden?', 'Nee. De co-extrusion laag beschermt tegen vocht en UV-straling. Af en toe afspoelen met water is genoeg.'], ['Kan ik eerst een sample bestellen?', 'Ja. Met een sample zie je de kleur en structuur in het echt, naast je eigen stenen of kozijnen.']].map(([qq, a], i) => ({ q: qq, a, open: s.faq === i, icon: s.faq === i ? '−' : '+', toggle: () => this.setState({ faq: s.faq === i ? -1 : i }) })),
+      blogs: [{ t: 'Composiet gevelbekleding monteren: zo doe je dat', img: 'assets/gevel-carry.jpg' }, { t: 'Welke kleur gevelbekleding past bij jouw huis?', img: 'assets/gevel-teak-zwart.jpg' }, { t: 'Composiet of hout voor je gevel?', img: 'assets/gevel-plank-duo.jpg' }]
+    };
+  }
+}
+</script>
+</body>
+</html>
