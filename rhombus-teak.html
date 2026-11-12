@@ -40,9 +40,9 @@ button{font-family:inherit}
 </div>
 
 <header style="background:#F1EEE8">
-  <div style="max-width:1320px;margin:0 auto;padding:16px clamp(16px,4vw,40px);display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+  <div style="max-width:1320px;margin:0 auto;padding:16px clamp(16px,4vw,40px);display:flex;align-items:center;gap:24px;flex-wrap:{{ hdrWrap }}">
     <a href="#" onMouseEnter="{{ logoAnim }}" style="display:flex;align-items:center;gap:6px;font-weight:700;font-size:24px;letter-spacing:-.02em">
-      <svg width="40" height="40" viewBox="0 0 79 79" style="display:block;flex:none;overflow:visible"><circle data-lg="c" cx="39.5" cy="39.5" r="39.5" fill="#FB7029"></circle><g transform="translate(19.328 18.098)"><g data-lg="s"><path d="M183.984,199.425a18.32,18.32,0,0,0,18.3,18.3h3.746a18.319,18.319,0,0,0,18.3-18.3V172.441H183.984Zm4.294-22.691h31.756v22.691a14.021,14.021,0,0,1-14.005,14.006h-3.746a14.021,14.021,0,0,1-14-14.006Z" transform="translate(-183.984 -172.441)" fill="#fff"></path></g><g data-lg="t"><path d="M196.951,211.217H206.3v9.25H210.6v-9.25h9.352v-4.294h-23Z" transform="translate(-188.278 -183.858)" fill="#fff"></path></g><g data-lg="v"><path d="M219.956,189.772v-5.036l-11.513,7.054-11.513-7.053v5.036l11.513,7.054Z" transform="translate(-188.272 -176.512)" fill="#fff"></path></g></g></svg>MT hekwerken
+      <svg width="40" height="40" viewBox="0 0 79 79" style="display:block;flex:none;overflow:visible"><circle data-lg="c" cx="39.5" cy="39.5" r="39.5" fill="#FB7029"></circle><g transform="translate(19.328 18.098)"><g data-lg="s"><path d="M183.984,199.425a18.32,18.32,0,0,0,18.3,18.3h3.746a18.319,18.319,0,0,0,18.3-18.3V172.441H183.984Zm4.294-22.691h31.756v22.691a14.021,14.021,0,0,1-14.005,14.006h-3.746a14.021,14.021,0,0,1-14-14.006Z" transform="translate(-183.984 -172.441)" fill="#fff"></path></g><g data-lg="t"><path d="M196.951,211.217H206.3v9.25H210.6v-9.25h9.352v-4.294h-23Z" transform="translate(-188.278 -183.858)" fill="#fff"></path></g><g data-lg="v"><path d="M219.956,189.772v-5.036l-11.513,7.054-11.513-7.053v5.036l11.513,7.054Z" transform="translate(-188.272 -176.512)" fill="#fff"></path></g></g></svg><sc-if value="{{ logoTxt }}" hint-placeholder-val="{{ true }}"><span style="white-space:nowrap">MT hekwerken</span></sc-if>
     </a>
     <sc-if value="{{ navDesk }}" hint-placeholder-val="{{ true }}"><div style="flex:1;min-width:200px;max-width:380px;margin-left:auto;background:#fff;border-radius:6px;padding:12px 16px;display:flex;align-items:center;gap:10px;color:#8A8C96;font-size:14px">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>Ik ben op zoek naar…
@@ -56,7 +56,7 @@ button{font-family:inherit}
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.8"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8a3 3 0 016 0"></path></svg>
       <span style="position:absolute;top:4px;right:2px;background:#11131F;color:#fff;border-radius:8px;font-size:10px;min-width:16px;height:16px;display:grid;place-items:center;font-weight:600">{{ cartCount }}</span>
     </div>
-    <sc-if value="{{ navMob }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mt-mobile-nav" from="./mobile-nav.js" hint-size="96px,44px"></x-import></sc-if>
+    <sc-if value="{{ navMob }}" hint-placeholder-val="{{ false }}"><x-import style="flex:none" component-from-global-scope="mt-mobile-nav" from="./mobile-nav.js" hint-size="96px,44px"></x-import></sc-if>
   </div>
   <sc-if value="{{ navDesk }}" hint-placeholder-val="{{ true }}"><nav style="background:#F7F5F1;border-top:1px solid #E6E2DA">
     <div class="hs" style="max-width:1320px;margin:0 auto;padding:14px clamp(16px,4vw,40px);display:flex;align-items:center;gap:32px;font-weight:500;font-size:16px;overflow-x:auto;white-space:nowrap">
@@ -93,7 +93,7 @@ button{font-family:inherit}
         <button onClick="{{ nextImg }}" aria-label="Volgende" style="position:absolute;left:72px;bottom:16px;width:48px;height:48px;border-radius:99px;border:none;background:#fff;cursor:pointer;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg></button>
         <span style="position:absolute;right:16px;bottom:16px;background:#fff;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;opacity:{{ imgLabelOp }};transition:opacity .25s ease;pointer-events:none">{{ imgLabel }}</span>
       </div>
-      <div class="hs" style="display:grid;grid-auto-flow:column;grid-auto-columns:88px;gap:10px;overflow-x:auto">
+      <div class="hs" style="display:grid;grid-auto-flow:column;grid-auto-columns:{{ thumbW }};gap:{{ thumbGap }};overflow-x:auto">
         <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="7">
           <button onClick="{{ g.pick }}" style="padding:0;border:2px solid {{ g.border }};border-radius:6px;overflow:hidden;aspect-ratio:1/1;cursor:pointer;background:#F1EEE8"><img src="{{ g.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button>
         </sc-for>
@@ -103,13 +103,13 @@ button{font-family:inherit}
 
     <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
 
-      <div style="display:flex;flex-direction:column;gap:14px;padding-bottom:22px;border-bottom:1px solid #E6E2DA">
-        <a href="#reviews" style="display:flex;align-items:center;gap:8px;font-size:13px;color:#3E4150;text-decoration:none;width:fit-content">
-          <span style="color:#FB7029;font-size:14px;letter-spacing:1px">★★★★★</span>
-          <span><strong style="font-weight:600;color:#11131F">8,8</strong> · 220 Google reviews</span>
-        </a>
+      <div id="pdp-head" style="display:flex;flex-direction:column;gap:14px;padding-bottom:22px;border-bottom:1px solid #E6E2DA">
         <h1 style="margin:0;font-size:clamp(28px,2.6vw,38px);line-height:1.08;letter-spacing:-.025em;font-weight:600;text-wrap:balance">Composiet schutting {{ finishName }} {{ colorName }}</h1>
-        <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;max-width:48ch;text-wrap:pretty">Warme houtlook, geen onderhoud. Robuuste planken van 2,5 cm met een geborsteld teak motief en 15 jaar garantie.</p>
+        <span style="margin-top:-6px;font-size:15px;color:#3E4150">Vanaf <strong style="font-weight:600;color:#11131F">€ 129,95</strong> per paneel</span>
+        <div style="position:relative;max-width:48ch">
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;text-wrap:pretty;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{ descClamp }};overflow:hidden">Warme houtlook, geen onderhoud. Robuuste planken van 2,5 cm met een geborsteld teak motief en 15 jaar garantie. Het rhombus profiel geeft een strak, modern lijnenspel. De panelen zijn kleurvast en rotten of splinteren niet.<sc-if value="{{ descOpen }}" hint-placeholder-val="{{ false }}"> <button type="button" onClick="{{ toggleDesc }}" aria-expanded="{{ descOpen }}" style="display:inline-flex;align-items:center;gap:5px;border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;color:#11131F;line-height:1.55;white-space:nowrap">Lees minder<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.6" stroke-linecap="round" style="transform:rotate(180deg)"><path d="M6 9l6 6 6-6"></path></svg></button></sc-if></p>
+          <sc-if value="{{ descClosed }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;right:0;bottom:0;display:flex;align-items:center;padding-left:44px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff 40px)"><button type="button" onClick="{{ toggleDesc }}" aria-expanded="{{ descOpen }}" style="display:inline-flex;align-items:center;gap:5px;border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;color:#11131F;line-height:1.55;white-space:nowrap">Lees meer<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.6" stroke-linecap="round" style="transform:none"><path d="M6 9l6 6 6-6"></path></svg></button></span></sc-if>
+        </div>
         <div style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:#11131F">
           <div style="display:flex;align-items:center;gap:9px;height:22px">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B51A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
@@ -200,9 +200,10 @@ button{font-family:inherit}
       </sc-if>
 
 
-      <button onClick="{{ addToCart }}" style="width:100%;height:58px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:18px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;font-family:inherit" style-hover="background:#E9611C">
+      <button id="pdp-cta" onClick="{{ addToCart }}" style="width:100%;height:58px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:18px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;font-family:inherit" style-hover="background:#E9611C">
         <span>{{ ctaLabel }}</span><span style="opacity:.6">·</span><span>{{ totalStr }}</span>
       </button>
+      <span style="display:flex;align-items:center;gap:8px;font-size:13px;color:#6B6E7A;margin-top:-6px"><span style="flex:none;width:6px;height:6px;border-radius:99px;background:#00B51A"></span>Op voorraad · levering in 5–10 werkdagen, of gratis afhalen in Boekel</span>
 
 
       <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:14px;margin-top:-6px">
@@ -221,30 +222,6 @@ button{font-family:inherit}
 
 
       
-      <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
-          <strong style="font-size:17px;font-weight:600;letter-spacing:-.01em">Elke maand 1000+ nieuwe projecten</strong>
-                  </div>
-        <div class="hs" onScroll="{{ onMiniScroll }}" style="display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 24px) / 3.3);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory">
-          <sc-for list="{{ videos }}" as="v" hint-placeholder-count="4">
-            <div style="position:relative;aspect-ratio:9/14.5;border-radius:8px;overflow:hidden;background:#1B1D2A;scroll-snap-align:start">
-              <video data-hls="{{ v.src }}" poster="{{ v.poster }}" playsInline="{{ true }}" loop="{{ true }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
-            </div>
-          </sc-for>
-        </div>
-        <div style="height:3px;border-radius:99px;background:#E6E2DA;overflow:hidden"><div style="height:100%;width:{{ miniProgress }};background:#11131F;border-radius:99px;transition:width .15s"></div></div>
-        <span style="display:flex;align-items:center;gap:8px;font-size:13px;color:#6B6E7A;margin-top:4px"><span style="width:6px;height:6px;border-radius:99px;background:#00B51A"></span>Op voorraad · levering in 5–10 werkdagen, of gratis afhalen in Boekel</span>
-      </div>
-      <sc-if value="{{ helpVisible }}" hint-placeholder-val="{{ false }}"><div style="position:relative;margin-top:6px">
-  <a href="#contact" style="position:relative;display:flex;align-items:center;background:#F1EEE8;border-radius:14px;overflow:hidden;height:96px" style-hover="background:#ECE8E0">
-    <div style="position:relative;z-index:1;padding:0 0 0 18px;display:flex;flex-direction:column;gap:6px;max-width:58%">
-      <strong style="font-size:15px;font-weight:600;line-height:1.2">Hulp nodig met jouw project? Vraag ons team!</strong>
-      <span style="font-size:13px;color:#3E4150;display:flex;align-items:center;gap:6px">Bereken je prijs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
-    </div>
-    <img src="assets/help-team-sm.png" alt="Ons team" style="position:absolute;right:0;bottom:0;height:100%;width:auto;max-width:44%;object-fit:contain;object-position:right bottom">
-  </a>
-  <button onClick="{{ closeHelp }}" aria-label="Sluiten" style="position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:99px;border:none;background:#11131F;color:#fff;cursor:pointer;display:grid;place-items:center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
-</div></sc-if>
     </div>
   </div>
 </section>
@@ -313,24 +290,32 @@ button{font-family:inherit}
   </div>
 </sc-if>
 
-<section data-screen-label="02 Video's" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
-  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px">
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <h2 style="margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.03em;font-weight:600">Elke maand 1000+<br>nieuwe projecten</h2>
+<section data-screen-label="02 Video" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px">
+    <h2 style="margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.03em;font-weight:600;max-width:16ch;text-wrap:balance">Strak tot in elke lijn</h2>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;max-width:40ch">
+      <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;max-width:40ch;text-wrap:pretty">Een warme teak houtlook met een strak rhombus profiel. Zo staan onze schuttingen bij klanten in de tuin.</p>
+      <button type="button" onClick="{{ toggleVidInfo }}" aria-expanded="{{ vidInfoOpen }}" style="display:flex;align-items:center;gap:6px;border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:#11131F">{{ vidInfoLabel }}<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.6" stroke-linecap="round" style="transform:{{ vidInfoRot }};transition:transform .2s"><path d="M6 9l6 6 6-6"></path></svg></button>
     </div>
-    <a href="#" style="display:flex;align-items:center;gap:12px;font-weight:500"><span style="display:flex;width:40px;height:40px;border-radius:99px;border:1.5px solid #11131F;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>Volg ons op Instagram &amp; TikTok</a>
   </div>
-  <div class="hs" style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory">
-    <sc-for list="{{ videos }}" as="v" hint-placeholder-count="4">
-      <div style="position:relative;aspect-ratio:9/16;border-radius:10px;overflow:hidden;background:#1B1D2A;scroll-snap-align:start">
-        <video data-hls="{{ v.src }}" poster="{{ v.poster }}" playsInline="{{ true }}" loop="{{ true }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
-        <div style="position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,rgba(14,17,32,.75))"></div>
-        <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:10px;color:#fff">
-          <img src="assets/mt-mark.svg" alt="" style="width:32px;height:32px">
-          <span style="display:flex;flex-direction:column;line-height:1.2"><strong style="font-size:14px;font-weight:600">@mthekwerken</strong><span style="font-size:12px;opacity:.85">Rhombus teak</span></span>
-        </div>
+  <sc-if value="{{ vidInfoOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px clamp(24px,4vw,56px);padding:28px 0 36px;margin-bottom:32px;border-top:1px solid #E6E2DA;border-bottom:1px solid #E6E2DA;animation:upsellIn .35s cubic-bezier(.22,1,.36,1) both">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <h3 style="margin:0;font-size:18px;font-weight:600;letter-spacing:-.01em">Rhombus teak</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3E4150;text-wrap:pretty">Robuuste planken van 2,5 cm met een geborsteld teak motief. Het rhombus profiel geeft een strak, modern lijnenspel en 15 jaar garantie.</p>
       </div>
-    </sc-for>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <h3 style="margin:0;font-size:18px;font-weight:600;letter-spacing:-.01em">Duurzaam en onderhoudsvrij</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3E4150;text-wrap:pretty">Gerecycled kunststof en houtvezels met een co-extrusie beschermlaag. Geen rot, splinters of verkleuring, en nooit meer schilderen.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <h3 style="margin:0;font-size:18px;font-weight:600;letter-spacing:-.01em">Eenvoudige montage</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3E4150;text-wrap:pretty">De planken schuif je tussen de aluminium palen. Met afdekkappen en afwerkprofielen staat je schutting strak afgewerkt.</p>
+      </div>
+    </div>
+  </sc-if>
+  <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#1B1D2A">
+    <video data-hls="https://vz-45716865-4aa.b-cdn.net/fe1e1556-7d01-41de-92dc-3a0b41596335/playlist.m3u8" poster="https://vz-45716865-4aa.b-cdn.net/fe1e1556-7d01-41de-92dc-3a0b41596335/thumbnail.jpg" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
   </div>
 </section>
 
@@ -471,88 +456,34 @@ button{font-family:inherit}
   </div>
 </section>
 
-<section id="hs-parallax" data-screen-label="03a Hotspots" style="margin-top:clamp(64px,9vw,104px);position:relative;width:100%;aspect-ratio:2200/1467;max-height:110vh;min-height:520px;overflow:hidden;background:#1B1D2A">
-  <div onClick="{{ hsClose }}" style="position:absolute;inset:0">
-    <div style="position:absolute;left:0;top:-15%;width:100%;height:130%;transform:{{ plxTf }};will-change:transform"><img src="assets/hs-man.jpg" alt="Composiet schutting Rhombus teak in een tuin" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-    <sc-for list="{{ hotspots }}" as="h" hint-placeholder-count="3">
-      <div style="position:absolute;left:{{ h.x }};top:{{ h.y }};transform:translate(-50%,-50%)">
-        <button data-hotspot-target="{{ h.key }}" data-hotspot-status="{{ h.status }}" onClick="{{ h.open }}" aria-label="{{ h.aria }}" aria-expanded="{{ h.expanded }}" style="width:56px;height:56px;padding:18px;border-radius:999px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:{{ h.bg }};color:{{ h.fg }};transform:{{ h.tf }};transition:transform .3s cubic-bezier(.38,.005,.215,1), background-color .3s cubic-bezier(.38,.005,.215,1)">
-          <svg width="100%" viewBox="0 0 24 24" fill="none"><path d="M19 5L5 19" stroke="currentColor" stroke-width="2.5"></path><path d="M5 5L19 19" stroke="currentColor" stroke-width="2.5"></path></svg>
-        </button>
-        <sc-if value="{{ h.tip }}" hint-placeholder-val="{{ false }}"><div onClick="{{ h.open }}" style="position:absolute;left:72px;top:50%;transform:translateY(-50%);width:260px;background:#F1EEE8;border-radius:16px;padding:16px 18px;box-shadow:0 14px 40px rgba(14,17,32,.22);cursor:pointer;display:flex;flex-direction:column;gap:6px;color:#11131F"><strong style="font-size:17px;font-weight:600;line-height:1.15">{{ h.tipTitle }}</strong><span style="font-size:14px;line-height:1.45;color:#3E4150">{{ h.tipText }}</span><span style="font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px">Lees meer</span></div></sc-if>
-        <sc-if value="{{ h.noTip }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;left:50%;top:66px;transform:translateX(-50%);white-space:nowrap;font-size:13px;font-weight:600;background:#fff;border-radius:8px;padding:5px 12px;box-shadow:0 4px 14px rgba(14,17,32,.12);pointer-events:none">{{ h.label }}</span></sc-if>
-      </div>
-    </sc-for>
-    </div>
-    
-    
+<section data-screen-label="06 Installatie" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px">
+    <h2 style="margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.03em;font-weight:600;max-width:16ch;text-wrap:balance">Zelf plaatsen, stap voor stap</h2>
+    <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;max-width:40ch;text-wrap:pretty">Bekijk hoe je de Rhombus schutting monteert en wat je per paneel geleverd krijgt.</p>
   </div>
-<div data-hotspot-modal-init="" data-hotspot-modal-status="{{ hsModalStatus }}" role="dialog" aria-modal="true" aria-hidden="{{ hsHidden }}" aria-label="Productdetails" style="position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden">
-  <div style="position:absolute;top:0;right:max(clamp(16px,4vw,40px), calc((100% - 1320px) / 2 + 40px));height:100%;width:calc(100% - 2 * clamp(16px,4vw,40px));max-width:30em;padding:clamp(16px,3vw,40px) 0;display:flex;align-items:center;transform:{{ hsSide }};opacity:{{ hsSideOp }};transition:transform .6s cubic-bezier(.625,.05,0,1)">
-    <div style="pointer-events:auto;position:relative;flex:1;height:100%;max-height:54em;background:#F1EEE8;border-radius:28px;display:flex;flex-direction:column;overflow:auto;box-shadow:0 24px 60px rgba(14,17,32,.2)">
-      <div style="position:sticky;top:20px;height:0;z-index:2;display:flex;justify-content:flex-end;padding:0 24px">
-        <button data-hotspot-control="close" onClick="{{ hsClose }}" aria-label="Sluiten" style="width:44px;height:44px;padding:13px;border-radius:99px;border:none;background:#fff;color:#11131F;cursor:pointer;display:flex"><svg width="100%" viewBox="0 0 24 24" fill="none"><path d="M19 5L5 19" stroke="currentColor" stroke-width="2.5"></path><path d="M5 5L19 19" stroke="currentColor" stroke-width="2.5"></path></svg></button>
-      </div>
-      <div style="flex:1;position:relative;display:grid">
-        <sc-for list="{{ hsCards }}" as="c" hint-placeholder-count="3">
-          <div data-hotspot-name="{{ c.key }}" data-hotspot-status="{{ c.status }}" style="grid-area:1 / 1;display:flex;flex-direction:column;padding:12px 12px 0;opacity:{{ c.op }};visibility:{{ c.vis }};transform:{{ c.tf }};transition:opacity .6s cubic-bezier(.625,.05,0,1), transform .6s cubic-bezier(.625,.05,0,1)">
-            <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:#fff"><img src="{{ c.img }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ c.fit }};object-position:{{ c.pos }}"></div>
-            <div style="padding:30px 18px;display:flex;flex-direction:column;gap:18px">
-              <h3 style="margin:0;font-size:clamp(28px,3vw,36px);line-height:.98;letter-spacing:-.04em;font-weight:600">{{ c.h }}</h3>
-              <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;text-wrap:pretty">{{ c.p1 }}</p>
-              <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;text-wrap:pretty">{{ c.p2 }}</p>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-      <div style="padding:0 24px 24px;display:flex;justify-content:space-between;align-items:center">
-        <button data-hotspot-control="prev" onClick="{{ hsPrev }}" aria-label="Vorige" style="width:44px;height:44px;padding:13px;border-radius:99px;border:none;background:#fff;color:#11131F;cursor:pointer;display:flex;transform:scaleX(-1)"><svg width="100%" viewBox="0 0 24 24" fill="none"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-width="2.5"></path><path d="M21 12H2" stroke="currentColor" stroke-width="2.5"></path></svg></button>
-        <div data-hotspot-generate-dots="" style="display:flex;gap:6px;align-items:center">
-          <sc-for list="{{ hsCards }}" as="c" hint-placeholder-count="3"><button data-hotspot-control="{{ c.num }}" data-hotspot-control-status="{{ c.dotStatus }}" onClick="{{ c.go }}" aria-label="{{ c.dotAria }}" style="width:12px;height:12px;padding:0;border-radius:99px;border:2.5px solid #F1EEE8;background:{{ c.dot }};cursor:pointer"></button></sc-for>
-        </div>
-        <button data-hotspot-control="next" onClick="{{ hsNext }}" aria-label="Volgende" style="width:44px;height:44px;padding:13px;border-radius:99px;border:none;background:#11131F;color:#fff;cursor:pointer;display:flex"><svg width="100%" viewBox="0 0 24 24" fill="none"><path d="M14 19L21 12L14 5" stroke="currentColor" stroke-width="2.5"></path><path d="M21 12H2" stroke="currentColor" stroke-width="2.5"></path></svg></button>
-      </div>
-    </div>
+  <div onClick="{{ soundInstall.toggle }}" style="position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#1B1D2A;cursor:pointer">
+    <video data-hls="https://vz-45716865-4aa.b-cdn.net/695d9d2c-30a3-4556-b96c-41f9bf09f693/playlist.m3u8" poster="https://vz-45716865-4aa.b-cdn.net/695d9d2c-30a3-4556-b96c-41f9bf09f693/thumbnail.jpg" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+    <span style="position:absolute;right:clamp(14px,2vw,24px);top:clamp(14px,2vw,24px);height:44px;padding:0 16px 0 14px;border-radius:8px;background:rgba(14,17,32,.45);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;pointer-events:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"></path><path d="{{ soundInstall.icon }}"></path></svg>{{ soundInstall.label }}</span>
   </div>
-</div>
-</section>
-
-<section data-screen-label="03c Vergelijk" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,5vw,72px);align-items:center">
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <h2 style="margin:0;font-size:clamp(32px,3.6vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:600;max-width:14ch">Composiet of een houten schutting?</h2>
-      <p style="margin:0;font-size:16px;line-height:1.55;color:#3E4150;max-width:42ch">Hout is goedkoop in aanschaf, maar vraagt elk jaar onderhoud. Composiet koop je één keer.</p>
-    </div>
-    <div style="border:1px solid #E6E2DA;border-radius:12px;overflow:hidden">
-      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:#F7F5F1;font-size:14px;font-weight:600"><span style="padding:14px 18px"></span><span style="padding:14px 12px;text-align:center;background:#11131F;color:#fff">Rhombus composiet</span><span style="padding:14px 12px;text-align:center;color:#6B6E7A">Hout</span></div>
-      <sc-for list="{{ compare }}" as="r" hint-placeholder-count="5">
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;border-top:1px solid #EEEBE5;font-size:15px;align-items:center">
-          <span style="padding:14px 18px">{{ r.k }}</span>
-          <span style="padding:14px 12px;display:flex;justify-content:center;background:#FBFAF8"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B51A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
-          <span style="padding:14px 12px;display:flex;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4B6BE" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>
+  <div role="tablist" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+    <button type="button" onClick="{{ inst.guide.pick }}" aria-pressed="{{ inst.guide.on }}" style="height:44px;padding:0 20px;border-radius:99px;border:1.5px solid #11131F;background:{{ inst.guide.bg }};color:{{ inst.guide.fg }};font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s,color .2s">Bekijk montagehandleiding</button>
+    <button type="button" onClick="{{ inst.box.pick }}" aria-pressed="{{ inst.box.on }}" style="height:44px;padding:0 20px;border-radius:99px;border:1.5px solid #11131F;background:{{ inst.box.bg }};color:{{ inst.box.fg }};font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s,color .2s">Wat zit er in het pakket</button>
+  </div>
+  <sc-if value="{{ inst.guide.on }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px clamp(24px,3vw,40px);padding:28px 0 0;margin-top:24px;border-top:1px solid #E6E2DA;animation:upsellIn .35s cubic-bezier(.22,1,.36,1) both">
+      <sc-for list="{{ instSteps }}" as="st" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:14px;font-weight:600;color:#FB7029;font-variant-numeric:tabular-nums">{{ st.n }}</span>
+          <h3 style="margin:0;font-size:18px;font-weight:600;letter-spacing:-.01em">{{ st.t }}</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#3E4150;text-wrap:pretty">{{ st.d }}</p>
         </div>
       </sc-for>
     </div>
-  </div>
-</section>
-
-<section data-screen-label="03b Productvideo" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
- <div onClick="{{ soundProduct.toggle }}" style="position:relative;border-radius:12px;overflow:hidden;background:#1B1D2A;aspect-ratio:16/9;cursor:pointer">
-  <video data-hls="https://vz-45716865-4aa.b-cdn.net/383c129c-ac29-495b-bf4d-7cf4c897e2ba/playlist.m3u8" poster="https://vz-45716865-4aa.b-cdn.net/383c129c-ac29-495b-bf4d-7cf4c897e2ba/thumbnail.jpg" playsInline="{{ true }}" loop="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
-  <span style="position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:99px;background:rgba(14,17,32,.45);backdrop-filter:blur(8px);display:grid;place-items:center;pointer-events:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"></path><path d="{{ soundProduct.icon }}"></path></svg></span>
- </div>
-</section>
-
-<section data-screen-label="04 In de doos" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:stretch">
-    <div style="position:relative;border-radius:12px;overflow:hidden;min-height:440px;background:#F1EEE8">
-      <img src="assets/carry-plank.jpg" alt="Composiet planken Rhombus teak" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></img>
-    </div>
-    <div style="display:flex;flex-direction:column;justify-content:center;gap:32px;padding:8px 0">
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <h2 style="margin:0;font-size:clamp(32px,3.6vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:600">Wat zit er in de doos?</h2>
-        <p style="margin:0;font-size:16px;color:#3E4150">Per paneel van 180 cm breed. Alles wat je nodig hebt, behalve de palen.</p>
-      </div>
+    <a href="https://www.mthekwerken.nl/klantenservice/montagehandleidingen/" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:15px;font-weight:600;color:#11131F;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#C9C4BA">Download de volledige montagehandleiding (PDF)</a>
+  </sc-if>
+  <sc-if value="{{ inst.box.on }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:24px;padding:28px 0 0;margin-top:24px;border-top:1px solid #E6E2DA;max-width:760px;animation:upsellIn .35s cubic-bezier(.22,1,.36,1) both">
+      <p style="margin:0;font-size:16px;color:#3E4150">Per paneel van 180 cm breed. Alles wat je nodig hebt, behalve de palen.</p>
       <div style="display:flex;flex-direction:column;gap:18px">
         <sc-for list="{{ inBox }}" as="i" hint-placeholder-count="3">
           <div style="display:flex;align-items:baseline;gap:14px;font-size:17px">
@@ -569,38 +500,7 @@ button{font-family:inherit}
         <button onClick="{{ addPalen }}" style="height:44px;border:1.5px solid #11131F;border-radius:8px;background:#fff;color:#11131F;padding:0 18px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit" style-hover="background:#11131F;color:#fff">{{ palenCta }}</button>
       </div>
     </div>
-  </div>
-</section>
-
-<section data-screen-label="05 Video's" style="background:#0E1120;color:#fff;margin-top:clamp(64px,9vw,104px)">
-  <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px)">
-    <div data-lib-player="" onClick="{{ libSound }}" style="position:relative;border-radius:14px;overflow:hidden;background:#1B1D2A;aspect-ratio:16/9;cursor:pointer;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)">
-      <sc-for list="{{ libVideos }}" as="v" hint-placeholder-count="1">
-        <div style="position:absolute;inset:0;opacity:{{ v.op }};transition:opacity .6s ease;pointer-events:none">
-          <img src="{{ v.poster }}" alt="" style="position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;filter:blur(36px) brightness(.55);display:block"></img>
-          <video data-hls="{{ v.src }}" data-lib-i="{{ v.i }}" poster="{{ v.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:relative;width:100%;height:100%;object-fit:contain;display:block"></video>
-        </div>
-      </sc-for>
-      <div style="position:absolute;inset:0 0 auto 0;height:38%;background:linear-gradient(180deg,rgba(14,17,32,.6),transparent);pointer-events:none"></div>
-      <div style="position:absolute;left:clamp(18px,2.5vw,32px);top:clamp(16px,2.2vw,28px);right:100px;display:flex;flex-direction:column;gap:6px;pointer-events:none">
-                <span style="font-size:clamp(20px,2.4vw,32px);font-weight:600;letter-spacing:-.02em;line-height:1.1">{{ libActive.title }}</span>
-      </div>
-      <span style="position:absolute;right:clamp(16px,2.2vw,28px);top:clamp(16px,2.2vw,28px);height:44px;padding:0 16px 0 14px;border-radius:8px;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;pointer-events:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"></path><path d="{{ libSoundIcon }}"></path></svg>{{ libSoundLabel }}</span>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:20px">
-      <sc-for list="{{ libVideos }}" as="v" hint-placeholder-count="3">
-        <button type="button" onClick="{{ v.pick }}" style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:12px;text-align:left;border:none;background:transparent;padding:0;cursor:pointer;font:inherit;color:#fff;opacity:{{ v.dim }};transition:opacity .25s" style-hover="opacity:1">
-          <span style="position:relative;display:block;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#1B1D2A;box-shadow:{{ v.ring }}">
-            <video data-hls="{{ v.src }}" data-thumb="1" poster="{{ v.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" autoPlay="{{ true }}" style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none"></video>
-            <span style="position:absolute;left:10px;bottom:10px;height:28px;padding:0 10px;border-radius:8px;background:{{ v.dot }};display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M7 4v16l13-8z"></path></svg>{{ v.badge }}</span>
-          </span>
-          <span style="display:flex;flex-direction:column;gap:3px">
-                        <span style="font-size:16px;font-weight:600;line-height:1.3">{{ v.title }}</span>
-          </span>
-        </button>
-      </sc-for>
-    </div>
-  </div>
+  </sc-if>
 </section>
 
 <section id="reviews" data-screen-label="07 Reviews" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
@@ -642,27 +542,6 @@ button{font-family:inherit}
   </div>
 </section>
 
-
-
-<section data-screen-label="09 Blog" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
-  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:32px">
-    <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.05;letter-spacing:-.03em;font-weight:600">Lees verder</h2>
-    <a href="#" style="font-size:15px;font-weight:500;text-decoration:underline;text-underline-offset:4px">Alle artikelen</a>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
-    <sc-for list="{{ blogs }}" as="p" hint-placeholder-count="3">
-      <a href="#" style="background:#F3F3F4;border:1px solid #E4E4E7;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;color:#11131F">
-        <img src="{{ p.img }}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block"></img>
-        <div style="padding:20px 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex:1">
-          <span style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:19px;font-weight:600;line-height:1.25;text-wrap:balance">{{ p.t }}</strong><span style="font-size:14px;color:#6B6E7A">Lees artikel</span></span>
-          <span style="flex:none;width:48px;height:48px;border-radius:99px;border:1.5px solid #11131F;display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
-        </div>
-      </a>
-    </sc-for>
-  </div>
-</section>
-
-
 <section id="contact" data-screen-label="10 Contact" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,5vw,72px);align-items:center">
     <div style="display:flex;flex-direction:column;gap:28px">
@@ -693,6 +572,25 @@ button{font-family:inherit}
     </div>
   </div>
 </section>
+
+<section data-screen-label="09 Blog" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 0">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:32px">
+    <h2 style="margin:0;font-size:clamp(30px,3.2vw,42px);line-height:1.05;letter-spacing:-.03em;font-weight:600">Lees verder</h2>
+    <a href="#" style="font-size:15px;font-weight:500;text-decoration:underline;text-underline-offset:4px">Alle artikelen</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+    <sc-for list="{{ blogs }}" as="p" hint-placeholder-count="3">
+      <a href="#" style="background:#F3F3F4;border:1px solid #E4E4E7;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;color:#11131F">
+        <img src="{{ p.img }}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block"></img>
+        <div style="padding:20px 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex:1">
+          <span style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:19px;font-weight:600;line-height:1.25;text-wrap:balance">{{ p.t }}</strong><span style="font-size:14px;color:#6B6E7A">Lees artikel</span></span>
+          <span style="flex:none;width:48px;height:48px;border-radius:99px;border:1.5px solid #11131F;display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
 </main>
 
 <section data-screen-label="11 Passie" style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(16px,4vw,40px) 72px">
@@ -752,12 +650,13 @@ button{font-family:inherit}
   </div>
 </footer>
 
+<sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}"><div style="height:76px"></div></sc-if>
 <sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid #E6E2DA;box-shadow:0 -8px 30px rgba(14,17,32,.08)">
     <div style="max-width:1320px;margin:0 auto;padding:12px clamp(16px,4vw,40px);display:flex;align-items:center;gap:16px">
       <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><img src="https://www.mthekwerken.nl/wp-content/uploads/Highlander-composiet-schutting-rhombus-teak-e1773499212856.webp" alt="Composiet schutting Rhombus teak" style="width:52px;height:52px;border-radius:6px;object-fit:cover;background:#F1EEE8"></sc-if>
       <div style="display:flex;flex-direction:column;min-width:0;flex:1"><strong style="font-size:16px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Composiet schutting Rhombus {{ colorName }}</strong><span style="font-size:13px;color:#6B6E7A">{{ stickySub }}</span></div>
-      <button onClick="{{ addToCart }}" style="height:50px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:16px;font-weight:600;cursor:pointer;padding:0 16px;white-space:nowrap;flex:none;max-width:52%;display:flex;align-items:center;justify-content:center;gap:6px"><span>{{ ctaLabel }}</span><sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><span>· {{ totalStr }}</span></sc-if></button>
+      <button onClick="{{ stickyCta }}" style="height:50px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:16px;font-weight:600;cursor:pointer;padding:0 16px;white-space:nowrap;flex:none;max-width:52%;display:flex;align-items:center;justify-content:center;gap:6px"><span>{{ ctaLabel }}</span><sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><span>· {{ totalStr }}</span></sc-if></button>
     </div>
   </div>
 </sc-if>
@@ -830,6 +729,7 @@ button{font-family:inherit}
 class Component extends DCLogic {
   state = { mob: typeof window !== 'undefined' && window.innerWidth < 760, tab: typeof window !== 'undefined' && window.innerWidth < 1100, img: 0, height: '180', pattern: 'Horizontaal', qty: 5, addons: { paal: false }, faq: 0, sticky: false, added: false };
   componentDidMount() {
+    this.onXs = () => { const x = window.innerWidth < 480; if (x !== this.state.xs) this.setState({ xs: x }); }; this.onXs(); window.addEventListener('resize', this.onXs);
     this.onKey = (e) => { if (e.key === 'Escape' && (this.state.hsOpen ?? true)) this.setState({ hsOpen: false }); }; window.addEventListener('keydown', this.onKey);
     this.onScroll = () => { const hp = document.getElementById('hs-parallax'); if (hp) { const r = hp.getBoundingClientRect(); if (r.bottom > 0 && r.top < window.innerHeight) { const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight; const v = Math.round(p * -r.height * 0.1 * 10) / 10; if (v !== this.state.plx) this.setState({ plx: v }); } } const y = window.scrollY; const s = y > 900, c = y > 160; const pe = document.querySelector('[data-screen-label="01 Product"]'); const gl = document.getElementById('pdp-gallery'); const past = !this.state.mob || !gl || gl.getBoundingClientRect().bottom < 0; const h = past && (pe ? pe.getBoundingClientRect().bottom > window.innerHeight * 0.75 : y < 1200); if (s !== this.state.sticky || c !== this.state.compact || h !== this.state.helpIn) this.setState({ sticky: s, compact: c, helpIn: h }); };
     window.addEventListener('scroll', this.onScroll, { passive: true });
@@ -995,6 +895,8 @@ class Component extends DCLogic {
       ['Kan ik mijn bestelling zelf ophalen?', 'Ja, gratis afhalen in ons magazijn in Boekel kan op afspraak. Meet je aanhanger of bus vooraf goed op en neem voldoende spanbanden mee.'],
     ];
     return {
+      logoTxt: !this.state.xs, hdrWrap: (typeof window !== 'undefined' && window.innerWidth < 1100) ? 'nowrap' : 'wrap',
+      vidInfoOpen: !!this.state.vidInfo, vidInfoLabel: this.state.vidInfo ? 'Lees minder' : 'Lees meer', vidInfoRot: this.state.vidInfo ? 'rotate(180deg)' : 'none', toggleVidInfo: () => this.setState(st => ({ vidInfo: !st.vidInfo })), descOpen: !!this.state.descOpen, descClosed: !this.state.descOpen, descClamp: this.state.descOpen ? 'unset' : 2, descLabel: this.state.descOpen ? 'Lees minder' : 'Lees meer', descRot: this.state.descOpen ? 'rotate(180deg)' : 'none', toggleDesc: () => this.setState(st => ({ descOpen: !st.descOpen })),
       stars5: [1,2,3,4,5],
       cartCount: s.added ? s.qty + extra : 0,
       mainImg: gallery[s.img], mainIsVideo: s.img === 0,
@@ -1100,6 +1002,13 @@ class Component extends DCLogic {
       miniProgress: Math.round(30 + 70 * (s.mini || 0)) + '%',
       onMiniScroll: (e) => { const el = e.currentTarget; const max = el.scrollWidth - el.clientWidth; this.setState({ mini: max > 0 ? el.scrollLeft / max : 0 }); },
       ...this.libVals(),
+      inst: (() => { const t = this.state.instTab || 'guide'; const mk = (id) => ({ on: t === id, bg: t === id ? '#11131F' : '#fff', fg: t === id ? '#fff' : '#11131F', pick: () => this.setState({ instTab: id }) }); return { guide: mk('guide'), box: mk('box') }; })(),
+      instSteps: [
+        { n: '01', t: 'Palen plaatsen', d: 'Zet de aluminium palen op 180 cm hart-op-hart en stort ze in met betonmortel.' },
+        { n: '02', t: 'Onderlijst leggen', d: 'Leg de afwerklijst onderin tussen de palen, zodat de planken vrij van de grond staan.' },
+        { n: '03', t: 'Planken schuiven', d: 'Schuif de composiet planken één voor één van bovenaf tussen de palen.' },
+        { n: '04', t: 'Afwerken', d: 'Sluit af met de bovenlijst en plaats de afdekkappen op de palen.' }
+      ],
       soundProduct: this.soundCtl('product'), soundInstall: this.soundCtl('install'), soundStory: this.soundCtl('story'),
       footerCols: [
         { t: 'Klantenservice', links: ['Contact', 'Klantenservice', 'Veelgestelde vragen', 'Retourneren', 'Garantie', 'Klachten', 'Levertijd & verzendkosten', 'Betaalmethodes', 'Montagehandleidingen'] },
@@ -1171,8 +1080,9 @@ class Component extends DCLogic {
         { t: 'Composiet tuindeur Rhombus teak', price: 'Vanaf € 369,00', img: 'assets/carry-alley.jpg' },
         { t: 'Zak betonmortel 25 kg', price: '€ 9,95', img: 'assets/watering.jpg' }
       ],
-      showSticky: (this.props.stickyBar ?? true) && s.sticky,
-      isDesk: !s.mob, isMob: !!s.mob, navDesk: !s.tab, navMob: !!s.tab, galPos: s.mob ? 'static' : 'sticky',
+      showSticky: (this.props.stickyBar ?? true) && (s.sticky || s.mob),
+      stickyCta: () => { const cta = document.getElementById('pdp-cta'), hd = document.getElementById('pdp-head'); if (this.state.mob && cta && hd && cta.getBoundingClientRect().top > window.innerHeight - 90) { window.scrollTo({ top: hd.getBoundingClientRect().bottom + window.scrollY - 70, behavior: 'smooth' }); return; } this.setState({ added: true }); clearTimeout(this.t); this.t = setTimeout(() => this.setState({ added: false }), 2200); },
+      isDesk: !s.mob, isMob: !!s.mob, thumbW: s.mob ? '52px' : '88px', thumbGap: s.mob ? '8px' : '10px', navDesk: !s.tab, navMob: !!s.tab, galPos: s.mob ? 'static' : 'sticky',
       stickySub: s.qty + ' panelen · ' + s.height + ' cm · ' + s.pattern.toLowerCase()
     };
   }

@@ -48,7 +48,7 @@ button,input,select{font-family:inherit;color:inherit}
 
 <header style="background:#F1EEE8">
   <div style="max-width:1320px;margin:0 auto;padding:12px clamp(20px,5vw,40px);display:flex;align-items:center;gap:20px">
-    <a href="https://www.mthekwerken.nl" style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:clamp(19px,2vw,24px);letter-spacing:-.02em;flex:none"><x-import component-from-global-scope="mt-logo" from="./mt-logo.js" size="36" hint-size="36px,36px"></x-import>MT hekwerken</a>
+    <a href="https://www.mthekwerken.nl" style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:clamp(19px,2vw,24px);letter-spacing:-.02em;flex:none"><x-import component-from-global-scope="mt-logo" from="./mt-logo.js" size="36" hint-size="36px,36px"></x-import><sc-if value="{{ logoTxt }}" hint-placeholder-val="{{ true }}"><span style="white-space:nowrap">MT hekwerken</span></sc-if></a>
     <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
       <label style="flex:1;max-width:380px;margin-left:auto;background:#fff;border-radius:6px;padding:0 14px;display:flex;align-items:center;gap:10px;height:46px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
@@ -66,7 +66,7 @@ button,input,select{font-family:inherit;color:inherit}
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="1.8"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8a3 3 0 016 0"></path></svg>
       <span style="position:absolute;top:5px;right:3px;background:#11131F;color:#fff;border-radius:8px;font-size:10px;min-width:16px;height:16px;display:grid;place-items:center;font-weight:600">{{ cartCount }}</span>
     </a>
-    <sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mt-mobile-nav" from="./mobile-nav.js" hint-size="96px,44px"></x-import></sc-if>
+    <sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}"><x-import style="flex:none" component-from-global-scope="mt-mobile-nav" from="./mobile-nav.js" hint-size="96px,44px"></x-import></sc-if>
   </div>
   <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
   <nav style="background:#F7F5F1;border-top:1px solid #E6E2DA">
@@ -123,14 +123,16 @@ button,input,select{font-family:inherit;color:inherit}
 <section data-screen-label="02 Assortiment" style="max-width:1320px;margin:0 auto;padding:{{ L.secPad }} clamp(20px,5vw,40px) 0">
   <div style="display:grid;grid-template-columns:{{ L.mainCols }};gap:36px;align-items:start">
 
-    <aside onKeyDown="{{ drawerKey }}" aria-hidden="{{ fp.hidden }}" style="position:fixed;inset:0;z-index:90;visibility:{{ fp.vis }};transition:visibility 0s linear {{ fp.visDelay }}">
-      <div onClick="{{ closeDrawer }}" style="position:absolute;inset:0;background:rgba(14,17,32,.42);backdrop-filter:blur(2px);opacity:{{ fp.scrimOp }};transition:opacity .35s ease"></div>
-      <div role="dialog" aria-modal="true" aria-label="Filters" style="position:relative;margin-left:auto;width:min(440px,100%);height:100%;background:#fff;display:flex;flex-direction:column;box-shadow:-24px 0 60px rgba(14,17,32,.18);transform:{{ fp.tf }};transition:transform .45s cubic-bezier(.22,1,.36,1)">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid #E6E2DA">
-            <span style="display:flex;align-items:baseline;gap:10px"><strong style="font-size:21px;font-weight:600;letter-spacing:-.01em">Filters</strong><span style="font-size:14px;color:#6B6E7A">{{ countLabel }}</span></span>
-            <button id="drawer-close" type="button" onClick="{{ closeDrawer }}" aria-label="Filters sluiten" style="width:44px;height:44px;border-radius:99px;border:none;background:#F1EEE8;display:grid;place-items:center;cursor:pointer;transition:background .2s,transform .3s cubic-bezier(.22,1,.36,1)" style-hover="background:#E6E1D8;transform:rotate(90deg)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    <aside onKeyDown="{{ drawerKey }}" style="position:{{ fp.pos }};inset:0;z-index:90;display:{{ fp.disp }};background:{{ fp.bg }}">
+      <div onClick="{{ closeDrawer }}" style="position:absolute;inset:0;display:{{ fp.scrim }}"></div>
+      <div role="{{ fp.role }}" aria-modal="{{ fp.modal }}" aria-label="Filters" style="position:relative;margin-left:auto;width:{{ fp.w }};height:{{ fp.h }};background:#fff;display:flex;flex-direction:column">
+        <sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #E6E2DA">
+            <strong style="font-size:19px;font-weight:600">Filters</strong>
+            <button id="drawer-close" type="button" onClick="{{ closeDrawer }}" aria-label="Filters sluiten" style="width:44px;height:44px;border-radius:99px;border:none;background:#F1EEE8;display:grid;place-items:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
           </div>
-        <div style="flex:1;overflow:auto;overscroll-behavior:contain;padding:4px 22px 22px;display:flex;flex-direction:column">
+        </sc-if>
+        <div style="flex:1;overflow:{{ fp.ov }};padding:{{ fp.pad }};display:flex;flex-direction:column">
           <sc-for list="{{ fGroups }}" as="g" hint-placeholder-count="5">
             <div style="border-bottom:1px solid #E6E2DA;padding:14px 0">
               <button type="button" onClick="{{ g.toggle }}" aria-expanded="{{ g.open }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;border:none;background:none;padding:0;cursor:{{ g.cursor }};font-size:15px;font-weight:600;text-align:left">
@@ -192,10 +194,12 @@ button,input,select{font-family:inherit;color:inherit}
             </div>
           </sc-if>
         </div>
-          <div style="display:grid;grid-template-columns:auto 1fr;gap:10px;padding:14px 22px calc(14px + env(safe-area-inset-bottom));border-top:1px solid #E6E2DA">
-            <button type="button" onClick="{{ clearAll }}" style="height:50px;padding:0 18px;border:1.5px solid #11131F;border-radius:8px;background:#fff;font-size:15px;font-weight:600;cursor:pointer" style-hover="background:#F7F5F1">Wis alles</button>
-            <button type="button" onClick="{{ closeDrawer }}" style="height:50px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:15px;font-weight:600;cursor:pointer" style-hover="background:#E9611C">{{ showLabel }}</button>
+        <sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:10px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));border-top:1px solid #E6E2DA">
+            <button type="button" onClick="{{ clearAll }}" style="height:50px;padding:0 16px;border:1.5px solid #11131F;border-radius:8px;background:#fff;font-size:15px;font-weight:600;cursor:pointer">Wis alles</button>
+            <button type="button" onClick="{{ closeDrawer }}" style="height:50px;border:none;border-radius:8px;background:#FB7029;color:#fff;font-size:15px;font-weight:600;cursor:pointer">{{ showLabel }}</button>
           </div>
+        </sc-if>
       </div>
     </aside>
 
@@ -206,7 +210,6 @@ button,input,select{font-family:inherit;color:inherit}
           <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:#6B6E7A;animation:pulse 1s ease-in-out infinite">Bijwerken…</span></sc-if>
         </div>
         <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;align-items:center;gap:10px">
           <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#6B6E7A">Sorteren op
             <span style="position:relative;display:block">
               <select value="{{ sort }}" onChange="{{ onSort }}" style="appearance:none;-webkit-appearance:none;height:42px;min-width:200px;border:1.5px solid #E1DCD2;border-radius:8px;background:#fff;padding:0 36px 0 14px;font-size:14px;font-weight:500;color:#11131F;cursor:pointer;box-shadow:none" style-hover="border-color:#11131F">
@@ -214,10 +217,6 @@ button,input,select{font-family:inherit;color:inherit}
               </select><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#11131F" stroke-width="2.4" stroke-linecap="round" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </label>
-          <button id="filter-btn" type="button" onClick="{{ openDrawer }}" aria-haspopup="dialog" aria-expanded="{{ drawerOpen }}" style="height:42px;padding:0 16px 0 14px;border:none;border-radius:8px;background:#11131F;color:#fff;display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s" style-hover="background:#2A2D3D">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"></path><circle cx="16" cy="7" r="2"></circle><circle cx="8" cy="17" r="2"></circle></svg>Filters<sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}"><span style="background:#FB7029;color:#fff;border-radius:99px;min-width:20px;height:20px;padding:0 6px;display:grid;place-items:center;font-size:12px">{{ activeCount }}</span></sc-if>
-          </button>
-          </div>
         </sc-if>
       </div>
 
@@ -505,6 +504,7 @@ class Component extends DCLogic {
     return s;
   })();
   componentDidMount() {
+    this.onXs = () => { const x = window.innerWidth < 480; if (x !== this.state.xs) this.setState({ xs: x }); }; this.onXs(); window.addEventListener('resize', this.onXs);
     this.onResize = () => { const m = window.innerWidth < 900, n = window.innerWidth < 560, w = window.innerWidth >= 1100; if (m !== this.state.mob || n !== this.state.narrow || w !== this.state.wide) this.setState({ mob: m, narrow: n, wide: w }); };
     window.addEventListener('resize', this.onResize); this.onResize();
     this.onPlx = () => { if (this.plxRaf) return; this.plxRaf = requestAnimationFrame(() => { this.plxRaf = null; const vh = window.innerHeight; document.querySelectorAll('[data-plx]').forEach(img => { const box = img.parentElement.getBoundingClientRect(); if (box.bottom < -50 || box.top > vh + 50) return; const p = (box.top + box.height / 2 - vh / 2) / vh; const amt = Number(img.getAttribute('data-plx')) || 30; img.style.transform = 'translate3d(0,' + (p * -amt).toFixed(1) + 'px,0)'; }); }); };
@@ -551,7 +551,7 @@ class Component extends DCLogic {
     const mobileCard = this.props.mobileCard ?? 'horizontaal';
     const horiz = narrow && mobileCard === 'horizontaal';
     const perPage = this.props.perPage ?? 12;
-    const four = !mob && s.wide;
+    const four = false;
     const toggleOpt = (k, v) => this.change(st => { const cur = st.sel[k] || []; const next = cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v]; return { sel: { ...st.sel, [k]: next } }; });
     const filtered = P.filter(p => this.matches(p, sel, s.min, s.max));
     const sorted = filtered.map((p, i) => ({ p, i, pr: this.priceFor(p, sel) }));
@@ -582,7 +582,7 @@ class Component extends DCLogic {
     ];
     let items = cards.slice();
     if (this.props.showPromos ?? true) {
-      const i1 = four ? 3 : 2; if (items.length >= i1) items.splice(i1, 0, PROMOS[0]);
+      const i1 = four ? 3 : 2; if (!mob && items.length >= i1) items.splice(i1, 0, PROMOS[0]);
       const i2 = four ? 8 : 9; if (!mob && items.length > i2) items.splice(i2, 0, PROMOS[1]);
     }
     const fGroups = FILTERS.map(f => {
@@ -610,7 +610,7 @@ class Component extends DCLogic {
     KEYS.forEach(k => (sel[k] || []).forEach(v => { const f = FILTERS.find(x => x.k === k); const o = (f.opts || []).find(x => x[0] === v); const l = o ? o[1] : v + ' cm'; const lab = f.k === 'w' ? 'Doorgang ' + l : f.k === 'h' ? 'Hoogte ' + l : l; chips.push({ l: lab, aria: 'Verwijder filter ' + lab, remove: () => toggleOpt(k, v) }); }));
     if (s.min !== '') chips.push({ l: 'Vanaf € ' + s.min, aria: 'Verwijder minimumprijs', remove: () => this.change({ min: '' }) });
     if (s.max !== '') chips.push({ l: 'Tot € ' + s.max, aria: 'Verwijder maximumprijs', remove: () => this.change({ max: '' }) });
-    const drawer = !!s.drawer;
+    const drawer = mob && s.drawer;
     const closeDrawer = () => { this.setState({ drawer: false }); setTimeout(() => { const b = document.getElementById('filter-btn'); if (b) b.focus(); }, 30); };
     const n = filtered.length;
     const qp = P.find(x => x.id === s.qv);
@@ -644,9 +644,12 @@ class Component extends DCLogic {
       catNextOp: s.catHover ? 1 : 0, catNextPe: s.catHover ? 'auto' : 'none',
 
       allCats: [['Draadhekwerk', 'draadhekwerk'], ['Draadmathekwerk', 'draadmathekwerk'], ['Draadpanelen', 'draadpanelen'], ['Dubbelstaafmat hekwerken', 'dubbelstaafmatten'], ['Groen hekwerk', 'groen-hekwerk'], ['Hekwerk onderdelen', 'hekwerk-onderdelen'], ['Metalen tuinhekken', 'tuinhek-metaal'], ['Oprit hekwerken', 'oprit-hekwerk'], ['Spijlen hekwerken', 'spijlen-hekwerk'], ['Staafmatten', 'staafmatten'], ['Stalen hekwerken', 'stalen-hekwerk'], ['Zwarte hekwerken', 'zwart-hekwerk']].map(([t, sl]) => ({ t, href: SITE + '/hekwerk/' + sl + '/' })),
-      L: { tileW: mob ? '112px' : '148px', arrTop: mob ? '34px' : '52px', catTop: mob ? '24px' : '28px', mainCols: 'minmax(0,1fr)', secPad: mob ? '20px' : '32px', gridCols: mob ? (horiz ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))') : four ? 'repeat(4,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))', gap: mob ? '20px 12px' : '36px 20px',
+      logoTxt: !this.state.xs,
+      L: { tileW: mob ? '112px' : '148px', arrTop: mob ? '34px' : '52px', catTop: mob ? '24px' : '28px', mainCols: mob ? 'minmax(0,1fr)' : '272px minmax(0,1fr)', secPad: mob ? '20px' : '32px', gridCols: mob ? (horiz ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))') : four ? 'repeat(4,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))', gap: mob ? '20px 12px' : '36px 20px',
         promoH: mob ? '280px' : '100%', promoSpan: mob ? '1 / -1' : 'auto', cardDir: horiz ? 'row' : 'column', cardGap: horiz ? '14px' : '12px', imgW: horiz ? '40%' : '100%', bodyPad: horiz ? '4px 0' : '0 2px', nameSize: horiz ? '16px' : '17px', qvLeft: mob ? 'auto' : '50%', qvRight: mob ? '8px' : 'auto', qvW: mob ? '40px' : '150px', qvH: mob ? '40px' : '40px', qvRadius: mob ? '0px' : '16px' },
-      fp: drawer ? { vis: 'visible', visDelay: '0s', scrimOp: 1, tf: 'translateX(0)', hidden: 'false' } : { vis: 'hidden', visDelay: '.45s', scrimOp: 0, tf: 'translateX(104%)', hidden: 'true' },
+      fp: drawer ? { pos: 'fixed', disp: 'block', bg: 'rgba(14,17,32,.5)', scrim: 'block', role: 'dialog', modal: 'true', w: 'min(440px,100%)', h: '100%', ov: 'auto', pad: '4px 18px 18px' }
+        : mob ? { pos: 'static', disp: 'none', bg: 'transparent', scrim: 'none', role: 'region', modal: 'false', w: '100%', h: 'auto', ov: 'visible', pad: '0' }
+        : { pos: 'static', disp: 'block', bg: 'transparent', scrim: 'none', role: 'region', modal: 'false', w: '100%', h: 'auto', ov: 'visible', pad: '0' },
       drawerOpen: drawer,
       openDrawer: () => { this.setState({ drawer: true }); setTimeout(() => { const b = document.getElementById('drawer-close'); if (b) b.focus(); }, 40); },
       closeDrawer, drawerKey: (e) => { if (e.key === 'Escape' && drawer) closeDrawer(); },

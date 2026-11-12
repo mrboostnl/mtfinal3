@@ -23,8 +23,9 @@
       this._t = scope;
       this._h = () => play(this);
       scope.addEventListener('mouseenter', this._h);
+      this._iv = setInterval(() => { if (document.hidden) return; const r = this.getBoundingClientRect(); if (r.top + window.scrollY < 200 && r.bottom > 0) play(this); }, 30000);
     }
-    disconnectedCallback() { if (this._t) this._t.removeEventListener('mouseenter', this._h); this._r = false; }
+    disconnectedCallback() { clearInterval(this._iv); if (this._t) this._t.removeEventListener('mouseenter', this._h); this._r = false; }
   }
   customElements.define('mt-logo', MtLogo);
 })();
